@@ -1,26 +1,9 @@
-     ,-----.,--.                  ,--. ,---.   ,--.,------.  ,------.
-    '  .--./|  | ,---. ,--.,--. ,-|  || o   \  |  ||  .-.  \ |  .---'
-    |  |    |  || .-. ||  ||  |' .-. |`..'  |  |  ||  |  \  :|  `--, 
-    '  '--'\|  |' '-' ''  ''  '\ `-' | .'  /   |  ||  '--'  /|  `---.
-     `-----'`--' `---'  `----'  `---'  `--'    `--'`-------' `------'
-    ----------------------------------------------------------------- 
+###Hi there,
 
+This is a repo containing the guts of my (Alex Pearson's) personal webpage. I use git for version control even when I'm working on solo projects, so it may as well be on GitHub and open-sourced, right? 
 
-Hi there! Welcome to Cloud9 IDE!
+Take what you'd like from anything I've written here, as long as you promise not to judge too harshly if you find something out-of-whack. This is always the beta-build of the site... working versions can be found, of course, at http://alexpear.com. 
 
-To get you started, we included a small hello world application.
+Thanks for stopping by!
 
-1) Open the hello-world.html file
-
-2) Click on the Preview button to open a live preview pane
-
-3) Make some changes to the file, save, watch the preview, and have fun!
-
-Happy coding!
-The Cloud9 IDE team
-
-
-## Support & Documentation
-
-Visit http://docs.c9.io for documentation, or http://support.c9.io for support.
-To watch some training videos, visit http://www.youtube.com/user/c9ide
+-Alex
