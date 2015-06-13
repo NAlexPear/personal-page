@@ -24,7 +24,7 @@ a:hover {
 .topstuff{ 
     /*position: relative;*/
     width: 100%; 
-    height: auto;
+    height: auto; 
     /*padding-bottom: 10%;*/
     /*text-shadow: 1px 1px 1px rgba(140,140,140,0.3);*/
 }
@@ -61,15 +61,8 @@ a:hover {
     /*margin-top:-5%;*/
 } 
 
-.main{
-    margin-left: auto;
-    margin-right: auto;
-    width:75%;  
-}   
-
 #navbubbles{
     list-style-type:none;
-    height: 28vw;
     width: 100%;
     /*text-align: center; */
 }
@@ -78,72 +71,28 @@ a:hover {
     /*text-decoration: none;*/
     display:inline-block;
     vertical-align: middle; 
-    width:28vw; 
-    height:28vw;  
-    margin: 0.1em
-}
- 
-#about{
+    width:25%; 
+    height:8vw;
     text-align: center;
     font-family: 'Lato', "Sans-Serif";
-    font-size: 6vw; 
+    font-size: 5vw; 
     font-weight: 300;
+    background-color: #dadada;
+    color:#ffffff;
+    /*border: 2px solid; */
+    /*border-color: #dadada;*/
+} 
+
+#navreact a{
+    
+   color: rgba(255,255,255, 0.8); 
 }
 
-#about a{
-    color: rgba(255,255,255, 0.8); 
-}
-
-#about a:hover{
+#navreact a:hover{
     color: rgba(255,255,255, 1);  
 }
-
-#aboutbutton {
-    width: 28vw;
-    height: 28vw;
-    background-image: url(http://i.imgur.com/yf9XQIj.png);
-    background-size: 110%;   
-    background-position: 10%;
-    opacity: 0.6;   
-    border: 1px solid; 
-    border-color: rgb(255,255,255); 
-    border-radius: 50%;
-    overflow: hidden; 
-} 
-
-#abouttext {
-    /*height: 10vw;*/
-    padding-top: 10%;
-    padding-bottom: 20%; 
-    margin-top: 30%;  
-    margin-bottom: auto;
-    background-color: rgba(255,30,30,0.7);
-}
  
-#resume {
-    text-align: center;
-    font-family: 'Lato', "Sans-Serif";
-    font-size: 4vw;
-    font-weight: 300;
-}
 
-#resumebutton {
-    width: 28vw;
-    height: 28vw; 
-    border: 1px solid;
-    border-color: rgb(155,155,155); 
-    border-radius: 50%; 
-}
- 
-/*#resumebutton a{*/
-/*    vertical-align: middle;*/
-/*}*/
-
-#resumetext {
-    /*height: 28vw;*/
-    margin-top: 25%;
-    margin-bottom: auto;  
-} 
 
 .twitter-timeline{ 
     /*width:20px;*/
