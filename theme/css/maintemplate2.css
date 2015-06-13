@@ -98,7 +98,7 @@ footer ul { list-style: none; margin: 0 auto; overflow: hidden; padding: 0; widt
 }  
 footer ul li {display: table-cell; font-family: lato, "sans-serif"; font-size: 2.2em; font-weight: bold;}
 footer ul li:last-child {margin-right: 0; } 
-footer ul li a { background: #DADADA; display:block; color: #fff; overflow: hidden; text-decoration: none; -webkit-transition: all .3s ease; width: 50%; height: auto;margin-left:auto;margin-right:auto;}
+footer ul li a { background: #DADADA; display:block; color: #fff; overflow: hidden; text-decoration: none; -webkit-transition: all .3s ease; width: 48px; height: 48px;margin-left:auto;margin-right:auto;}
 footer ul li a:hover, footer ul li a:focus, footer ul li a:active { background: #51504f; color: #fff; }
 
 #socialmediabuttons {
