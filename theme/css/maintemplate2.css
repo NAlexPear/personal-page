@@ -12,20 +12,18 @@ p {
     color: rgb(155,155,155); 
 } 
 
-a {
+a { 
     text-decoration: none;
     color: rgba(100,100,100,0.7);
 }
 
-a:hover { 
-    color: rgba(100,100,100,1.0); 
+a:hover {  
+    color: rgba(100,100,100,1.0);
 }
 
 .topstuff{
     width: 100%; 
-    height: 100%;
 }
-
 
 .splash {
     width: 50%; 
@@ -39,7 +37,7 @@ a:hover {
     font-weight: 300;
     font-size:9vw;
     line-height:90%;
-    padding-bottom: 0vw;
+    padding-bottom: 0vw; 
     position: inherit;
     color: rgb(255,255,255);
 } 
@@ -47,22 +45,23 @@ a:hover {
 #splashtag{
     font-family:'Lato',"Sans-Serif";
     font-size:4vw; 
-    font-weight: 100;
+    font-weight: 100; 
     color: rgb(255,255,255);
     text-align: center;
 } 
 
 #navbubbles{
     list-style-type:none;
-    display:table-cell;
-    table-cell:fixed;
+    display:table;
+    table-layout:fixed; 
     width: 100%;
     padding-top: 4vw;
+    padding-bottom: 1vw;
     padding-left: 0px;
-    background-color: #EEEEEE;
 }
   
 #navbubbles li{
+    display: table-cell;
     text-align: center;
     font-family: 'Lato', "Sans-Serif";
     font-size: 4vw; 
@@ -86,76 +85,21 @@ a:hover {
  
 
 
-.twitter-timeline{ 
-    /*width:20px;*/
-    /*padding: 10%; */
-    margin-left: 7%;  
-    /*margin-top: 25%;*/
-    margin-bottom: auto;
-} 
 
-#twitbutton { 
-    overflow: hidden; 
-    /*margin-left: 0.5em;*/
-    width: 28vw;
-    height: 28vw;
-    border: 1px solid;
-    border-color: rgb(155,155,155); 
-    border-radius: 50%; 
-} 
-
-#twittext{
-    width: 28vw;
-    height: 14vw;
-    background-color: rgb(220,220,220);
-} 
-
-#twitheader {
-    height: 9vw; 
-    margin-top: -5%;
-}
-
-#twitheader img{
-    width: 20%;
-    margin-left: 40%;
-    margin-top: 1vw;
-    border-radius: 20%;
-    float: left; 
-}
-
-#twitheader p{
-    margin-left: 25%;
-    font-family: 'Lato', 'Sans-Serif';
-    font-size: 2vw;
-    width: 50%; 
-}
-
-#twittext p{
-    margin-top: 0vw;
-    text-align: center; 
-    font-family: 'Lato', 'Sans-Serif';
-    font-size: 2vw;
-    font-weight: 300; 
-    color: rgba(0,0,0,0.7);
-    width: 90%;
-}
-
-.socialmedia{
+.socialmedia{ 
     margin-top: 10%;
+}
+
+footer ul { list-style: none; margin: 0 auto; overflow: hidden; padding: 0; width: 100%; 
     margin-left: auto;   
     margin-right: auto;
-    width:35%;
+    display: table; 
+    table-layout:fixed; 
 }
-
-.socialmedia li{
-    display: inline;
-}
-
-footer ul { list-style: none; margin: 0 auto; overflow: hidden; padding: 0; width: 204px; }
-footer ul li { float: left; font-family: lato, "sans-serif" !important; font-size: 2.2em; font-weight: bold; height: 48px; margin: 0 30px 12px 0; width: 48px; }
+footer ul li {display: table-cell; font-family: lato, "sans-serif"; font-size: 2.2em; background: #DADADA; font-weight: bold;width: 48px; height: 48px;}
 footer ul li:last-child { margin-right: 0; }
-footer ul li a { background: #cccccc; color: #fff; display: block; height: 48px; line-height: 48px; overflow: hidden; text-decoration: none; -webkit-transition: all .3s ease; width: 48px; behavior: url("/responsive/stylesheets/PIE.htc"); }
-footer ul li a:hover, footer ul li a:focus, footer ul li a:active { background: #333; color: #fff; }
+footer ul li a {  color: #fff; overflow: hidden; text-decoration: none; -webkit-transition: all .3s ease; }
+footer ul li a:hover, footer ul li a:focus, footer ul li a:active { background: #51504f; color: #fff; }
 
 #socialmediabuttons {
     list-style-type:none;
