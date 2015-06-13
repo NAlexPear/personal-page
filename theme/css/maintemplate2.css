@@ -17,25 +17,18 @@ a {
     color: rgba(100,100,100,0.7);
 }
 
-a:hover {
+a:hover { 
     color: rgba(100,100,100,1.0); 
 }
 
-.topstuff{ 
-    /*position: relative;*/
+.topstuff{
     width: 100%; 
-    height: auto; 
-    /*padding-bottom: 10%;*/
-    /*text-shadow: 1px 1px 1px rgba(140,140,140,0.3);*/
-}
-  
-.headshot {
-    z-index: -10;
-    /*margin: 0 auto;*/
+    height: 100%;
 }
 
+
 .splash {
-    width: 50%;
+    width: 50%; 
     position: relative;
     margin-top: -32%;
 }
@@ -48,7 +41,6 @@ a:hover {
     line-height:90%;
     padding-bottom: 0vw;
     position: inherit;
-    /*margin-top: -25%;*/
     color: rgb(255,255,255);
 } 
 
@@ -58,38 +50,38 @@ a:hover {
     font-weight: 100;
     color: rgb(255,255,255);
     text-align: center;
-    /*margin-top:-5%;*/
 } 
 
 #navbubbles{
     list-style-type:none;
+    display:table-cell;
+    table-cell:fixed;
     width: 100%;
-    /*text-align: center; */
+    padding-top: 4vw;
+    padding-left: 0px;
+    background-color: #EEEEEE;
 }
   
 #navbubbles li{
-    /*text-decoration: none;*/
-    display:inline-block;
-    vertical-align: middle; 
-    width:25%; 
-    height:8vw;
     text-align: center;
     font-family: 'Lato', "Sans-Serif";
-    font-size: 5vw; 
+    font-size: 4vw; 
     font-weight: 300;
-    background-color: #dadada;
-    color:#ffffff;
-    /*border: 2px solid; */
-    /*border-color: #dadada;*/
+    color:#ffffff;;
 } 
 
-#navreact a{
+.navreact a{
     
-   color: rgba(255,255,255, 0.8); 
+   color:#A8A8A8;
+  -o-transition:.5s color; 
+  -ms-transition:.5s color;
+  -moz-transition:.5s color;
+  -webkit-transition:.5s color;
+   transition: .5s color; 
 }
 
-#navreact a:hover{
-    color: rgba(255,255,255, 1);  
+.navreact a:hover{
+    color: #51504f;  
 }
  
 
@@ -150,7 +142,7 @@ a:hover {
 
 .socialmedia{
     margin-top: 10%;
-    margin-left: auto;
+    margin-left: auto;   
     margin-right: auto;
     width:35%;
 }
