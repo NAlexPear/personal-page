@@ -37,7 +37,7 @@ a:hover {
     width:95%;
     margin-left:auto;
     margin-right:auto;
-    border: 0.2em solid #dadada;
+    border: 0.3vw dashed #dadada;
     border-radius: 15px;
 }
 
@@ -47,14 +47,51 @@ a:hover {
 }
 
 #content p{
-    font-size:1em;
+    font-size:3vw;
     font-family:'Lato', 'Helvetica', 'sans-serif';
+    font-weight:300;
 }
 
 #content ul{
     font-family: 'Lato', 'Helvetica', 'sans-serif';
     font-size: 0.8em;
     opacity: 0.3;
+}
+
+#content a{
+    border-bottom:0.2vw dotted;
+}
+
+#content a:hover{
+    border-bottom:0.2vw solid;
+}
+
+.signature{
+    width:40%;
+    height:auto;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.signature img{
+    /*float:left;*/
+    margin-left:27%;
+    width:40%;
+    height:14vw;
+    margin-bottom:0;
+    opacity: 0.7;
+    border: 0.3vw solid #59556a;
+    border-radius:50%;
+}
+
+.signature h1{ 
+    font-family: 'Shadows Into Light', 'cursive';
+    font-size: 7vw;
+    font-weight:300;
+    margin-left:29%;
+    margin-top:-10%;
+    padding-top:0;
+    color:#59556a;
 }
 
 #splashname{
@@ -130,7 +167,7 @@ footer ul li a:hover, footer ul li a:focus, footer ul li a:active { background: 
 #socialmediabuttons {
     text-align: center;
     /*direction:ltr;*/
-}
+} 
  
 #in{
     font-weight: bolder;
