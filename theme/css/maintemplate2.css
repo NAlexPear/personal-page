@@ -37,9 +37,35 @@ a:hover {
     width:95%;
     margin-left:auto;
     margin-right:auto;
+    margin-top: 5%; 
     border: 0.3vw dashed #dadada;
     border-radius: 15px;
 }
+/*#content-wrapper:before {*/
+/*  content:"";*/
+/*  position:absolute;*/
+ /* bottom:-20px; /* value = - border-top-width - border-bottom-width */
+  /*left:40px; /* controls horizontal position */
+/*  border-width:20px 20px 0;*/
+/*  border-style:dashed;*/
+/*  border-color:#5a8f00 transparent;*/
+  /* reduce the damage in FF3.0 */
+/*  display:block;*/
+/*  width:0;*/
+/*}*/
+
+/*#content-wrapper:after {*/
+/*  content:"";*/
+/*  position:absolute;*/
+/*  bottom:-13px; /* value = - border-top-width - border-bottom-width */
+  /*left:47px; /* value = (:before left) + (:before border-left) - (:after border-left) 
+/*  border-width:13px 13px 0;*/
+/*  border-style:dashed;*/
+/*  border-color:#fff transparent;*/
+  /* reduce the damage in FF3.0 */
+/*  display:block;*/
+/*  width:0;*/
+/*}*/
 
 #content{
     padding-left:1.5vw;
@@ -71,15 +97,15 @@ a:hover {
     height:auto;
     margin-left:auto;
     margin-right:auto;
+    margin-top:-2%;
 }
 
 .signature img{
-    /*float:left;*/
     margin-left:27%;
     width:40%;
     height:14vw;
     margin-bottom:0;
-    opacity: 0.7;
+    opacity: 0.1;
     border: 0.3vw solid #59556a;
     border-radius:50%;
 }
@@ -89,7 +115,7 @@ a:hover {
     font-size: 7vw;
     font-weight:300;
     margin-left:29%;
-    margin-top:-10%;
+    margin-top:-23%;
     padding-top:0;
     color:#59556a;
 }
