@@ -33,6 +33,30 @@ a:hover {
     margin-top: -30%;
 }
 
+#content-wrapper{
+    width:95%;
+    margin-left:auto;
+    margin-right:auto;
+    border: 0.2em solid #dadada;
+    border-radius: 15px;
+}
+
+#content{
+    padding-left:1.5vw;
+    padding-right:1.5vw;
+}
+
+#content p{
+    font-size:1em;
+    font-family:'Lato', 'Helvetica', 'sans-serif';
+}
+
+#content ul{
+    font-family: 'Lato', 'Helvetica', 'sans-serif';
+    font-size: 0.8em;
+    opacity: 0.3;
+}
+
 #splashname{
     position:relative;
     font-family: 'Lato', "sans-serif";
