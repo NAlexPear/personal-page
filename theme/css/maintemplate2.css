@@ -175,7 +175,22 @@ a:hover {
 }
  
 
+#resume-links{
+    list-style:none;
+    display:table;
+    table-layout: fixed;
+    width: 80%;
+    max-width:800px;
+    height:auto;
+    margin-left:auto;
+    margin-right:auto;
+    text-align:center;
+}
 
+#resume-links li{
+    font-size:3vw;
+    display:table-cell;
+}
 
 .socialmedia{ 
     margin-top: 10%;
