@@ -1,8 +1,8 @@
 $(function() {
 
     var newHash      = "",
-        $mainContent = $("#main-content"),
-        $pageWrap    = $("#page-wrap"),
+        $mainContent = $("#content"),
+        $pageWrap    = $("#content-wrapper"),
         baseHeight   = 0,
         $el;
         
