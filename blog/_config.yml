@@ -1,0 +1,7 @@
+name: "Alex Pearson's Blog"
+description: "Thoughts on building, breaking, programming, educating, sometimes lifting, and everything in between. "
+
+paginate: 15
+
+markdown: rdiscount
+permalink: /blog/:year/:month/:day/:title/
