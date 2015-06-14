@@ -5,7 +5,7 @@ html{
 
 body{
     background-color: rgb(255,255,255);
-    margin:0;
+    margin:0; 
 }
 
 p {
@@ -29,22 +29,23 @@ a:hover {
 
 .splash {
     width: 50%; 
-    position: relative;
-    margin-top: -32%;
+    position: absolute;
+    margin-top: -30%;
 }
 
 #splashname{
+    position:relative;
     font-family: 'Lato', "sans-serif";
     text-align: center;
     font-weight: 300;
     font-size:9vw;
     line-height:90%;
     padding-bottom: 0vw; 
-    position: inherit;
     color: rgb(255,255,255);
 } 
 
 #splashtag{
+    position:relative;
     font-family:'Lato',"Sans-Serif";
     font-size:4vw; 
     font-weight: 100; 
@@ -57,8 +58,7 @@ a:hover {
     display:table;
     table-layout:fixed; 
     width: 100%;
-    padding-top: 4vw;
-    padding-bottom: 1vw;
+    padding-bottom: 2vw;
     padding-left: 0px;
 }
   
@@ -92,7 +92,7 @@ a:hover {
     margin-top: 10%;
 }
 
-footer ul { list-style: none; margin: 0 auto; overflow: hidden; padding: 0; width: 50%; 
+footer ul { list-style: none; margin: 0 auto; overflow: hidden; padding: 0; width: 50%; min-width:200px; max-width:350px;
     margin-left: auto;   
     margin-right: auto;
     display: table; 
@@ -113,7 +113,8 @@ footer ul li a:hover, footer ul li a:focus, footer ul li a:active { background: 
 }
 
 .copyright {
-    margin-top:5%;
+    margin-top:5%; 
+    margin-bottom:10%;
     text-align: center;
     font-family: helvetica, "Sans-Serif"; 
     font-size: 14px;
