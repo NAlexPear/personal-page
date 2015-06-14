@@ -34,13 +34,15 @@ a:hover {
 }
 
 #content-wrapper{
-    width:95%;
+    width:90%;
+    max-width: 2000px;
     margin-left:auto;
     margin-right:auto;
     margin-top: 5%; 
     border: 0.3vw dashed #dadada;
     border-radius: 15px;
 }
+
 /*#content-wrapper:before {*/
 /*  content:"";*/
 /*  position:absolute;*/

@@ -31,7 +31,7 @@ function loadContent(href) {
         .load(href + " #content", function() { // load the contents of whatever href is
           $mainContent.fadeIn(200, function() {
             $pageWrap.animate({
-              height: baseHeight + $mainContent.height() + &quot;px&quot;
+              height: baseHeight + $mainContent.height()
             });
          });
       
