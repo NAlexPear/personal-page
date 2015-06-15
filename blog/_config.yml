@@ -1,6 +1,8 @@
 name: "Alex Pearson's Blog"
 description: "Thoughts on building, breaking, programming, educating, sometimes lifting, and everything in between. "
 
+url: "http://alexpear.com"
+
 paginate: 15
 
 markdown: rdiscount
