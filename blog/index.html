@@ -7,7 +7,8 @@ layout: preview
     <h4>{{ post.date | date_to_long_string }}</h4>
     <p>
       {{ post.excerpt | strip_html }}
-      <a href="{{ post.url }}">Read Post</a>
+      <br>
+      <a href="{{ post.url }}"> [read more...]</a>
     </p>
     <hr>
 {% endfor %}

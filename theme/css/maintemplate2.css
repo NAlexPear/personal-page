@@ -80,6 +80,11 @@ a:hover {
     font-weight:300;
 }
 
+#content h1{
+    font-family:'Lato', 'Helvetica', 'Sans-serif';
+    font-weight: 400;
+}
+
 #content ul{
     font-family: 'Lato', 'Helvetica', 'sans-serif';
     font-size: 0.8em;

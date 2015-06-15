@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+	<channel>
+		<title>Alex Pearson&#39;s Blog</title>
+		<description>Thoughts on building, breaking, programming, educating, sometimes lifting, and everything in between. </description>		
+		<link>http://alexpear.com</link>
+		<atom:link href="http://alexpear.com/feed.xml" rel="self" type="application/rss+xml" />
+		
+			<item>
+				<title>Getting Started (with this blog)</title>
+				        
+				
+					<description>&lt;h3&gt;Thanks for visiting my blog&lt;/h3&gt;
+</description>
+				
+				<pubDate>Wed, 15 Oct 2014 00:00:00 +0000</pubDate>
+				<link>http://alexpear.com/blog/2014/10/15/getting-started/</link>
+				<guid isPermaLink="true">http://alexpear.com/blog/2014/10/15/getting-started/</guid>
+			</item>
+		
+	</channel>
+</rss>

@@ -43,31 +43,6 @@ a:hover {
     border-radius: 15px;
 }
 
-/*#content-wrapper:before {*/
-/*  content:"";*/
-/*  position:absolute;*/
- /* bottom:-20px; /* value = - border-top-width - border-bottom-width */
-  /*left:40px; /* controls horizontal position */
-/*  border-width:20px 20px 0;*/
-/*  border-style:dashed;*/
-/*  border-color:#5a8f00 transparent;*/
-  /* reduce the damage in FF3.0 */
-/*  display:block;*/
-/*  width:0;*/
-/*}*/
-
-/*#content-wrapper:after {*/
-/*  content:"";*/
-/*  position:absolute;*/
-/*  bottom:-13px; /* value = - border-top-width - border-bottom-width */
-  /*left:47px; /* value = (:before left) + (:before border-left) - (:after border-left) 
-/*  border-width:13px 13px 0;*/
-/*  border-style:dashed;*/
-/*  border-color:#fff transparent;*/
-  /* reduce the damage in FF3.0 */
-/*  display:block;*/
-/*  width:0;*/
-/*}*/
 
 #content{
     padding-left:1.5vw;
@@ -84,6 +59,7 @@ a:hover {
     font-family: 'Lato', 'Helvetica', 'sans-serif';
     font-size: 0.8em;
     opacity: 0.3;
+    padding-bottom: 3vw;
 }
 
 #content a{
@@ -92,6 +68,18 @@ a:hover {
 
 #content a:hover{
     border-bottom:0.2vw solid;
+}
+
+h2{
+    font-family: 'Lato', 'Helvetica', 'sans-serif';
+    font-size:5vw;
+    font-weight: 400;
+    line-height: 50%;
+}
+
+h4{
+    font-family: 'Lato', 'Helvetica', 'sans-serif';
+    font-weight: 400;
 }
 
 .signature{
