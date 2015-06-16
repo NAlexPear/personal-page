@@ -5,11 +5,11 @@
 <meta charset="utf-8">
 <!-- Set the viewport width to device width for mobile -->
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
-<link rel="shortcut icon" href="/theme/images/favicon.ico" type="image/x-icon">
-<link rel="icon" href="theme/images/favicon.ico" type="image/x-icon">
-<title>Alex Pearson's Personal Page</title>
+<link rel="shortcut icon" href="../../../../../../theme/images/favicon.ico" type="image/x-icon">
+<link rel="icon" href="../../../../../../theme/images/favicon.ico" type="image/x-icon">
+<title>Alex Pearson</title>
 <!-- Included CSS Files -->
-<link rel="stylesheet" href="theme/css/maintemplate2.css">
+<link rel="stylesheet" href="../../../../../../theme/css/maintemplate2.css">
 <!-- IE Fix for HTML5 Tags -->
 <!--[if lt IE 9]>
 		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -19,27 +19,13 @@
 <link rel="shortlink" href="http://alexpear.com">
 
 <link href='https://fonts.googleapis.com/css?family=Lato:100,300,400' rel='stylesheet' type='text/css'>
-<link href='https://fonts.googleapis.com/css?family=Shadows+Into+Light' rel='stylesheet' type='text/css'>
-
-<!--Scripts below-->
-<!--JQuery.min.js linkage-->
-<script type='text/javascript' src='//ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js'></script>
-
-<!--asnyc scripts below--->
-<script type="text/javascript" async src="theme/js/analytics.js"></script>
-<!--modernizr script below for checking HTML5 compatibility-->
-<script type="text/javascript" async src="theme/js/modernizr.js"></script>
-<!--Hashchange plugin-->
-<script type='text/javascript' async src='theme/js/jquery.ba-hashchange.min.js'></script>
-<!--Making the page dynamic and interactive-->
-<script type="text/javascript" async src="theme/js/dynamicpage.js"></script>
 
 </head>
 
 <body>
     <div style="background-color: #EEEEEE;">
     <div class="topstuff">
-        <img src="theme/images/alexsmilin3.jpg" width="100%" height="auto" alt="Alex's Home Page"></img>
+        <img src="../../../../../../theme/images/alexsmilin3.jpg" width="100%" height="auto"></img>
         <div class="splash">
             <a href="http://alexpear.com">
                 <div id="splashname">
@@ -54,7 +40,7 @@
         <ul id="navbubbles">
             <li id="about">
                 <div class="navreact">
-                    <a href="http://alexpear.com/about#content" title="About Alex" alt="About Alex">
+                    <a href="http://www.alexpear.com/about#content" title="About Alex" alt="About Alex">
                         <div>about me</div>
                     </a>
                 </div>
@@ -68,8 +54,8 @@
             </li>
             <li id="blog">
                 <div class="navreact">
-                    <a href="http://alexpear.com/blog#content" title="Alex's Blog" alt="Alex's Blog">
-                        <div>blog</div>
+                    <a href="#content" title="Alex's Blog" alt="Alex's Blog">
+                        <div style="color:#51504f;">blog</div>
                     </a>
                 </div>
             </li>
@@ -82,22 +68,17 @@
             </li>
         </ul>
     </div>
-    <div id="page-wrap">
-        <div id="content-wrapper">
-            <div id="content">
-                <p style="font-weight:bold; text-align: center; font-size:4vw; color:#59556A;">Hi there.</p>
-                <p style="text-align:center;">Welcome to my personal web page. I maintain this site as a way of gathering together all of those things that others might (or might not) find interesting about what I do and who I am. 
-                <br>
-                <p style="text-align:center;">I hope you find it useful, enlightening, or entertaining.</p>
-                <br>
-                <p style="text-align:center;">Click on the <a href="http://alexpear.com/about">about me</a> link to find out more. Thanks for visiting.</p>
-                <div class="signature">
-                    <img src="theme/images/APlogo3.svg">
-                    <h1 style="font-family:'Shadows Into Light', 'cursive';">-Alex</h1>
-                </div>
-            </div>
+    <div id="content-wrapper">
+        <div id="content">
+            <ul id="resume-links">
+                <li><a href="http://alexpear.com/blog/">back to preview page</a></li>
+                <li><a href="http://alexpear.com/blog/archive">archive</a></li>
+                <li><a href="http://alexpear.com/blog/feed.xml">feed</a></li>
+            </ul>
+            {{ content }}
         </div>
     </div>
+    
 </body>
 <footer>
     <div class="socialmedia">
