@@ -7,6 +7,20 @@
 		<atom:link href="http://alexpear.com/feed.xml" rel="self" type="application/rss+xml" />
 		
 			<item>
+				<title>Blog Tech 1</title>
+				        
+				
+					<description>&lt;h3&gt;Blog Tech pt.1&lt;/h3&gt;
+
+&lt;h2&gt;a quick look at the tools I&#39;ve used to build this blog&lt;/h2&gt;
+</description>
+				
+				<pubDate>Wed, 03 Dec 2014 00:00:00 +0000</pubDate>
+				<link>http://alexpear.com/blog/2014/12/03/blog-tech-1/</link>
+				<guid isPermaLink="true">http://alexpear.com/blog/2014/12/03/blog-tech-1/</guid>
+			</item>
+		
+			<item>
 				<title>Getting Started (with this blog)</title>
 				        
 				
