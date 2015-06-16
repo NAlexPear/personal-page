@@ -3,16 +3,16 @@
 	<channel>
 		<title>Alex Pearson&#39;s Blog</title>
 		<description>Thoughts on building, breaking, programming, educating, sometimes lifting, and everything in between. </description>		
-		<link>http://alexpear.com</link>
-		<atom:link href="http://alexpear.com/feed.xml" rel="self" type="application/rss+xml" />
+		<link>http://alexpear.com/blog</link>
+		<atom:link href="http://alexpear.com/blog/feed.xml" rel="self" type="application/rss+xml" />
 		
 			<item>
 				<title>Blog Tech 1</title>
 				        
 				
-					<description>&lt;h3&gt;Blog Tech pt.1&lt;/h3&gt;
+					<description>&lt;h2&gt;Blog Tech pt.1&lt;/h2&gt;
 
-&lt;h2&gt;a quick look at the tools I&#39;ve used to build this blog&lt;/h2&gt;
+&lt;h4&gt;a quick look at the tools I&#39;ve used to build this blog&lt;/h4&gt;
 </description>
 				
 				<pubDate>Wed, 03 Dec 2014 00:00:00 +0000</pubDate>
@@ -24,7 +24,7 @@
 				<title>Getting Started (with this blog)</title>
 				        
 				
-					<description>&lt;h3&gt;Thanks for visiting my blog&lt;/h3&gt;
+					<description>&lt;h2&gt;Thanks for visiting my blog&lt;/h2&gt;
 </description>
 				
 				<pubDate>Wed, 15 Oct 2014 00:00:00 +0000</pubDate>

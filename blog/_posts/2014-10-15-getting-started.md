@@ -1,14 +1,14 @@
 ---
-layout: preview
+layout: posts
 title: Getting Started (with this blog)
 author: Alex
 date: 2014-10-15
 published: yes
 ---
 
-###Thanks for visiting my blog
+##Thanks for visiting my blog
 
-while there's quite a lot to say about the process of getting started (in big things or little things in life... more thoughts on that in a later post),
+While there's quite a lot to say about the process of getting started (in big things or little things in life... more thoughts on that in a later post),
 this post is more about what I hope to accomplish with this blog over the next few hundred (thousand?) posts. Realistically, I have the following three goals for this space:
 
 + I'd like to get better at writing. This blog will have a personal feel to it, because I want it to, but I'd like to think that the simple act of typing out my thoughts will lead to a better understanding of the craft of writing in both professional and personal applications. 

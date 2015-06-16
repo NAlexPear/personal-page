@@ -3,12 +3,14 @@ layout: preview
 ---
 
 {% for post in site.posts limit: 10 %}
-    <a href="{{ post.url }}"><h2>{{ post.title }}</h2></a>
-    <h4>{{ post.date | date_to_long_string }}</h4>
+  <br>
+    <a href="/blog/{{ post.url }}"><p style="font-size:2.5vw; font-weight:400;margin-bottom:0; line-height:12%;">{{ post.title }}</p></a>
+    <p style="font-size:1.5vw; color:#dadada;">{{ post.date | date_to_long_string }}</p>
     <p>
-      {{ post.excerpt | strip_html }}
+      {{ post.excerpt | strip_html }}      
       <br>
-      <a href="{{ post.url }}"> [read more...]</a>
+      <a href="/blog/{{ post.url }}"> [read more...]</a>
     </p>
-    <hr>
+    <br>
+    <br>
 {% endfor %}
