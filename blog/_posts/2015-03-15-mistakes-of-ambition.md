@@ -18,10 +18,15 @@ but to encourage you to let both your mistakes and victories be grand, ambitious
 
 To segue into the point: one of the most interesting facts about leadership under pressure
 comes from studies of shipwrecks, plane crashes, and other scenarios of stranded teams
-operating without full information. The rate of survival for these small teams depends less
+operating without full information. [Here's a great little article comparing
+two different shipwrecks on the same island, for roughly the same duration,
+at the same time, and two wildly different outcomes](http://wildernessinnovation.com/2012/01/12/leadership-is-essential-for-group-survival/).
+The rate of survival for these small teams depends less
 on the quality of decisions made then the ability of the leader to stand behind those decisions,
 present a clear vision of success, and get everyone on board with a solution.
-This applied even when the "solution" wasn't technically correct or the best option. Interesting, huh?
+This applied even when the "solution" wasn't technically correct or the best option,
+as long as the leadership was willing to [adapt quickly](http://alexpear.com/blog//2015/01/29/specialization-is-for-insects/)
+when failures (mistakes of ambition) happened. Interesting, huh?
 
 This is *not* to say that the decisions made were decisions made in a vacuum.
 Decisions to set sail vs stay put, or to ford the river vs head upstream,
