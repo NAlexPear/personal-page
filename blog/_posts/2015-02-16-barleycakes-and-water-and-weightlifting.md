@@ -56,7 +56,7 @@ gave us a pretty clear set of ideals at the entrance to his gathering place
 for would-be philosophers 
 (in a time when "philosophy" was a proving ground for those wanting to start something new):
 
-> The hospitable keeper of mansion,
+> The hospitable keeper of this mansion,
 where you will find pleasure the highest good,
 will present you liberally with barley cakes, and water from the spring.
 These gardens will not provoke your appetite by artificial dainties,
@@ -74,8 +74,8 @@ but I think he has the right idea of true progress being hindered by a junkie's 
 So how do we find our own "barley cakes and water" attitude in the midst of focused pursuit?
 
 The best practice I've ever had for this attitude came from coaching competitive weightlifters.
-There's something incredibly addicting to the rush one fails when you conquer an inanimate object,
-whose only purpose is to be heavy, and who's only defeat comes by being thrown into the air.
+There's something incredibly addicting to the rush one feels when you conquer an inanimate object,
+whose only purpose is to be heavy, and whose only defeat comes by being thrown into the air.
 In the world of weightlifting, as in the world of starting and building new things,
 the obstacle (in this case, a barbell) wins more often than not. 
 And it can be an emotional rollercoaster in much the same way... a personal best and new gym record
@@ -88,8 +88,8 @@ Most will throw temper-tantrums or fall into a depressed state.
 Among the hype-beasts, the best recover quickly from this state.
 And some of them can get to be pretty good lifters. But *none* of them get to be the world's best,
 and I would wager that few are happy with their progress. 
-Compare this to the champion weightlifter, whose competed for decades.
-Not only are they more consistent, but they're generally more reserved in all things.
+Compare this to the champion weightlifter, who's competed for decades.
+Not only are they more consistent, but they're generally more reserved in all gym-related things.
 Set a new back squat record for the gym? A genuine smile, a small wave of thanks to the Coach,
 and a pat on the back from a teammate are all that's needed.
 A disastrous lift on the international stage? A chin held high,
@@ -98,7 +98,7 @@ a quick adjustment from the Coach, and a cool drink of water are all that's need
 It takes some getting used to, for sure. 
 But the idea of progress in the long haul depends on a temprament that understands that
 "this, too, shall pass" and that the solid and dependable will often be happier
-than the frenetic and exciteable. 
+than the frenetic and exciteable, simply by virtue of their sustained progress.
 
 
 
