@@ -4,16 +4,15 @@ var uglify = require('gulp-uglify');
 var minifyCss = require('gulp-minify-css');
 var header = require('gulp-header');
 
-gulp.task('default', ['add-headers', 'bower-port'], function() {
+gulp.task('default', ['add-headers', 'bower-port', 'misc-port'], function() {
    gulp.src('index.html')
         .pipe(usemin({
-            assetsDir: 'public',
+            assetsDir: '',
             css: [minifyCss(), 'concat'],
             js: [uglify(), 'concat']
         }))
         .pipe(gulp.dest('public'));
 });
-
 gulp.task('add-headers', function() {
     gulp.src('index.html')
         .pipe(header("<!-- This file is generated — do not edit by hand! -->\n"))
@@ -27,8 +26,11 @@ gulp.task('add-headers', function() {
         .pipe(header("/* This file is generated — do not edit by hand! */\n"))
         .pipe(gulp.dest('public/theme/css'));
 });
-
 gulp.task('bower-port', function(){
   gulp.src(['bower_components/**/*'])
     .pipe(gulp.dest('public/bower_components'));
+});
+gulp.task('misc-port', function(){
+  gulp.src(['misc/**/*'])
+    .pipe(gulp.dest('public'));
 });
