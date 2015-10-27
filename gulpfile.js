@@ -3,8 +3,9 @@ var usemin = require('gulp-usemin');
 var uglify = require('gulp-uglify');
 var minifyCss = require('gulp-minify-css');
 var header = require('gulp-header');
+var imagemin = require('gulp-imagemin');
 
-gulp.task('default', ['add-headers', 'bower-port', 'misc-port'], function() {
+gulp.task('default', ['add-headers', 'bower-port', 'misc-port','image-min', 'image-port'], function() {
    gulp.src('index.html')
         .pipe(usemin({
             assetsDir: '',
@@ -33,4 +34,16 @@ gulp.task('bower-port', function(){
 gulp.task('misc-port', function(){
   gulp.src(['misc/**/*'])
     .pipe(gulp.dest('public'));
+});
+gulp.task('image-min', function () {
+    gulp.src(['theme/images/*.jpg','theme/images/*.png'])
+        .pipe(imagemin({
+          optimizationLevel: 5,
+          progressive:true
+        }))
+        .pipe(gulp.dest('public/theme/images'));
+});
+gulp.task('image-port', function () {
+    gulp.src(['theme/images/*.svg'])
+        .pipe(gulp.dest('public/theme/images'));
 });
