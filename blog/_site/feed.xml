@@ -7,6 +7,20 @@
 		<atom:link href="http://alexpear.com/blog/feed.xml" rel="self" type="application/rss+xml" />
 		
 			<item>
+				<title>Blog Tech 2</title>
+				        
+				
+					<description>&lt;h2&gt;Blog Tech pt. 2&lt;/h2&gt;
+
+&lt;h4&gt;...on themes and layouts with Jekyll&lt;/h4&gt;
+</description>
+				
+				<pubDate>Mon, 04 May 2015 00:00:00 +0000</pubDate>
+				<link>http://alexpear.com/blog/2015/05/04/blog-tech-2/</link>
+				<guid isPermaLink="true">http://alexpear.com/blog/2015/05/04/blog-tech-2/</guid>
+			</item>
+		
+			<item>
 				<title>Learn to be Useful</title>
 				        
 				
@@ -15,7 +29,7 @@
 &lt;h3&gt;...and other lessons from &quot;children&#39;s&quot; TV&lt;/h3&gt;
 </description>
 				
-				<pubDate>Thu, 30 Apr 2015 00:00:00 -0500</pubDate>
+				<pubDate>Thu, 30 Apr 2015 00:00:00 +0000</pubDate>
 				<link>http://alexpear.com/blog/2015/04/30/learn-to-be-useful/</link>
 				<guid isPermaLink="true">http://alexpear.com/blog/2015/04/30/learn-to-be-useful/</guid>
 			</item>
@@ -29,7 +43,7 @@
 &lt;h4&gt;Building a machine that needs tuning, not driving&lt;/h4&gt;
 </description>
 				
-				<pubDate>Tue, 14 Apr 2015 00:00:00 -0500</pubDate>
+				<pubDate>Tue, 14 Apr 2015 00:00:00 +0000</pubDate>
 				<link>http://alexpear.com/blog/2015/04/14/on-trust/</link>
 				<guid isPermaLink="true">http://alexpear.com/blog/2015/04/14/on-trust/</guid>
 			</item>
@@ -41,7 +55,7 @@
 					<description>&lt;h2&gt;Mistakes of Ambition vs Mistakes of Sloth&lt;/h2&gt;
 </description>
 				
-				<pubDate>Sun, 15 Mar 2015 00:00:00 -0500</pubDate>
+				<pubDate>Sun, 15 Mar 2015 00:00:00 +0000</pubDate>
 				<link>http://alexpear.com/blog/2015/03/15/mistakes-of-ambition/</link>
 				<guid isPermaLink="true">http://alexpear.com/blog/2015/03/15/mistakes-of-ambition/</guid>
 			</item>
@@ -55,7 +69,7 @@
 &lt;h4&gt;The importance of temprament on success and survival&lt;/h4&gt;
 </description>
 				
-				<pubDate>Mon, 16 Feb 2015 00:00:00 -0600</pubDate>
+				<pubDate>Mon, 16 Feb 2015 00:00:00 +0000</pubDate>
 				<link>http://alexpear.com/blog/2015/02/16/barleycakes-and-water-and-weightlifting/</link>
 				<guid isPermaLink="true">http://alexpear.com/blog/2015/02/16/barleycakes-and-water-and-weightlifting/</guid>
 			</item>
@@ -69,7 +83,7 @@
 &lt;h4&gt;...or, how to be a wide pool with some clusters of depth&lt;/h4&gt;
 </description>
 				
-				<pubDate>Thu, 29 Jan 2015 00:00:00 -0600</pubDate>
+				<pubDate>Thu, 29 Jan 2015 00:00:00 +0000</pubDate>
 				<link>http://alexpear.com/blog/2015/01/29/specialization-is-for-insects/</link>
 				<guid isPermaLink="true">http://alexpear.com/blog/2015/01/29/specialization-is-for-insects/</guid>
 			</item>
@@ -81,7 +95,7 @@
 					<description>&lt;h2&gt;...But Their Overhead Was Low&lt;/h2&gt;
 </description>
 				
-				<pubDate>Fri, 02 Jan 2015 00:00:00 -0600</pubDate>
+				<pubDate>Fri, 02 Jan 2015 00:00:00 +0000</pubDate>
 				<link>http://alexpear.com/blog/2015/01/02/but-their-overhead-was-low/</link>
 				<guid isPermaLink="true">http://alexpear.com/blog/2015/01/02/but-their-overhead-was-low/</guid>
 			</item>
@@ -95,7 +109,7 @@
 &lt;h4&gt;a quick look at the tools I&#39;ve used to build this blog&lt;/h4&gt;
 </description>
 				
-				<pubDate>Wed, 03 Dec 2014 00:00:00 -0600</pubDate>
+				<pubDate>Wed, 03 Dec 2014 00:00:00 +0000</pubDate>
 				<link>http://alexpear.com/blog/2014/12/03/blog-tech-1/</link>
 				<guid isPermaLink="true">http://alexpear.com/blog/2014/12/03/blog-tech-1/</guid>
 			</item>
@@ -109,7 +123,7 @@
 &lt;h3&gt;...and why it sucks&lt;/h3&gt;
 </description>
 				
-				<pubDate>Wed, 12 Nov 2014 00:00:00 -0600</pubDate>
+				<pubDate>Wed, 12 Nov 2014 00:00:00 +0000</pubDate>
 				<link>http://alexpear.com/blog/2014/11/12/starting-from-scratch/</link>
 				<guid isPermaLink="true">http://alexpear.com/blog/2014/11/12/starting-from-scratch/</guid>
 			</item>
@@ -121,7 +135,7 @@
 					<description>&lt;h2&gt;Thanks for visiting my blog&lt;/h2&gt;
 </description>
 				
-				<pubDate>Wed, 15 Oct 2014 00:00:00 -0500</pubDate>
+				<pubDate>Wed, 15 Oct 2014 00:00:00 +0000</pubDate>
 				<link>http://alexpear.com/blog/2014/10/15/getting-started/</link>
 				<guid isPermaLink="true">http://alexpear.com/blog/2014/10/15/getting-started/</guid>
 			</item>
