@@ -6,4 +6,4 @@ url: "http://alexpear.com/blog"
 paginate: 15
 
 markdown: rdiscount
-permalink: /:year/:month/:day/:title/
+permalink: :year/:month/:day/:title/
