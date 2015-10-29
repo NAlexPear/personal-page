@@ -9,7 +9,7 @@ var gutil = require('gulp-util');
 
 
 
-gulp.task('default', ['add-headers', 'bower-port', 'misc-port','image-min', 'image-port', 'jekyll'], function() {
+gulp.task('default', ['bower-port', 'misc-port','image-min', 'image-port', 'jekyll'], function() {
    gulp.src('index.html')
         .pipe(usemin({
             assetsDir: '',
@@ -17,19 +17,6 @@ gulp.task('default', ['add-headers', 'bower-port', 'misc-port','image-min', 'ima
             js: [uglify(), 'concat']
         }))
         .pipe(gulp.dest('public'));
-});
-gulp.task('add-headers', function() {
-    gulp.src('index.html')
-        .pipe(header("<!-- This file is generated — do not edit by hand! -->\n"))
-        .pipe(gulp.dest('public'));
-
-    gulp.src('public/theme/js/site.js')
-        .pipe(header("/* This file is generated — do not edit by hand! */\n"))
-        .pipe(gulp.dest('public/theme/js'));
-
-    gulp.src('public/theme/css/site.css')
-        .pipe(header("/* This file is generated — do not edit by hand! */\n"))
-        .pipe(gulp.dest('public/theme/css'));
 });
 gulp.task('bower-port', function(){
   gulp.src(['bower_components/**/*'])
