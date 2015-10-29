@@ -9,7 +9,7 @@ var gutil = require('gulp-util');
 
 
 
-gulp.task('default', ['bower-port', 'misc-port','image-min', 'image-port', 'jekyll'], function() {
+gulp.task('default', ['bower-port', 'misc-port','image-min', 'image-port', 'downloads-port','jekyll'], function() {
    gulp.src('index.html')
         .pipe(usemin({
             assetsDir: '',
@@ -25,6 +25,10 @@ gulp.task('bower-port', function(){
 gulp.task('misc-port', function(){
   gulp.src(['misc/**/*'])
     .pipe(gulp.dest('public'));
+});
+gulp.task('downloads-port', function(){
+  gulp.src(['downloads/**/*'])
+    .pipe(gulp.dest('public/downloads'));
 });
 gulp.task('image-min', function () {
     gulp.src(['theme/images/*.jpg','theme/images/*.png'])
