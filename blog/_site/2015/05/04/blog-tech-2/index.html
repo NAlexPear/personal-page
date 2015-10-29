@@ -110,157 +110,127 @@ layout: preview
 
 <p>Layouts are called out by name in the YAML, and saved in a separate directory called <code>_layouts</code>. Remember, directories with an underscore in their name aren't rendered into the final site as their own directory, but are rather just used as mixins or resources for other parts of a template. I primarily use two different layouts: <code>preview</code> for the front page/index view, and <code>post</code> for individual posts. Here's what my layout file (<code>preview.html</code>) might look like:</p>
 
-<p>```html
-&lt;!DOCTYPE html>
-<html lang="en-us"></p>
+<pre><code class="html">&lt;!DOCTYPE html&gt;
+&lt;html lang="en-us"&gt;
 
-<p><head>
-<meta charset="utf-8"></p>
+{% include head.html %}
 
-<!-- Set the viewport width to device width for mobile -->
-
-
-<p><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
-<link rel="shortcut icon" href="../theme/images/favicon.ico" type="image/x-icon">
-<link rel="icon" href="../theme/images/favicon.ico" type="image/x-icon">
-<title>Alex Pearson</title></p>
-
-<!-- Included CSS Files, generated through Gulp -->
-
-
-<p><link rel="stylesheet" href="../theme/css/site.css"></p>
-
-<!--[if lt IE 9]>
-        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-
-
-<p><link rel="canonical" href="http://alexpear.com">
-<link rel="shortlink" href="http://alexpear.com"></p>
-
-<p><link href='https://fonts.googleapis.com/css?family=Lato:100,300,400' rel='stylesheet' type='text/css'></p>
-
-<p></head></p>
-
-<p><body>
-    <div style="background-color: #EEEEEE;">
-    <div class="topstuff">
-        <img src="../theme/images/alexsmilin3.jpg" width="100%" height="auto"></img>
-        <div class="splash">
-            <a href="http://alexpear.com">
-                <div id="splashname">
+&lt;body&gt;
+    &lt;div style="background-color: #EEEEEE;"&gt;
+    &lt;div class="topstuff"&gt;
+        &lt;img src="../theme/images/alexsmilin3.jpg" width="100%" height="auto"&gt;&lt;/img&gt;
+        &lt;div class="splash"&gt;
+            &lt;a href="http://alexpear.com"&gt;
+                &lt;div id="splashname"&gt;
                     ALEX PEARSON
-                </div>
-                <div id="splashtag">
+                &lt;/div&gt;
+                &lt;div id="splashtag"&gt;
                     educator / entrepreneur / web developer
-                </div>
-            </a>
-        </div>
-    </div>
-        <ul id="navbubbles">
-            <li id="about">
-                <div class="navreact">
-                    <a href="http://www.alexpear.com/about#content" title="About Alex" alt="About Alex">
-                        <div>about me</div>
-                    </a>
-                </div>
-            </li>
-            <li id="resume">
-                <div class="navreact">
-                    <a href="http://alexpear.com/resume#content" title="Alex's Resume" alt="Alex's Resume">
-                        <div>résumé</div>
-                    </a>
-                </div>
-            </li>
-            <li id="blog">
-                <div class="navreact">
-                    <a href="#content" title="Alex's Blog" alt="Alex's Blog">
-                        <div style="color:#51504f;">blog</div>
-                    </a>
-                </div>
-            </li>
-            <li id="blog">
-                <div class="navreact">
-                    <a href="http://alexpear.com/portfolio" title="Alex's Twitter Feed" alt="Alex's Tweets">
-                        <div>portfolio</div>
-                    </a>
-                </div>
-            </li>
-        </ul>
-    </div>
-    <div id="content-wrapper">
-        <div id="content">
-            <ul id="resume-links">
-                <li><a href="http://alexpear.com/blog/archive">archive</a></li>
-                <li><a href="http://alexpear.com/blog/feed.xml">feed</a></li>
-            </ul>
+                &lt;/div&gt;
+            &lt;/a&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+        &lt;ul id="navbubbles"&gt;
+            &lt;li id="about"&gt;
+                &lt;div class="navreact"&gt;
+                    &lt;a href="http://www.alexpear.com/about#content" title="About Alex" alt="About Alex"&gt;
+                        &lt;div&gt;about me&lt;/div&gt;
+                    &lt;/a&gt;
+                &lt;/div&gt;
+            &lt;/li&gt;
+            &lt;li id="resume"&gt;
+                &lt;div class="navreact"&gt;
+                    &lt;a href="http://alexpear.com/resume#content" title="Alex's Resume" alt="Alex's Resume"&gt;
+                        &lt;div&gt;résumé&lt;/div&gt;
+                    &lt;/a&gt;
+                &lt;/div&gt;
+            &lt;/li&gt;
+            &lt;li id="blog"&gt;
+                &lt;div class="navreact"&gt;
+                    &lt;a href="#content" title="Alex's Blog" alt="Alex's Blog"&gt;
+                        &lt;div style="color:#51504f;"&gt;blog&lt;/div&gt;
+                    &lt;/a&gt;
+                &lt;/div&gt;
+            &lt;/li&gt;
+            &lt;li id="blog"&gt;
+                &lt;div class="navreact"&gt;
+                    &lt;a href="http://alexpear.com/portfolio" title="Alex's Twitter Feed" alt="Alex's Tweets"&gt;
+                        &lt;div&gt;portfolio&lt;/div&gt;
+                    &lt;/a&gt;
+                &lt;/div&gt;
+            &lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
+    &lt;div id="content-wrapper"&gt;
+        &lt;div id="content"&gt;
+            &lt;ul id="resume-links"&gt;
+                &lt;li&gt;&lt;a href="http://alexpear.com/blog/archive"&gt;archive&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="http://alexpear.com/blog/feed.xml"&gt;feed&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
             {{ content }}
-        </div>
-    </div></p>
+        &lt;/div&gt;
+    &lt;/div&gt;
 
-<p></body>
-<footer>
-    <div class="socialmedia">
-        <ul id="socialmediabuttons">
-            <li id="fb"><a href="https://www.facebook.com/alex.pearson.568" title="facebook">f</a></li>
-            <li id="in"><a href="https://www.linkedin.com/pub/alex-pearson/a4/492/a16" title="linkedin">in</a></li>
-            <li id="twit"><a href="https://twitter.com/NAlexPearson" title="twitter"><img src="theme/images/twitterwhite.png" width="80%"></a></li></p>
+&lt;/body&gt;
+&lt;footer&gt;
+    &lt;div class="socialmedia"&gt;
+        &lt;ul id="socialmediabuttons"&gt;
+            &lt;li id="fb"&gt;&lt;a href="https://www.facebook.com/alex.pearson.568" title="facebook"&gt;f&lt;/a&gt;&lt;/li&gt;
+            &lt;li id="in"&gt;&lt;a href="https://www.linkedin.com/pub/alex-pearson/a4/492/a16" title="linkedin"&gt;in&lt;/a&gt;&lt;/li&gt;
+            &lt;li id="twit"&gt;&lt;a href="https://twitter.com/NAlexPearson" title="twitter"&gt;&lt;img src="theme/images/twitterwhite.png" width="80%"&gt;&lt;/a&gt;&lt;/li&gt;
 
-<pre><code>    &lt;/ul&gt;
-&lt;/div&gt;
-&lt;div class="copyright"&gt;©2014 Alex Pearson&lt;/div&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
+    &lt;div class="copyright"&gt;©2014 Alex Pearson&lt;/div&gt;
+&lt;/footer&gt;
 </code></pre>
 
-<p></footer></p>
+<p>Now we're starting to see something that looks like a real HTML document. These layouts are where the majority of your HTML will reside. You can also make these layouts even more abstract by saving chunks of HTML as mixins in an <code>_includes</code> directory. These files are included using the bracket-percentage notation of
+ <code>{% include [file.ext] %}</code>. These are very useful for things like header content that you know will be a part of every page (and my real preview template both the head content and navigation bars are abstracted away into separate mixins like this). The <code>{{ content }}</code> is generated from the body of the HTML document that calls this layout as a template, whether it's entirely generated (like posts) or entirely pre-constructed using HTML (like my <code>index.html</code> file).</p>
 
-<pre><code>
-Now we're starting to see something that looks like a real HTML document. These layouts are where the majority of your HTML will reside. You can also make these layouts even more abstract by saving chunks of HTML as mixins in an `_includes` directory. These files are included using the bracket-percentage notation of 
- `{% include [full mixin name and file extension] %}`. These are very useful for things like header content that you know will be a part of every page (and my real preview template has the header and navigation bars abstracted away into separate mixins like this). The `{{ content }}` is generated from the body of the HTML document that calls this layout as a template, whether it's entirely generated (like posts) or entirely pre-constructed using HTML (like my `index.html` file). 
+<p>Inside <code>index.html</code> we can see that there are regular HTML elements wrapping the content that's pulled in from other sources. The difference, though, is that we're pulling in an unknown number of posts from a variety of sources, so it's not quite so simple as copy->pasting some content into a block of HTML. Let's walk through the body of this doc to see what's going on to show us an indexed view of posts.</p>
 
-Inside `index.html` we can see that there are regular HTML elements wrapping the content that's pulled in from other sources. The difference, though, is that we're pulling in an unknown number of posts from a variety of sources, so it's not quite so simple as copy-&gt;pasting some content into a block of HTML. Let's walk through the body of this doc to see what's going on to show us an indexed view of posts. 
+<p>First, we have this thing: <code>{% for post in site.posts limit:10 %}</code>. Those of you with a bit of programming background will recognize the 'for x in y' structure of a for-in loop for iterating over Objects, and that's exactly what this is. In this case, though, <code>post</code> is defined as a markdown document in the <code>_posts</code> directory, and <code>site.posts</code> is the collection of all of those documents. So this same set of information will apply to each individual (and properly-formatted) document in the <code>_posts</code> folder.</p>
 
-First, we have this thing: `{% for post in site.posts limit:10 %}`. Those of you with a bit of programming background will recognize the 'for x in y' structure of a for-in loop for iterating over Objects, and that's exactly what this is. In this case, though, `post` is defined as a markdown document in the `_posts` directory, and `site.posts` is the collection of all of those documents. So this same set of information will apply to each individual (and properly-formatted) document in the `_posts` folder. 
+<p>You'll then notice that we can pull in metadata from each post using the double-bracket notation of <a href="http://liquidmarkup.org/">Liquid Markup</a>. It looks a bit like <a href="http://handlebarsjs.com/">handlebars.js</a>, and it does a lot of the same stuff, just using Ruby instead of JavaScript. Normally I'd opt for the JS option, but Liquid comes packaged with Jekyll, so we go with Liquid in this case.</p>
 
-You'll then notice that we can pull in metadata from each post using the double-bracket notation of [Liquid Markup](http://liquidmarkup.org/). It looks a bit like [handlebars.js](http://handlebarsjs.com/), and it does a lot of the same stuff, just using Ruby instead of JavaScript. Normally I'd opt for the JS option, but Liquid comes packaged with Jekyll, so we go with Liquid in this case. 
+<p>Each bit of supra-index.html data comes packaged in a form of Object notation, where for each Jekyll-generated <code>post</code> Object, we can access YAML-specified or <code>_config.yml</code>-generated properties using dot-notation. Common ones include <code>post.url</code>, <code>post.title</code>, and <code>post.excerpt</code>.</p>
 
-Each bit of supra-index.html data comes packaged in a form of Object notation, where for each Jekyll-generated `post` Object, we can access YAML-specified or `_config.yml`-generated properties using dot-notation. Common ones include `post.url`, `post.title`, and `post.excerpt`. 
+<p>You can also apply modifiers to some of these properties to change the way that Liquid renders them. So <code>{{ post.date | date_to_long_string }}</code> goes from a cumbersome sequence of numbers to 'February 3, 2015' (for example).</p>
 
-You can also apply modifiers to some of these properties to change the way that Liquid renders them. So `{{ post.date | date_to_long_string }}` goes from a cumbersome sequence of numbers to 'February 3, 2015' (for example). 
+<p>While some of these properties are auto-generated (like the url, which is generated from the name of each post file), many are explicitly declared in the YAML front matter of individual posts. Just like the index.html template above, each post will have its own front matter contained between two sets of triple-hyphens. The YAML for this post, for example, looks like this:</p>
 
-While some of these properties are auto-generated (like the url, which is generated from the name of each post file), many are explicitly declared in the YAML front matter of individual posts. Just like the index.html template above, each post will have its own front matter contained between two sets of triple-hyphens. The YAML for this post, for example, looks like this: 
-</code></pre>
-
-<hr />
-
-<p>layout: posts
+<pre><code class="html">
+---
+layout: posts
 title: Blog Tech 2
 author: Alex
-date: 2015-02-03</p>
-
-<h2>published: yes</h2>
-
-<pre><code>
-These key-value pairs should make sense when thinking about how we've applied properties to a post object for each post in the blog directory. Pretty neat, isn't it?
-
-Hopefully the details have begun to make a bit more sense. The final step, then is to take a higher-level view at that ever-important directory structure that I've been harping about over the last two Blog Tech posts. While there are some variations on this directory structure theme that you can explore in the [Jekyll Documentation](http://jekyllrb.com/docs/home/), mine works pretty well for my purposes. Here's a quick layout of the whole tree:
+date: 2015-02-03
+published: yes
+---
 </code></pre>
 
-<p>/blog/
+<p>These key-value pairs should make sense when thinking about how we've applied properties to a post object for each post in the blog directory. Pretty neat, isn't it?</p>
+
+<p>Hopefully the details have begun to make a bit more sense. The final step, then is to take a higher-level view at that ever-important directory structure that I've been harping about over the last two Blog Tech posts. While there are some variations on this directory structure theme that you can explore in the <a href="http://jekyllrb.com/docs/home/">Jekyll Documentation</a>, mine works pretty well for my purposes. Here's a quick layout of the whole tree:</p>
+
+<pre><code class="bash">
+/blog/
 |
-|--<em>drafts/
+|--_drafts/
 |   |-*.md files in post format (unpublished)
 |
-|--</em>includes/
-|   |-<em>.html files for mixing into templates
+|--_includes/
+|   |-*.html files for mixing into templates
 |
-|--<em>layouts/
-|   |-posts.html
+|--_layouts/
+|   |-posts.html 
 |   |-preview.html
 |
-|--</em>posts/
-|   |-</em>.md files in post format (unpublished)
+|--_posts/
+|   |-*.md files in post format (unpublished)
 |
-|--<em>site/ (compiled and baked site)
+|--_site/ (compiled and baked site)
 |   |--2014/
 |   |   |-sub directories organized by post date (for 2014)
 |   |
@@ -269,10 +239,9 @@ Hopefully the details have begun to make a bit more sense. The final step, then 
 |   |
 |   |-index.html (fully baked home page)
 |
-|-</em>config.yml (configuration file)
-|-index.html (root template for landing page content)</p>
-
-<p>```</p>
+|-_config.yml (configuration file)
+|-index.html (root template for landing page content)
+</code></pre>
 
 <p>And there you have it. In the next blog tech post, I'll talk about how I integrate this system with my current web development workflow. Thanks for reading!</p>
 
