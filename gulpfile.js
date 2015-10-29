@@ -4,6 +4,10 @@ var uglify = require('gulp-uglify');
 var minifyCss = require('gulp-minify-css');
 var header = require('gulp-header');
 var imagemin = require('gulp-imagemin');
+var exex = require('child_process').exec;
+var gutil = require('gulp-util');
+
+
 
 gulp.task('default', ['add-headers', 'bower-port', 'misc-port','image-min', 'image-port'], function() {
    gulp.src('index.html')
@@ -46,4 +50,9 @@ gulp.task('image-min', function () {
 gulp.task('image-port', function () {
     gulp.src(['theme/images/*.svg'])
         .pipe(gulp.dest('public/theme/images'));
+});
+gulp.task('jekyll', function (){
+exec('jekyll build --source blog/ --destination public/blog', function(err, stdout, stderr) {
+      console.log(stdout);
+  });
 });
