@@ -107,7 +107,7 @@
 
 <p>The reason you wouldn’t is that it can be a bit of a pain to zip up every HTML, CSS, and JavaScript file that is served to the end user. My solution was two-pronged. First, we I needed to change some of the default settings on nearlyfreespeech’s Apache server using a special file in the root directory called <code>.htaccess</code>. Inside that file, I have the following:</p>
 
-<pre><code class="language-javascript">
+<pre><code class="language-apache">
 RewriteEngine on
 RewriteCond %{HTTP:Accept-Encoding} gzip
 RewriteCond %{REQUEST_FILENAME}.gz -f
