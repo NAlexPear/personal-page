@@ -9,10 +9,19 @@ var pngquant = require('imagemin-pngquant');
 var exec = require('child_process').exec;
 var gutil = require('gulp-util');
 var gzip = require('gulp-gzip');
+var critical = require('critical');
 
 
 
 gulp.task('default', ['bower-port', 'misc-port','image-min', 'svg-min', 'downloads-port','jekyll'], function() {
+    critical.generateInline({
+      base:'public/',
+      src:'index.html',
+      styleTarget: 'theme/css/site.css',
+      htmlTarget: 'public/index.html',
+      width: 1300,
+      height: 480
+    });
    gulp.src('index.html')
         .pipe(usemin({
             assetsDir: '',
@@ -23,6 +32,7 @@ gulp.task('default', ['bower-port', 'misc-port','image-min', 'svg-min', 'downloa
         .pipe(gzip())
         .pipe(gulp.dest('public'));
 });
+
 gulp.task('bower-port', function(){
   gulp.src(['bower_components/**/*'])
     .pipe(gulp.dest('public/bower_components'));
