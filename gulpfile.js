@@ -1,12 +1,14 @@
 var gulp = require('gulp');
 var usemin = require('gulp-usemin');
 var uglify = require('gulp-uglify');
+var minifyHtml = require('gulp-minify-html');
 var minifyCss = require('gulp-minify-css');
 var header = require('gulp-header');
 var imagemin = require('gulp-imagemin');
 var pngquant = require('imagemin-pngquant');
 var exec = require('child_process').exec;
 var gutil = require('gulp-util');
+var gzip = require('gulp-gzip');
 
 
 
@@ -14,6 +16,7 @@ gulp.task('default', ['bower-port', 'misc-port','image-min', 'image-port', 'down
    gulp.src('index.html')
         .pipe(usemin({
             assetsDir: '',
+            html: [minifyHtml({empty:true})],
             css: [minifyCss(), 'concat'],
             js: [uglify(), 'concat']
         }))
@@ -48,9 +51,4 @@ gulp.task('jekyll', function (){
 exec('jekyll build --source blog/ --destination public/blog/', function(err, stdout, stderr) {
       console.log(stdout);
   });
-gulp.task('compressor', function(){
-  exec('perl compress.pl', function(err, stdout, stderr){
-    console.log(stdout);
-  })
-})
 });
