@@ -1,7 +1,7 @@
-RewriteEngine on 
-RewriteCond %{HTTP:Accept-Encoding} gzip 
-RewriteCond %{REQUEST_FILENAME}.gz -f 
-RewriteRule ^(.*)$ $1.gz [L] 
+RewriteEngine on
+RewriteCond %{HTTP:Accept-Encoding} gzip
+RewriteCond %{REQUEST_FILENAME}.gz -f
+RewriteRule ^(.*)$ $1.gz [L]
 
 ExpiresActive On
 ExpiresDefault "access plus 1 seconds"
@@ -9,6 +9,7 @@ ExpiresByType text/html "access plus 1 seconds"
 ExpiresByType image/gif "access plus 2592000 seconds"
 ExpiresByType image/jpeg "access plus 2592000 seconds"
 ExpiresByType image/png "access plus 2592000 seconds"
+ExpiresByType image/svg "access plus 2592000 seconds"
 ExpiresByType text/css "access plus 604800 seconds"
 ExpiresByType text/javascript "access plus 604800 seconds"
 ExpiresByType application/x-javascript "access plus 216000 seconds"

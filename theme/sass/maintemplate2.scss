@@ -49,22 +49,24 @@ table {
 body{
     background-color: $color-base;
 }
-
+h1,h2,h3,h4{
+  font-family: 'Lato', 'Helvetica', 'sans-serif';
+  line-height: 1.2;
+}
+h1{
+  font-size: $h1;
+}
 h2{
-    font-family: 'Lato', 'Helvetica', 'sans-serif';
     font-size:$h2;
     font-weight: 400;
-    line-height: 50%;
 }
 h3{
-  font-family: 'Lato', 'Helvetica', 'sans-serif';
   text-align: center;
   color: $color-accent;
   font-size: $h3;
 }
 h4{
     font-size: $h4;
-    font-family: 'Lato', 'Helvetica', 'sans-serif';
     font-weight: 400;
 }
 

@@ -14,14 +14,7 @@ var critical = require('critical');
 
 
 gulp.task('default', ['bower-port', 'misc-port','image-min', 'svg-min', 'downloads-port','jekyll'], function() {
-    critical.generateInline({
-      base:'public/',
-      src:'index.html',
-      styleTarget: 'theme/css/site.css',
-      htmlTarget: 'public/index.html',
-      width: 1300,
-      height: 480
-    });
+
    gulp.src('index.html')
         .pipe(usemin({
             assetsDir: '',
@@ -29,8 +22,19 @@ gulp.task('default', ['bower-port', 'misc-port','image-min', 'svg-min', 'downloa
             css: [minifyCss(), 'concat'],
             js: [uglify(), 'concat']
         }))
-        .pipe(gzip())
         .pipe(gulp.dest('public'));
+    critical.generateInline({
+      base:'public',
+      src:'index.html',
+      styleTarget: 'theme/css/site.css',
+      htmlTarget: 'public/index.html',
+      width: 1300,
+      height: 480
+    });
+});
+gulp.task('zipper', function(){
+  gulp.src('public/theme/js/*')
+    .pipe(gzip()).pipe(gulp.dest('public/theme/js/'));
 });
 
 gulp.task('bower-port', function(){
