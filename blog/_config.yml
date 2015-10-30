@@ -5,5 +5,13 @@ url: "http://alexpear.com/blog"
 
 paginate: 15
 
-markdown: rdiscount
+highlighter: rouge
+markdown: kramdown
+
+kramdown:
+  input: GFM
+  syntax_highliter: rouge
+
 permalink: :year/:month/:day/:title/
+
+encoding: 'utf-8'

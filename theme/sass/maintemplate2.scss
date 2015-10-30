@@ -1,3 +1,5 @@
+@import "syntax";
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -11,6 +13,7 @@ article, aside, canvas, details, embed,
 figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
+  -webkit-font-smoothing: antialised;
 	margin: 0;
 	padding: 0;
 	border: 0;
@@ -25,9 +28,6 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
-}
-ol, ul {
-	list-style: none;
 }
 blockquote, q {
 	quotes: none;
@@ -46,14 +46,8 @@ table {
 // CUSTOM SASS BELOW
 // ******************
 
-html{
-    -webkit-font-smoothing: antialised;
-    margin:0;
-}
-
 body{
     background-color: rgb(255,255,255);
-    margin:0;
 }
 
 h2{
@@ -67,9 +61,9 @@ h4{
     font-weight: 400;
 }
 
-p {
-    font-family: georgia, "Times New Roman";
+p, ul, ol {
     font-size: 4vw;
+		line-height: 1.7;
     color: rgb(155,155,155);
 }
 
@@ -103,8 +97,7 @@ a {
 }
 
 #content{
-    padding-left:1.5vw;
-    padding-right:1.5vw;
+    padding:2.5vmax;
     h1,p,ul{font-family:'Lato', 'Helvetica', 'Sans-serif';}
 
     h1{font-weight: 400;}
@@ -113,8 +106,10 @@ a {
         font-weight:300;
     }
     ul{
-        font-size: 0.8em;
-        opacity: 0.3;
+        font-size:2vw;
+        padding-left: 4vw;
+				padding-top: 3vh;
+				padding-bottom: 3vh;
     }
     a{
         border-bottom:0.2vw dotted;
