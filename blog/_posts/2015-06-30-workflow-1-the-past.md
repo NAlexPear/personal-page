@@ -7,7 +7,7 @@ published: yes
 ---
 
 ## Workflow pt. 1
-#### ...on the old way of doing things
+### ...on the old way of doing things
 
 It used to be (in what some *might* be tempted to call the Good 'Ol Days) that all it took to start developing for the web was an `index.html` file. Then we started getting fancy: maybe we need a separate stylesheet, how about some external JavaScript, maybe some extra assets... and then things got complex. Not bad, by any means, just more complex. The barriers to entry have risen a bit, but that's better for the web in general. Even if we have to give up glorious the [glorious websites of the 90's](http://www.warnerbros.com/archive/spacejam/movie/jam.htm) in the process, it's nice to know that standards across the Web are, in general, being raised.
 

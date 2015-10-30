@@ -4,6 +4,7 @@ var uglify = require('gulp-uglify');
 var minifyCss = require('gulp-minify-css');
 var header = require('gulp-header');
 var imagemin = require('gulp-imagemin');
+var pngquant = require('imagemin-pngquant');
 var exec = require('child_process').exec;
 var gutil = require('gulp-util');
 
@@ -33,8 +34,9 @@ gulp.task('downloads-port', function(){
 gulp.task('image-min', function () {
     gulp.src(['theme/images/*.jpg','theme/images/*.png'])
         .pipe(imagemin({
-          optimizationLevel: 5,
-          progressive:true
+          optimizationLevel: 7,
+          progressive:true,
+          use: [pngquant()]
         }))
         .pipe(gulp.dest('public/theme/images'));
 });
@@ -46,4 +48,9 @@ gulp.task('jekyll', function (){
 exec('jekyll build --source blog/ --destination public/blog/', function(err, stdout, stderr) {
       console.log(stdout);
   });
+gulp.task('compressor', function(){
+  exec('perl compress.pl', function(err, stdout, stderr){
+    console.log(stdout);
+  })
+})
 });

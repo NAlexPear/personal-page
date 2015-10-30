@@ -6,11 +6,7 @@ url: "http://alexpear.com/blog"
 paginate: 15
 
 highlighter: rouge
-markdown: kramdown
-
-kramdown:
-  input: GFM
-  syntax_highliter: rouge
+markdown: rdiscount
 
 permalink: :year/:month/:day/:title/
 

@@ -6,8 +6,8 @@ date: 2015-04-30
 published: yes
 ---
 
-##Learn to be useful##
-###...and other lessons from "children's" TV###
+## Learn to be useful
+### ...and other lessons from "children's" TV
 
 An English Lit teacher of mine once told me that every great essay started with a contentious statement. So here goes mine:<br>
 **Thomas the Tank Engine is the coolest, most inspirational children's TV show on the air.**
@@ -21,14 +21,14 @@ Said with maximum enthusiasm, of course. What a great message for kids and adult
 The adult version of this credo might be Alec Baldwin's speech from Glengarry Glen Ross,
 and the teen's version might be Shia LeBeouf's "motivational" video. I prefer Thomas the Tank Engine, though,
 because he represents the sort of industrial (rather than psychopathic) side of the idea that you (yes, you) have to actively do something
-in order to be of any use to anyone. The most important thing you can learn is learning to be useful. 
+in order to be of any use to anyone. The most important thing you can learn is learning to be useful.
 
 It's certainly a stark contrast from Barney, which is all about loving each other and cleaning up.
 It's not about the power of friendship, although that's important, too.
 It's not really "learn to be happy", although the perma-smile on Thomas might suggest that he's happiest when he's useful (just like some of us).
 It's about acquiring skills that mean something to someone, and acknowledging that there's some learning and effort on your part that's going to take place.
 
-And while we know that simply saying "learn to be useful" is a bit unhelpful, you have to admit that the skill of knowing how to make yourself useful is an important one in life. 
+And while we know that simply saying "learn to be useful" is a bit unhelpful, you have to admit that the skill of knowing how to make yourself useful is an important one in life.
 What Thomas the Tank Engine is really challenging us to consider includes the following questions:
 
 + How do you identify the pain points (figurative, not literal) of others?
@@ -44,5 +44,3 @@ It means that you're adaptable and responsive to the needs of a situation.
 It means that you can add value when others find themselves "uncomfortable" with responsibilities outside of their job description.
 It means that you probably have some dirt under your fingernails and callouses on your palms (maybe only metaphorically, but hopefully literally, too).
 And it *definitely* means that if you're looking for a job in St. Louis, you should give me a call.
-
-

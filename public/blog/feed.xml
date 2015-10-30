@@ -10,9 +10,9 @@
 				<title>Workflow pt. 1 - the Old Way</title>
 				        
 				
-					<description>&lt;h2 id=&quot;workflow-pt-1&quot;&gt;Workflow pt. 1&lt;/h2&gt;
-&lt;p&gt;#### …on the old way of doing things&lt;/p&gt;
+					<description>&lt;h2&gt;Workflow pt. 1&lt;/h2&gt;
 
+&lt;h3&gt;...on the old way of doing things&lt;/h3&gt;
 </description>
 				
 				<pubDate>Tue, 30 Jun 2015 00:00:00 -0500</pubDate>
@@ -24,9 +24,9 @@
 				<title>Blog Tech 2</title>
 				        
 				
-					<description>&lt;h2 id=&quot;blog-tech-pt-2&quot;&gt;Blog Tech pt. 2&lt;/h2&gt;
-&lt;p&gt;#### …on themes and layouts with Jekyll&lt;/p&gt;
+					<description>&lt;h2&gt;Blog Tech pt. 2&lt;/h2&gt;
 
+&lt;h3&gt;...on themes and layouts with Jekyll&lt;/h3&gt;
 </description>
 				
 				<pubDate>Mon, 04 May 2015 00:00:00 -0500</pubDate>
@@ -38,9 +38,9 @@
 				<title>Learn to be Useful</title>
 				        
 				
-					<description>&lt;p&gt;##Learn to be useful##&lt;br /&gt;
-###…and other lessons from “children’s” TV###&lt;/p&gt;
+					<description>&lt;h2&gt;Learn to be useful&lt;/h2&gt;
 
+&lt;h3&gt;...and other lessons from &quot;children&#39;s&quot; TV&lt;/h3&gt;
 </description>
 				
 				<pubDate>Thu, 30 Apr 2015 00:00:00 -0500</pubDate>
@@ -52,9 +52,9 @@
 				<title>On Trust</title>
 				        
 				
-					<description>&lt;p&gt;##On Trust##&lt;br /&gt;
-####Building a machine that needs tuning, not driving####&lt;/p&gt;
+					<description>&lt;h2&gt;On Trust&lt;/h2&gt;
 
+&lt;h3&gt;Building a machine that needs tuning, not driving&lt;/h3&gt;
 </description>
 				
 				<pubDate>Tue, 14 Apr 2015 00:00:00 -0500</pubDate>
@@ -66,8 +66,7 @@
 				<title>Mistakes of Ambition</title>
 				        
 				
-					<description>&lt;p&gt;##Mistakes of Ambition vs Mistakes of Sloth&lt;/p&gt;
-
+					<description>&lt;h2&gt;Mistakes of Ambition vs Mistakes of Sloth&lt;/h2&gt;
 </description>
 				
 				<pubDate>Sun, 15 Mar 2015 00:00:00 -0500</pubDate>
@@ -79,9 +78,9 @@
 				<title>Barley Cakes and Water and Weightlifting</title>
 				        
 				
-					<description>&lt;p&gt;##Barleycakes and Water and Weightlifting&lt;br /&gt;
-####The importance of temprament on success and survival&lt;/p&gt;
+					<description>&lt;h2&gt;Barleycakes and Water and Weightlifting&lt;/h2&gt;
 
+&lt;h3&gt;The importance of temperament on success and survival&lt;/h3&gt;
 </description>
 				
 				<pubDate>Mon, 16 Feb 2015 00:00:00 -0600</pubDate>
@@ -93,9 +92,9 @@
 				<title>Specialization is for Insects</title>
 				        
 				
-					<description>&lt;h2 id=&quot;specialization-is-for-insects&quot;&gt;Specialization is for Insects&lt;/h2&gt;
-&lt;p&gt;#### …or, how to be a wide pool with some clusters of depth&lt;/p&gt;
+					<description>&lt;h2&gt;Specialization is for Insects&lt;/h2&gt;
 
+&lt;h3&gt;...or, how to be a wide pool with some clusters of depth&lt;/h3&gt;
 </description>
 				
 				<pubDate>Thu, 29 Jan 2015 00:00:00 -0600</pubDate>
@@ -107,8 +106,7 @@
 				<title>...But Their Overhead Was Low</title>
 				        
 				
-					<description>&lt;p&gt;##…But Their Overhead Was Low&lt;/p&gt;
-
+					<description>&lt;h2&gt;...But Their Overhead Was Low&lt;/h2&gt;
 </description>
 				
 				<pubDate>Fri, 02 Jan 2015 00:00:00 -0600</pubDate>
@@ -120,9 +118,9 @@
 				<title>Blog Tech 1</title>
 				        
 				
-					<description>&lt;h2 id=&quot;blog-tech-pt1&quot;&gt;Blog Tech pt.1&lt;/h2&gt;
-&lt;p&gt;#### a quick look at the tools I’ve used to build this blog&lt;/p&gt;
+					<description>&lt;h2&gt;Blog Tech pt.1&lt;/h2&gt;
 
+&lt;h3&gt;...a quick look at the tools I&#39;ve used to build this blog&lt;/h3&gt;
 </description>
 				
 				<pubDate>Wed, 03 Dec 2014 00:00:00 -0600</pubDate>
@@ -134,9 +132,9 @@
 				<title>Starting from Scratch</title>
 				        
 				
-					<description>&lt;p&gt;##Getting Started&lt;br /&gt;
-###…and why it sucks&lt;/p&gt;
+					<description>&lt;h2&gt;Getting Started&lt;/h2&gt;
 
+&lt;h3&gt;...and why it sucks&lt;/h3&gt;
 </description>
 				
 				<pubDate>Wed, 12 Nov 2014 00:00:00 -0600</pubDate>

@@ -7,7 +7,7 @@ published: yes
 ---
 
 ## Specialization is for Insects##
-#### ...or, how to be a wide pool with some clusters of depth
+### ...or, how to be a wide pool with some clusters of depth
 
 One of my favorite authors of all time is, believe it or not, the source for one of my favorite quotes of all time.
 It's something of a life motto for me by this point,
