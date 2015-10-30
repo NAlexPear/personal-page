@@ -12,7 +12,7 @@ var gzip = require('gulp-gzip');
 
 
 
-gulp.task('default', ['bower-port', 'misc-port','image-min', 'image-port', 'downloads-port','jekyll'], function() {
+gulp.task('default', ['bower-port', 'misc-port','image-min', 'svg-min', 'downloads-port','jekyll'], function() {
    gulp.src('index.html')
         .pipe(usemin({
             assetsDir: '',
@@ -20,6 +20,7 @@ gulp.task('default', ['bower-port', 'misc-port','image-min', 'image-port', 'down
             css: [minifyCss(), 'concat'],
             js: [uglify(), 'concat']
         }))
+        .pipe(gzip())
         .pipe(gulp.dest('public'));
 });
 gulp.task('bower-port', function(){
@@ -43,7 +44,7 @@ gulp.task('image-min', function () {
         }))
         .pipe(gulp.dest('public/theme/images'));
 });
-gulp.task('image-port', function () {
+gulp.task('svg-min', function () {
     gulp.src(['theme/images/*.svg'])
         .pipe(gulp.dest('public/theme/images'));
 });
