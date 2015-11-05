@@ -12,34 +12,6 @@ var critical = require('critical');
 var useref = require('gulp-useref');
 var gulpif = require('gulp-if');
 
-
-// Post-port zipping (renamed default)
-gulp.task('default', ['cruncher'], function(){
-  gulp.src(['public/**/*','!public/**/*.gz','!public/**/*.md','!public/**/*.txt', '!public/**/*.json', '!public/theme/images/**/*'])
-    .pipe(gzip()).pipe(gulp.dest('public'));
-});
-//HTML minifier (run after ports, image-minification, and critical CSS inlining)
-gulp.task('cruncher', ['async'], function() {
-   gulp.src('public/index.html')
-        .pipe(usemin({
-            assetsDir: '',
-            html: [minifyHtml({empty:true})]
-        }))
-        .pipe(gulp.dest('public'));
-});
-
-//CSS and JS minifier, retaining async on javascript files, after all other files have been ported over
-gulp.task('async',['bower-port', 'misc-port', 'downloads-port','image-min', 'other-image-port', 'jekyll', 'css-inline'],function(){
-  var assets = useref.assets();
-  gulp.src('index.html')
-    .pipe(assets)
-    .pipe(gulpif('*.js', uglify()))
-    .pipe(gulpif('*.css', minifyCss()))
-    .pipe(assets.restore())
-    .pipe(useref())
-    .pipe(gulp.dest('public'));
-});
-
 //Porters of non-critical content
 gulp.task('bower-port', function(){
   gulp.src(['bower_components/**/*'])
@@ -76,14 +48,42 @@ exec('jekyll build --source blog/ --destination public/blog/', function(err, std
   });
 });
 
-//critical css inliner
-gulp.task('css-inline', function(){
-  critical.generateInline({
-    base:'public',
+//CSS and JS minifier, retaining async on javascript files, after all other files have been ported over
+gulp.task('async',['bower-port', 'misc-port', 'downloads-port','image-min', 'other-image-port', 'jekyll'],function(){
+  var assets = useref.assets();
+  return gulp.src('index.html')
+    .pipe(assets)
+    .pipe(gulpif('*.js', uglify()))
+    .pipe(gulpif('*.css', minifyCss()))
+    .pipe(assets.restore())
+    .pipe(useref())
+    .pipe(gulp.dest('public'));
+});
+
+//CSS inliner post-CSS and JS minification, pre-HTML minification and gzipping
+gulp.task('css-inline',['async'], function(){
+  return critical.generateInline({
+    base:'public/',
     src:'index.html',
-    styleTarget: 'theme/css/site.css',
-    htmlTarget: 'public/index.html',
+    dest: 'public/index.html',
     width: 1300,
     height: 480
   });
+});
+
+//HTML minifier (run after ports, image-minification, and critical CSS inlining)
+gulp.task('cruncher', ['css-inline'], function() {
+   gulp.src('public/index.html')
+        .pipe(usemin({
+            assetsDir: '',
+            html: [minifyHtml({empty:true})]
+        }))
+        .pipe(gulp.dest('public'));
+});
+
+
+// Post-port zipping (renamed default)
+gulp.task('default', ['cruncher'], function(){
+  gulp.src(['public/**/*','!public/**/*.gz','!public/**/*.md','!public/**/*.txt', '!public/**/*.json','!public/**/*.xml', '!public/theme/images/**/*'])
+    .pipe(gzip()).pipe(gulp.dest('public'));
 });

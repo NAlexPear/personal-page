@@ -90,8 +90,7 @@
 
 <p>With just a little bit of syntax help, though, Jekyll is much easier to customize at almost every level. To get started, all you need is an index.html file in the root of the blog directory. Here's mine:</p>
 
-<div class="highlight"><pre><code class="language-html" data-lang="html">```
----
+<div class="highlight"><pre><code class="language-html" data-lang="html">---
 layout: preview
 ---
 
@@ -106,8 +105,7 @@ layout: preview
     <span class="nt">&lt;/p&gt;</span>
     <span class="nt">&lt;br&gt;</span>
     <span class="nt">&lt;br&gt;</span>
-{% endfor %}
-```</code></pre></div>
+{% endfor %}</code></pre></div>
 
 
 <p>Perhaps not your typical root file, but it makes a bit of sense with some explanation. First is the stuff at the head of the document, written in YAML ('Yet Another Markup Language') format of key-value pairs of data. This sort of markup is required at the head of every rendered document, and it helps Jekyll parse through lots of important data before it gets to the actual content. There can be data about base urls, authors, dates, scheduled publishing dates... a whole host of things. For this base file, though, we only need to call out the template that will apply.</p>
