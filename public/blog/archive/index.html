@@ -2,16 +2,14 @@
 <html lang="en-us">
 
 <head>
-<meta charset="utf-8">
+  <meta charset="utf-8">
 <!-- Set the viewport width to device width for mobile -->
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
-<link rel="shortcut icon" href="../../theme/images/favicon.ico" type="image/x-icon">
-<link rel="icon" href="../../theme/images/favicon.ico" type="image/x-icon">
-<title>Alex Pearson's Blog Archive</title>
+<link rel="shortcut icon" href="/theme/images/favicon.ico" type="image/x-icon">
+<link rel="icon" href="/theme/images/favicon.ico" type="image/x-icon">
+<title>Alex Pearson</title>
 <!-- Included CSS Files, generated through Gulp -->
-<link rel="stylesheet" href="../theme/css/site.css">
-
-<!-- IE Fix for HTML5 Tags -->
+<link rel="stylesheet" href="/theme/css/site.css">
 <!--[if lt IE 9]>
 		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
@@ -26,48 +24,52 @@
 <body>
     <div style="background-color: #EEEEEE;">
     <div class="topstuff">
-        <img src="../theme/images/alexsmilin3.jpg" width="100%" height="auto"></img>
-        <div class="splash">
-            <a href="http://alexpear.com">
-                <div id="splashname">
-                    ALEX PEARSON
-                </div>
-                <div id="splashtag">
-                    educator / entrepreneur / web developer
-                </div>
-            </a>
-        </div>
+  <picture>
+    <source srcset="/theme/images/alexsmilin3_hi_res.jpg" media='(min-width:1280px)'>
+    <img srcset="/theme/images/alexsmilin3.jpg" width="100%" height="auto" alt="Alex's Home Page"></img>
+  </picture>
+    <div class="splash">
+        <a href="/">
+            <div id="splashname">
+                ALEX PEARSON
+            </div>
+            <div id="splashtag">
+                educator / entrepreneur / web developer
+            </div>
+        </a>
     </div>
-        <ul id="navbubbles">
-            <li id="about">
-                <div class="navreact">
-                    <a href="http://www.alexpear.com/about#content" title="About Alex" alt="About Alex">
-                        <div>about me</div>
-                    </a>
-                </div>
-            </li>
-            <li id="resume">
-                <div class="navreact">
-                    <a href="http://alexpear.com/resume#content" title="Alex's Resume" alt="Alex's Resume">
-                        <div>résumé</div>
-                    </a>
-                </div>
-            </li>
-            <li id="blog">
-                <div class="navreact">
-                    <a href="#content" title="Alex's Blog" alt="Alex's Blog">
-                        <div style="color:#51504f;">blog</div>
-                    </a>
-                </div>
-            </li>
-            <li id="blog">
-                <div class="navreact">
-                    <a href="http://alexpear.com/portfolio" title="Alex's Twitter Feed" alt="Alex's Tweets">
-                        <div>portfolio</div>
-                    </a>
-                </div>
-            </li>
-        </ul>
+</div>
+    <ul id="navbubbles">
+        <li id="about">
+            <div class="navreact">
+                <a href="#" data-action="about-me" title="About Alex" alt="About Alex">
+                    <div>about me</div>
+                </a>
+            </div>
+        </li>
+        <li id="resume">
+            <div class="navreact">
+                <a href="#" data-action="resume-info" title="Alex's Resume" alt="Alex's Resume">
+                    <div>résumé</div>
+                </a>
+            </div>
+        </li>
+        <li id="blog">
+            <div class="navreact">
+                <a href="blog/" data-action="blog-link" title="Alex's Blog" alt="Alex's Blog">
+                    <div>blog</div>
+                </a>
+            </div>
+        </li>
+        <li id="blog">
+            <div class="navreact">
+                <a href="portfolio/index.html" data-action="preview-portfolio" title="Alex's Twitter Feed" alt="Alex's Tweets">
+                    <div>portfolio</div>
+                </a>
+            </div>
+        </li>
+    </ul>
+
     </div>
     <div id="content-wrapper">
         <div id="content">
@@ -162,7 +164,7 @@
         </div>
     </div>
 
-</body>
+    
 <footer>
     <div class="socialmedia">
         <ul id="socialmediabuttons">
@@ -174,3 +176,6 @@
     </div>
     <div class="copyright">©2014 Alex Pearson</div>
 </footer>
+
+    <script type="text/javascript" src="/theme/js/site.js"></script>
+</body>

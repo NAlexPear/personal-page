@@ -2,72 +2,12 @@
 <html lang="en-us">
 
 <head>
-<meta charset="utf-8">
-<!-- Set the viewport width to device width for mobile -->
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
-<link rel="shortcut icon" href="../../theme/images/favicon.ico" type="image/x-icon">
-<link rel="icon" href="../../theme/images/favicon.ico" type="image/x-icon">
-<title>Alex Pearson's Blog Archive</title>
-<!-- Included CSS Files, generated through Gulp -->
-<link rel="stylesheet" href="../theme/css/site.css">
-
-<!-- IE Fix for HTML5 Tags -->
-<!--[if lt IE 9]>
-		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-	<![endif]-->
-
-<link rel="canonical" href="http://alexpear.com">
-<link rel="shortlink" href="http://alexpear.com">
-
-<link href='https://fonts.googleapis.com/css?family=Lato:100,300,400' rel='stylesheet' type='text/css'>
-
+  {% include head.html %}
 </head>
 
 <body>
     <div style="background-color: #EEEEEE;">
-    <div class="topstuff">
-        <img src="../theme/images/alexsmilin3.jpg" width="100%" height="auto"></img>
-        <div class="splash">
-            <a href="http://alexpear.com">
-                <div id="splashname">
-                    ALEX PEARSON
-                </div>
-                <div id="splashtag">
-                    educator / entrepreneur / web developer
-                </div>
-            </a>
-        </div>
-    </div>
-        <ul id="navbubbles">
-            <li id="about">
-                <div class="navreact">
-                    <a href="http://www.alexpear.com/about#content" title="About Alex" alt="About Alex">
-                        <div>about me</div>
-                    </a>
-                </div>
-            </li>
-            <li id="resume">
-                <div class="navreact">
-                    <a href="http://alexpear.com/resume#content" title="Alex's Resume" alt="Alex's Resume">
-                        <div>résumé</div>
-                    </a>
-                </div>
-            </li>
-            <li id="blog">
-                <div class="navreact">
-                    <a href="#content" title="Alex's Blog" alt="Alex's Blog">
-                        <div style="color:#51504f;">blog</div>
-                    </a>
-                </div>
-            </li>
-            <li id="blog">
-                <div class="navreact">
-                    <a href="http://alexpear.com/portfolio" title="Alex's Twitter Feed" alt="Alex's Tweets">
-                        <div>portfolio</div>
-                    </a>
-                </div>
-            </li>
-        </ul>
+    {% include nav.html %}
     </div>
     <div id="content-wrapper">
         <div id="content">
@@ -79,15 +19,6 @@
         </div>
     </div>
 
+    {% include foot.html %}
+    <script type="text/javascript" src="/theme/js/site.js"></script>
 </body>
-<footer>
-    <div class="socialmedia">
-        <ul id="socialmediabuttons">
-            <li id="fb"><a href="https://www.facebook.com/alex.pearson.568" title="facebook">f</a></li>
-            <li id="in"><a href="https://www.linkedin.com/pub/alex-pearson/a4/492/a16" title="linkedin">in</a></li>
-            <li id="twit"><a href="https://twitter.com/NAlexPearson" title="twitter"><img src="http://i.imgur.com/KlB8yzw.png" width="80%"></a></li>
-
-        </ul>
-    </div>
-    <div class="copyright">©2014 Alex Pearson</div>
-</footer>
