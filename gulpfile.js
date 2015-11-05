@@ -67,7 +67,7 @@ gulp.task('css-inline',['async'], function(){
     src:'index.html',
     dest: 'public/index.html',
     width: 1300,
-    height: 480
+    height: 900
   });
 });
 
