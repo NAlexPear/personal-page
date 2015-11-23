@@ -1,54 +1,13 @@
 @import 'syntax';
 @import 'basevars';
+@import 'reset';
 
-html, body, div, span, applet, object, iframe, 
-h1, h2, h3, h4, h5, h6, p, blockquote,
-a, abbr, acronym, address, big, cite,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-  -webkit-font-smoothing: antialised;
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
-	display: block;
-}
-body {
-	line-height: 1;
-}
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
-}
-
-// ******************
-// CUSTOM SASS BELOW
-// ******************
-
+// HTML element styles
 body{
     background-color: $color-base;
+    &>div:first-child{
+      background-color: $color-head;
+    }
 }
 h1,h2,h3,h4{
   font-family: 'Lato', 'Helvetica', 'sans-serif';
@@ -85,6 +44,7 @@ a {
     }
 }
 
+//header and splash photo style
 .topstuff{
 		background-color: $color-mid-light;
     width: 100%;
@@ -96,9 +56,66 @@ a {
     margin-top: -30%;
 }
 
+#splashname{
+    position:relative;
+    font-family: 'Lato', "sans-serif";
+    text-align: center;
+    font-weight: 300;
+    font-size:9vw;
+    line-height:90%;
+    padding-bottom: 0vw;
+    color: $color-base;
+}
+
+#splashtag{
+    position:relative;
+    font-family:'Lato',"Sans-Serif";
+    font-size:4vw;
+    font-weight: 100;
+    color: $color-base;
+    text-align: center;
+}
+
+//navigation bar styles
+#navbubbles{
+    list-style-type:none;
+    display:table;
+    table-layout:fixed;
+    width: 100%;
+    max-width: 1080px;
+    margin: 0 auto;
+    padding-bottom: 5px;
+    padding-left: 0px;
+
+    li{
+      vertical-align: middle;
+      display: table-cell;
+      text-align: center;
+      font-family: 'Lato', "Sans-Serif";
+      font-size: 2.5vw;
+      font-weight: 300;
+      color:$color-base;
+    }
+}
+
+.navreact {
+  a{
+     color:$color-mid;
+    -o-transition:.5s color;
+    -ms-transition:.5s color;
+    -moz-transition:.5s color;
+    -webkit-transition:.5s color;
+     transition: .5s color;
+     :hover{
+         color: $color-mid-dark;
+     }
+  }
+}
+
+//main content styles
 #content-wrapper{
     width:90%;
-    max-width: 1200px;
+    max-width: 960px;
     margin-left:auto;
     margin-right:auto;
     margin-top: 5%;
@@ -164,60 +181,6 @@ a {
     }
 }
 
-#splashname{
-    position:relative;
-    font-family: 'Lato', "sans-serif";
-    text-align: center;
-    font-weight: 300;
-    font-size:9vw;
-    line-height:90%;
-    padding-bottom: 0vw;
-    color: $color-base;
-}
-
-#splashtag{
-    position:relative;
-    font-family:'Lato',"Sans-Serif";
-    font-size:4vw;
-    font-weight: 100;
-    color: $color-base;
-    text-align: center;
-}
-
-#navbubbles{
-    list-style-type:none;
-    display:table;
-    table-layout:fixed;
-    width: 100%;
-    padding-bottom: 2vw;
-    padding-left: 0px;
-
-    li{
-        display: table-cell;
-        text-align: center;
-        font-family: 'Lato', "Sans-Serif";
-        font-size: 4vw;
-        font-weight: 300;
-        color:$color-base;
-    }
-}
-
-
-
-.navreact {
-  a{
-     color:$color-mid;
-    -o-transition:.5s color;
-    -ms-transition:.5s color;
-    -moz-transition:.5s color;
-    -webkit-transition:.5s color;
-     transition: .5s color;
-     :hover{
-         color: $color-mid-dark;
-     }
-  }
-}
-
 #resume-links{
     list-style:none;
     display:table;
@@ -234,6 +197,7 @@ a {
     }
 }
 
+//footer links
 .socialmedia{
     margin-top: 10%;
 }
@@ -277,8 +241,4 @@ footer {
     font-family: helvetica, "Sans-Serif";
     font-size: 14px;
     opacity: 0.4;
-}
-
-.hidden{
-	display: none;
 }
