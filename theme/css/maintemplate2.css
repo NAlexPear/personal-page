@@ -413,7 +413,7 @@ a {
   display: table;
   table-layout: fixed;
   width: 100%;
-  max-width: 1080px;
+  max-width: 1200px;
   margin: 0 auto;
   padding-bottom: 5px;
   padding-left: 0px; }
@@ -422,7 +422,7 @@ a {
     display: table-cell;
     text-align: center;
     font-family: 'Lato', "Sans-Serif";
-    font-size: 2.5vw;
+    font-size: 2.75vw;
     font-weight: 300;
     color: #ffffff; }
 
@@ -523,11 +523,15 @@ footer ul {
   table-layout: fixed; }
   footer ul li {
     display: table-cell;
-    font-family: lato, "sans-serif";
-    font-size: 2.2em;
-    font-weight: bold; }
+    font-family: 'lato', "sans-serif";
+    font-size: 3.54986vmax;
+    font-weight: bold;
+    padding: 0;
+    vertical-align: middle; }
     footer ul li :last-child {
       margin-right: 0; }
+      footer ul li :last-child :hover, footer ul li :last-child :focus, footer ul li :last-child :active {
+        background: #dadada; }
     footer ul li a {
       background: #dadada;
       display: block;
@@ -544,8 +548,7 @@ footer ul {
         color: #ffffff; }
 
 #socialmediabuttons {
-  text-align: center;
-  /*direction:ltr;*/ }
+  text-align: center; }
 
 #in {
   font-weight: bolder; }
