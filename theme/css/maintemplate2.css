@@ -304,6 +304,18 @@
 .hidden {
   display: none; }
 
+.mobile-only {
+  display: block; }
+
+.desktop-only {
+  display: none; }
+
+@media (min-width: 640px) {
+  .mobile-only {
+    display: none; }
+
+  .desktop-only {
+    display: block; } }
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote,
 a, abbr, acronym, address, big, cite,
@@ -389,6 +401,22 @@ a {
   width: 50%;
   position: absolute;
   margin-top: -30%; }
+  .splash > div > ul {
+    display: table;
+    table-layout: fixed;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto; }
+    .splash > div > ul li {
+      margin-right: 1em;
+      display: table-cell; }
+      .splash > div > ul li a {
+        color: #EFEFEF; }
+        .splash > div > ul li a :hover {
+          color: #A8A8A8; }
+      .splash > div > ul li span {
+        font-size: 2.37841vmax;
+        font-weight: 100; }
 
 #splashname {
   position: relative;
@@ -413,7 +441,7 @@ a {
   display: table;
   table-layout: fixed;
   width: 100%;
-  max-width: 1200px;
+  max-width: 1500px;
   margin: 0 auto;
   padding-bottom: 5px;
   padding-left: 0px; }
@@ -516,18 +544,20 @@ footer ul {
   margin: 0 auto;
   overflow: hidden;
   padding: 0;
-  width: 50%;
-  min-width: 200px;
-  max-width: 350px;
+  width: 70%;
+  min-width: 300px;
+  max-width: 550px;
   display: table;
   table-layout: fixed; }
   footer ul li {
+    text-align: center;
     display: table-cell;
     font-family: 'lato', "sans-serif";
     font-size: 3.54986vmax;
-    font-weight: bold;
+    font-weight: 400;
     padding: 0;
-    vertical-align: middle; }
+    vertical-align: middle;
+    margin-right: 1em; }
     footer ul li :last-child {
       margin-right: 0; }
       footer ul li :last-child :hover, footer ul li :last-child :focus, footer ul li :last-child :active {
@@ -546,12 +576,6 @@ footer ul {
       footer ul li a :hover, footer ul li a :focus, footer ul li a :active {
         background: #51504f;
         color: #ffffff; }
-
-#socialmediabuttons {
-  text-align: center; }
-
-#in {
-  font-weight: bolder; }
 
 .copyright {
   margin-top: 5%;

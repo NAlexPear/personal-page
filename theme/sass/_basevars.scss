@@ -76,3 +76,18 @@ $p: $h4*0.67;
 .hidden{
 	display: none;
 }
+.mobile-only{
+  display: block;
+}
+.desktop-only{
+  display: none;
+}
+
+@media (screen and min-width:640px){
+  .mobile-only{
+    display: none;
+  }
+  .desktop-only{
+    display: block;
+  }
+}

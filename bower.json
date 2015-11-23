@@ -21,7 +21,9 @@
     "tests"
   ],
   "dependencies": {
-    "jquery": "~2.1.4"
+    "jquery": "~2.1.4",
+    "themify": "~0.1.0",
+    "themify-icons": "~0.1.0"
   },
   "devDependencies": {
     "picturefill": "~3.0.1"
