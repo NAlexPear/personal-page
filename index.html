@@ -55,7 +55,7 @@
                   <li><a href="https://www.facebook.com/alex.pearson.568" title="facebook"><span class="ti ti-facebook"></span></a></li>
                   <li><a href="https://www.linkedin.com/pub/alex-pearson/a4/492/a16" title="linkedin"><span class="ti ti-linkedin"></span></a></li>
                   <li><a href="https://twitter.com/NAlexPearson" title="twitter"><span class="ti ti-twitter"></span></a></li>
-                  <li><a href="mailto:alex@alexpear.com" title="email" alt="email Alex"><span class="ti ti-email"></span></a></li>
+                  <li class="contact-target"><a href="#" data-action="contact-form" title="email" alt="email Alex"><span class="ti ti-email"></span></a></li>
                 </ul>
               </div>
           </div>
@@ -85,7 +85,7 @@
             </li>
             <li id="portfolio">
                 <div class="navreact">
-                    <a href="portfolio/index.html" data-action="preview-portfolio" title="Alex's Twitter Feed" alt="Alex's Tweets">
+                    <a href="#" data-action="preview-portfolio" title="Alex's Portfolio" alt="Alex's Portfolio">
                         <div>portfolio</div>
                     </a>
                 </div>
@@ -107,9 +107,67 @@
             </div>
           </li>
           <li>
-            <div class="navreact"><span class="ti ti-email"></span></div>
+            <div class="navreact">
+              <span class="ti ti-email"></span>
+            </div>
           </li>
         </ul>
+        <ul id="menubar" class="mobile-only">
+            <li>
+              <a href="#" data-action="about-me" title="About Alex" alt="About Alex">
+                  <div>about me</div>
+              </a>
+            </li>
+            <li>
+              <a href="#" data-action="resume-info" title="Alex's Resume" alt="Alex's Resume">
+                  <div>résumé</div>
+              </a>
+            </li>
+            <li>
+              <a href="blog/" data-action="blog-link" title="Alex's Blog" alt="Alex's Blog">
+                  <div>blog</div>
+              </a>
+            </li>
+            <li>
+              <a href="portfolio/index.html" data-action="preview-portfolio" title="Alex's Twitter Feed" alt="Alex's Tweets">
+                  <div>portfolio</div>
+              </a>
+            </li>
+        </ul>
+      </div>
+      <div class="hidden" id="mobile-contact-overlay">
+        <div class="mobile-only contact-form">
+          <form action="https://formspree.io/alex@alexpear.com" method="POST">
+            <span class="ti ti-close"></span>
+            <h3>Contact Alex</h3>
+            <br>
+            <label for="firstname">First Name:</label><br>
+            <input type="text" name="firstname" placeholder="first name" required><br>
+            <label for="lastname">Last Name:</label><br>
+            <input type="text" name="lastname" placeholder="last name" required><br>
+            <label for="sender">Your Email Address:</label><br>
+            <input type="email" name="sender" placeholder="email@youraddress.com" required>
+            <label for="subject">Message Subject:</label><br>
+            <input type="text" name="subject" value="new message for Alex"><br>
+            <label for="message">Message:</label><br>
+            <textarea name="message" placeholder="Write your message here"></textarea><br>
+            <div>
+              <input type="submit" value="send message">
+              <button type="button" name="cancel" class="cancel">cancel</button>
+            </div>
+          </form>
+          <br>
+          <div class="hidden">
+            <h4>Thanks for the message!</h4>
+            <p>I'll respond as soon as I can. Don't forget to also follow me on social media:</p>
+            <ul>
+              <li><a href="https://github.com/nalexpear" title="github"><span class="ti ti-github"></span></a></li>
+              <li><a href="https://www.facebook.com/alex.pearson.568" title="facebook"><span class="ti ti-facebook"></span></a></li>
+              <li><a href="https://www.linkedin.com/pub/alex-pearson/a4/492/a16" title="linkedin"><span class="ti ti-linkedin"></span></a></li>
+              <li><a href="https://twitter.com/NAlexPearson" title="twitter"><span class="ti ti-twitter"></span></a></li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
     <div id="page-wrap">
@@ -198,6 +256,38 @@
                   </div>
               </div>
               <div class="preview-portfolio hidden"></div>
+              <div class="desktop-only contact-form hidden">
+                <form action="https://formspree.io/alex@alexpear.com" method="POST">
+                  <span class="ti ti-close mobile-only"></span>
+                  <h3>Contact Alex</h3>
+                  <br>
+                  <label for="firstname">First Name:</label><br>
+                  <input type="text" name="firstname" placeholder="first name" required><br>
+                  <label for="lastname">Last Name:</label><br>
+                  <input type="text" name="lastname" placeholder="last name" required><br>
+                  <label for="sender">Your Email Address:</label><br>
+                  <input type="email" name="sender" placeholder="email@youraddress.com" required>
+                  <label for="subject">Message Subject:</label><br>
+                  <input type="text" name="subject" value="new message for Alex"><br>
+                  <label for="message">Message:</label><br>
+                  <textarea name="message" placeholder="Write your message here"></textarea><br>
+                  <div>
+                    <input type="submit" value="send message">
+                    <button type="button" name="cancel" class="cancel">cancel</button>
+                  </div>
+                </form>
+                <br>
+                <div class="hidden">
+                  <h4>Thanks for the message!</h4>
+                  <p>I'll respond as soon as I can. Don't forget to also follow me on social media:</p>
+                  <ul>
+                    <li><a href="https://github.com/nalexpear" title="github"><span class="ti ti-github"></span></a></li>
+                    <li><a href="https://www.facebook.com/alex.pearson.568" title="facebook"><span class="ti ti-facebook"></span></a></li>
+                    <li><a href="https://www.linkedin.com/pub/alex-pearson/a4/492/a16" title="linkedin"><span class="ti ti-linkedin"></span></a></li>
+                    <li><a href="https://twitter.com/NAlexPearson" title="twitter"><span class="ti ti-twitter"></span></a></li>
+                  </ul>
+                </div>
+              </div>
             </div>
         </div>
     </div>
@@ -208,7 +298,7 @@
               <li><a href="https://www.facebook.com/alex.pearson.568" title="facebook"><span class="ti ti-facebook"></span></a></li>
               <li><a href="https://www.linkedin.com/pub/alex-pearson/a4/492/a16" title="linkedin"><span class="ti ti-linkedin"></span></a></li>
               <li><a href="https://twitter.com/NAlexPearson" title="twitter"><span class="ti ti-twitter"></span></a></li>
-              <li><a href="mailto:alex@alexpear.com" title="email" alt="email Alex"><span class="ti ti-email"></span></a></li>
+              <li class="contact-target"><a href="#" data-action="contact-form" title="email" alt="email Alex"><span class="ti ti-email"></span></a></li>
             </ul>
         </div>
         <div class="copyright">©2014 Alex Pearson</div>
@@ -218,7 +308,8 @@
     <script type='text/javascript' async src='bower_components/jquery/dist/jquery.min.js'></script>
     <script type="text/javascript" async src='bower_components/picturefill/dist/picturefill.min.js'></script>
     <script type="text/javascript" async src="theme/js/modernizr.js"></script>
-    <script type="text/javascript" async src="theme/js/scroller.js"></script>
     <script type="text/javascript" async src="theme/js/content-mixer.js"></script>
+    <script type="text/javascript" async src="theme/js/scroller.js"></script>
+    <script type="text/javascript" async src="theme/js/mobile.js"></script>
     <!-- endbuild -->
 </body>

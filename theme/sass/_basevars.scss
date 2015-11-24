@@ -74,7 +74,7 @@ $p: $h4*0.67;
 
 //toggle classes
 .hidden{
-	display: none;
+	display: none !important;
 }
 .mobile-only{
   display: block;
