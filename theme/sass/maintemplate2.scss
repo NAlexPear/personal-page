@@ -98,7 +98,7 @@ a {
 }
 
 //navigation bar styles
-#navbubbles{
+.navbubbles{
     list-style-type:none;
     display:table;
     table-layout:fixed;
@@ -120,7 +120,7 @@ a {
 }
 
 .navreact {
-  a{
+  a, span{
      color:$color-mid;
     -o-transition:.5s color;
     -ms-transition:.5s color;
@@ -131,6 +131,12 @@ a {
          color: $color-mid-dark;
      }
   }
+}
+
+#mobile-nav span{
+  font-size: 8vmin;
+  font-weight: 100;
+  padding: 0.75em;
 }
 
 //main content styles
@@ -245,14 +251,10 @@ footer {
       margin-right: 1em;
       :last-child {
         margin-right: 0;
-          :hover, :focus, :active{
-            background: $color-main;
-          }
       }
       a {
-        background: $color-main;
         display:block;
-        color: $color-base;
+        color: $color-mid;
         overflow: hidden;
         text-decoration: none;
         -webkit-transition: all .3s ease;
@@ -262,8 +264,7 @@ footer {
         margin-right:auto;
 
         :hover, :focus, :active{
-          background: $color-mid-dark;
-          color: $color-base;
+          color: $color-mid-dark;
         }
       }
     }

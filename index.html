@@ -60,41 +60,57 @@
               </div>
           </div>
       </div>
-      <ul id="navbubbles">
-          <li id="about">
+      <div class="desktop-only">
+        <ul class="navbubbles">
+            <li id="about">
+                <div class="navreact">
+                    <a href="#" data-action="about-me" title="About Alex" alt="About Alex">
+                        <div>about me</div>
+                    </a>
+                </div>
+            </li>
+            <li id="resume">
+                <div class="navreact">
+                    <a href="#" data-action="resume-info" title="Alex's Resume" alt="Alex's Resume">
+                        <div>résumé</div>
+                    </a>
+                </div>
+            </li>
+            <li id="blog">
+                <div class="navreact">
+                    <a href="blog/" data-action="blog-link" title="Alex's Blog" alt="Alex's Blog">
+                        <div>blog</div>
+                    </a>
+                </div>
+            </li>
+            <li id="portfolio">
+                <div class="navreact">
+                    <a href="portfolio/index.html" data-action="preview-portfolio" title="Alex's Twitter Feed" alt="Alex's Tweets">
+                        <div>portfolio</div>
+                    </a>
+                </div>
+            </li>
+            <li id="contact">
               <div class="navreact">
-                  <a href="#" data-action="about-me" title="About Alex" alt="About Alex">
-                      <div>about me</div>
-                  </a>
+                <a href="#" data-action ="contact-form" title="Contact Alex" alt="Contact Alex">
+                  <div>contact</div>
+                </a>
               </div>
-          </li>
-          <li id="resume">
-              <div class="navreact">
-                  <a href="#" data-action="resume-info" title="Alex's Resume" alt="Alex's Resume">
-                      <div>résumé</div>
-                  </a>
-              </div>
-          </li>
-          <li id="blog">
-              <div class="navreact">
-                  <a href="blog/" data-action="blog-link" title="Alex's Blog" alt="Alex's Blog">
-                      <div>blog</div>
-                  </a>
-              </div>
-          </li>
-          <li id="portfolio">
-              <div class="navreact">
-                  <a href="portfolio/index.html" data-action="preview-portfolio" title="Alex's Twitter Feed" alt="Alex's Tweets">
-                      <div>portfolio</div>
-                  </a>
-              </div>
-          </li>
-          <li id="contact">
+            </li>
+        </ul>
+      </div>
+      <div class="mobile-only">
+        <ul class="navbubbles" id="mobile-nav">
+          <li>
             <div class="navreact">
-              <a href="#" data-action ="contact-form" title="Contact Alex" alt="Contact Alex">contact</a>
+              <span class="ti ti-menu"></span>
             </div>
           </li>
-      </ul>
+          <li>
+            <div class="navreact"><span class="ti ti-email"></span></div>
+          </li>
+        </ul>
+      </div>
     </div>
     <div id="page-wrap">
         <div id="content-wrapper">
