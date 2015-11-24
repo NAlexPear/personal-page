@@ -12,11 +12,13 @@
     <div id="content-wrapper">
         <div id="content">
             <ul id="resume-links">
-                <li><a href="http://alexpear.com/blog/">back to preview page</a></li>
-                <li><a href="http://alexpear.com/blog/archive">archive</a></li>
-                <li><a href="http://alexpear.com/blog/feed.xml">feed</a></li>
+                <li><a href="https://alexpear.com/blog/">back to preview page</a></li>
+                <li><a href="https://alexpear.com/blog/archive">archive</a></li>
+                <li><a href="https://alexpear.com/blog/feed.xml">feed</a></li>
             </ul>
             {{ content }}
+
+            {% include extra.html %}
         </div>
     </div>
     {% include disqus.html %}
