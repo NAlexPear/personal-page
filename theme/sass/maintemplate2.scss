@@ -394,20 +394,56 @@ a {
     }
 }
 
-#resume-links{
+#content .resume-links{
     list-style:none;
     display:table;
     table-layout: fixed;
     width: 80%;
     max-width:800px;
     height:auto;
-    margin-left:auto;
-    margin-right:auto;
     text-align:center;
+    padding: 0;
+    margin: 1em auto;
     li{
         font-size:3vw;
         display:table-cell;
     }
+}
+
+#content .resume-info{
+  &>p:first-child{
+    text-indent: 0;
+    text-align: center;
+  }
+  .resume-drop{
+    margin: 1em;
+    box-shadow: 0 0 20px $color-mid-light;
+    .resume-title{
+      padding-top: 0.5em;
+      text-align: center;
+      color: $color-accent;
+      font-weight: 400;
+    }
+    ul{
+      list-style-type: none;
+      li{
+        margin-bottom: 0.5em;
+        cursor: pointer;
+        color: $color-mid;
+        span{
+          margin-right: 0.5em;
+          &::before{
+            display: inline-block;
+            -webkit-transform: rotate(135deg);
+            transform: rotate(135deg);
+          }
+        }
+        &:hover {
+          color: $color-mid-dark;
+        }
+      }
+    }
+  }
 }
 
 //footer links

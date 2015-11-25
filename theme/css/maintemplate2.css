@@ -690,19 +690,45 @@ a {
     padding-top: 0;
     color: #59556a; }
 
-#resume-links {
+#content .resume-links {
   list-style: none;
   display: table;
   table-layout: fixed;
   width: 80%;
   max-width: 800px;
   height: auto;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center; }
-  #resume-links li {
+  text-align: center;
+  padding: 0;
+  margin: 1em auto; }
+  #content .resume-links li {
     font-size: 3vw;
     display: table-cell; }
+
+#content .resume-info > p:first-child {
+  text-indent: 0;
+  text-align: center; }
+#content .resume-info .resume-drop {
+  margin: 1em;
+  box-shadow: 0 0 20px #EFEFEF; }
+  #content .resume-info .resume-drop .resume-title {
+    padding-top: 0.5em;
+    text-align: center;
+    color: #59556a;
+    font-weight: 400; }
+  #content .resume-info .resume-drop ul {
+    list-style-type: none; }
+    #content .resume-info .resume-drop ul li {
+      margin-bottom: 0.5em;
+      cursor: pointer;
+      color: #A8A8A8; }
+      #content .resume-info .resume-drop ul li span {
+        margin-right: 0.5em; }
+        #content .resume-info .resume-drop ul li span::before {
+          display: inline-block;
+          -webkit-transform: rotate(135deg);
+          transform: rotate(135deg); }
+      #content .resume-info .resume-drop ul li:hover {
+        color: #51504f; }
 
 .socialmedia {
   margin-top: 10%; }
