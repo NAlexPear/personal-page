@@ -696,12 +696,15 @@ footer ul {
   border-bottom: none; }
   #content .blogroll a > h4 {
     opacity: 1;
-    text-align: left; }
+    text-align: left;
+    border-bottom: none; }
+    #content .blogroll a > h4:hover {
+      border-bottom: none; }
   #content .blogroll a:hover {
     opacity: 1;
     border-bottom: none; }
 #content .blogroll .subtitle {
-  font-size: 1.1892vmax;
+  font-size: 1.90273vmax;
   color: #EFEFEF; }
 
 /*# sourceMappingURL=maintemplate2.css.map */

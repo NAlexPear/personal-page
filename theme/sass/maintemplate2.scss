@@ -418,6 +418,10 @@ footer {
     &>h4{
       opacity: 1;
       text-align: left;
+      border-bottom: none;
+      &:hover{
+        border-bottom: none;
+      }
     }
     &:hover{
       opacity: 1;
@@ -425,7 +429,7 @@ footer {
     }
   }
   .subtitle{
-    font-size: $p*0.5;
+    font-size: $p*0.8;
     color: $color-mid-light;
   }
 }
