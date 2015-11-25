@@ -74,7 +74,7 @@ a {
           }
         }
         span{
-          font-size: $p;
+          font-size: $h4;
           font-weight: 100;
         }
       }
@@ -172,6 +172,7 @@ a {
   left: 3.5vw;
   height: auto;
   width: 90vw;
+  max-width:900px;
   background-color: $color-base;
   opacity: 0.95;
   box-shadow: 0 0 25px #adadad;
@@ -209,11 +210,13 @@ a {
       font-size: $p*0.65;
     }
     div{
-      width: 150px;
+      width: 250px;
+      @media (max-width: 640px){width: 150px;}
       margin: 1.5em auto;
     }
     input[type=submit], button{
-      width: 150px;
+      width: 250px;
+      @media (max-width: 640px){width: 150px;}
       font-size: $p*0.8;
       border: 3px solid #dadada;
       border-radius: 1em;
@@ -293,6 +296,7 @@ a {
     }
     ul,ol{
         font-size:$p;
+        font-weight: 100;
         padding-left: 4vw;
 				padding-top: 3vh;
 				padding-bottom: 3vh;
@@ -316,7 +320,7 @@ a {
     margin-top:-2%;
     img{
         margin-left:27%;
-        width:40%;
+        width:14vw;
         height:14vw;
         margin-bottom:0;
         opacity: 0.1;
@@ -371,6 +375,9 @@ footer {
       display: table-cell;
       font-family: 'lato', "sans-serif";
       font-size: $h4;
+      @media (min-width: 640px){
+      font-size: $h3;
+      }
       font-weight: 400;
       padding:0;
       vertical-align: middle;
@@ -384,8 +391,8 @@ footer {
         overflow: hidden;
         text-decoration: none;
         -webkit-transition: all .3s ease;
-        width: 48px;
-        height: 48px;
+        width: 6vmin;
+        height: 8vmin;
         margin-left:auto;
         margin-right:auto;
 

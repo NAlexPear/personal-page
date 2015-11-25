@@ -367,19 +367,19 @@ h1, h2, h3, h4 {
   line-height: 1.2; }
 
 h1 {
-  font-size: 7vmax; }
+  font-size: 5vmax; }
 
 h2 {
-  font-size: 6.09vmax;
+  font-size: 4.35vmax;
   font-weight: 400; }
 
 h3 {
   text-align: center;
   color: #59556a;
-  font-size: 5.2983vmax; }
+  font-size: 3.7845vmax; }
 
 h4 {
-  font-size: 3.54986vmax;
+  font-size: 2.53562vmax;
   color: #59556a;
   font-weight: 400; }
 
@@ -419,7 +419,7 @@ a {
         .splash > div > ul li a :hover {
           color: #A8A8A8; }
       .splash > div > ul li span {
-        font-size: 2.37841vmax;
+        font-size: 2.53562vmax;
         font-weight: 100; }
 
 #splashname {
@@ -497,6 +497,7 @@ a {
   left: 3.5vw;
   height: auto;
   width: 90vw;
+  max-width: 900px;
   background-color: #ffffff;
   opacity: 0.95;
   box-shadow: 0 0 25px #adadad;
@@ -504,11 +505,11 @@ a {
   padding: 2em; }
   .contact-form span {
     margin-left: 70vw;
-    font-size: 2.37841vmax; }
+    font-size: 1.69886vmax; }
   .contact-form form label {
     font-family: 'Lato', sans-serif;
     font-weight: 400;
-    font-size: 2.37841vmax;
+    font-size: 1.69886vmax;
     margin-bottom: 0.5em; }
   .contact-form form input {
     margin-bottom: 1.5em;
@@ -518,7 +519,7 @@ a {
     border-bottom: 1px solid #dadada;
     font-family: 'Lato', sans-serif;
     font-weight: 100;
-    font-size: 2.37841vmax; }
+    font-size: 1.69886vmax; }
   .contact-form form textarea {
     border: 1px solid #dadada;
     width: 100%;
@@ -526,18 +527,24 @@ a {
     margin: 1em 0;
     padding: 0.5em;
     font-family: 'Lato',sans-serif;
-    font-size: 1.54596vmax; }
+    font-size: 1.10426vmax; }
   .contact-form form div {
-    width: 150px;
+    width: 250px;
     margin: 1.5em auto; }
+    @media (max-width: 640px) {
+      .contact-form form div {
+        width: 150px; } }
   .contact-form form input[type=submit], .contact-form form button {
-    width: 150px;
-    font-size: 1.90273vmax;
+    width: 250px;
+    font-size: 1.35909vmax;
     border: 3px solid #dadada;
     border-radius: 1em;
     background-color: #ffffff;
     color: #51504f;
     padding: 0.5em; }
+    @media (max-width: 640px) {
+      .contact-form form input[type=submit], .contact-form form button {
+        width: 150px; } }
     .contact-form form input[type=submit] :active, .contact-form form button :active {
       background-color: #EFEFEF; }
   .contact-form ul {
@@ -553,7 +560,7 @@ a {
       .contact-form ul li a {
         color: #A8A8A8; }
       .contact-form ul li span {
-        font-size: 3.56761vmax;
+        font-size: 2.54829vmax;
         font-weight: 100; }
 
 .desktop-only.contact-form {
@@ -592,10 +599,11 @@ a {
     color: #59556a; }
   #content p {
     text-indent: 5vw;
-    font-size: 2.37841vmax;
+    font-size: 1.69886vmax;
     font-weight: 300; }
   #content ul, #content ol {
-    font-size: 2.37841vmax;
+    font-size: 1.69886vmax;
+    font-weight: 100;
     padding-left: 4vw;
     padding-top: 3vh;
     padding-bottom: 3vh; }
@@ -604,7 +612,7 @@ a {
     #content a :hover {
       border-bottom: 0.2vw solid; }
   #content code {
-    font-size: 2.37841vmax; }
+    font-size: 1.69886vmax; }
 
 .signature {
   width: 40%;
@@ -614,7 +622,7 @@ a {
   margin-top: -2%; }
   .signature img {
     margin-left: 27%;
-    width: 40%;
+    width: 14vw;
     height: 14vw;
     margin-bottom: 0;
     opacity: 0.1;
@@ -622,7 +630,7 @@ a {
     border-radius: 50%; }
   .signature h1 {
     font-family: 'Shadows Into Light', 'cursive';
-    font-size: 7vmax;
+    font-size: 5vmax;
     font-weight: 300;
     margin-left: 29%;
     margin-top: -23%;
@@ -660,11 +668,14 @@ footer ul {
     text-align: center;
     display: table-cell;
     font-family: 'lato', "sans-serif";
-    font-size: 3.54986vmax;
+    font-size: 2.53562vmax;
     font-weight: 400;
     padding: 0;
     vertical-align: middle;
     margin-right: 1em; }
+    @media (min-width: 640px) {
+      footer ul li {
+        font-size: 3.7845vmax; } }
     footer ul li :last-child {
       margin-right: 0; }
     footer ul li a {
@@ -673,8 +684,8 @@ footer ul {
       overflow: hidden;
       text-decoration: none;
       -webkit-transition: all .3s ease;
-      width: 48px;
-      height: 48px;
+      width: 6vmin;
+      height: 8vmin;
       margin-left: auto;
       margin-right: auto; }
       footer ul li a :hover, footer ul li a :focus, footer ul li a :active {
@@ -704,7 +715,7 @@ footer ul {
     opacity: 1;
     border-bottom: none; }
 #content .blogroll .subtitle {
-  font-size: 1.90273vmax;
+  font-size: 1.35909vmax;
   color: #EFEFEF; }
 
 /*# sourceMappingURL=maintemplate2.css.map */

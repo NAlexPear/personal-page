@@ -8,11 +8,21 @@ $color-accent: #59556a;
 $color-head: #EEEEEE;
 
 //FONT SIZES
-$h1: 7vmax;
+//mobile
+@media (max-width:640px) {
+  $h1: 7vmax;
+  $h2: $h1*0.87;
+  $h3: $h2*0.87;
+  $h4: $h3*0.67;
+  $p: $h4*0.67;
+}
+//desktop
+$h1: 5vmax;
 $h2: $h1*0.87;
 $h3: $h2*0.87;
 $h4: $h3*0.67;
 $p: $h4*0.67;
+
 
 //WEBFONTS
 /* latin-ext */
