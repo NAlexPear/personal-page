@@ -417,11 +417,13 @@ a {
   }
   .resume-drop{
     margin: 1em;
+    padding: 0.5em;
     border-radius: 2em;
     box-shadow: 0 0 20px #dadada;
     .resume-title{
       padding-top: 0.5em;
       text-align: center;
+      text-indent: 0;
       color: $color-accent;
       font-weight: 400;
       font-size: $h4;
@@ -434,10 +436,14 @@ a {
       p{
         text-indent: 0;
         color: $color-mid-dark;
+        @media (max-width:640px) {
+          font-size: 1.2em;
+        }
       }
     }
     ul{
       list-style-type: none;
+      padding-right: 4vw;
       li{
         margin-bottom: 0.75em;
         cursor: pointer;
