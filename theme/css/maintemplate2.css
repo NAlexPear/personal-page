@@ -603,7 +603,7 @@ a {
     font-weight: 300; }
   #content ul, #content ol {
     font-size: 1.69886vmax;
-    font-weight: 100;
+    font-weight: 300;
     padding-left: 4vw;
     padding-top: 3vh;
     padding-bottom: 3vh; }
@@ -612,15 +612,19 @@ a {
     #content a :hover {
       border-bottom: 0.2vw solid; }
   #content code {
-    font-size: 1.69886vmax; }
+    font-size: 1.35909vmax;
+    overflow: scroll; }
 
-.signature {
+.introduction p {
+  text-align: center; }
+
+#content .signature {
   width: 40%;
   height: auto;
   margin-left: auto;
   margin-right: auto;
   margin-top: -2%; }
-  .signature img {
+  #content .signature img {
     margin-left: 27%;
     width: 14vw;
     height: 14vw;
@@ -628,7 +632,7 @@ a {
     opacity: 0.1;
     border: 0.3vw solid #59556a;
     border-radius: 50%; }
-  .signature h1 {
+  #content .signature h1 {
     font-family: 'Shadows Into Light', 'cursive';
     font-size: 5vmax;
     font-weight: 300;

@@ -296,7 +296,7 @@ a {
     }
     ul,ol{
         font-size:$p;
-        font-weight: 100;
+        font-weight: 300;
         padding-left: 4vw;
 				padding-top: 3vh;
 				padding-bottom: 3vh;
@@ -308,11 +308,16 @@ a {
         }
     }
     code{
-        font-size: $p;
+        font-size: $p*0.8;
+        overflow: scroll;
     }
 }
-
-.signature{
+.introduction{
+  p{
+    text-align: center;
+  }
+}
+#content .signature{
     width:40%;
     height:auto;
     margin-left:auto;
