@@ -504,7 +504,7 @@ a {
 
 .contact-form {
   box-sizing: border-box;
-  position: fixed;
+  position: absolute;
   overflow-y: auto;
   top: 3vh;
   left: 3.5vw;
@@ -537,7 +537,7 @@ a {
     border: none;
     border-bottom: 1px solid #dadada;
     font-family: 'Lato', sans-serif;
-    font-weight: 100;
+    font-weight: 300;
     font-size: 2.54829vmax; }
     @media (min-width: 640px) {
       .contact-form form input[type=text], .contact-form form input[type=email] {
@@ -552,7 +552,7 @@ a {
     font-size: 1.69886vmax; }
     @media (min-width: 640px) {
       .contact-form form textarea {
-        font-size: 1.10426vmax; } }
+        font-size: 1.44403vmax; } }
   .contact-form form div {
     width: 250px;
     margin: 1.5em auto; }

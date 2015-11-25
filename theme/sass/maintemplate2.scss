@@ -179,7 +179,7 @@ a {
 //mobile overlay version
 .contact-form{
   box-sizing: border-box;
-  position: fixed;
+  position: absolute;
   overflow-y: auto;
   top: 3vh;
   left: 3.5vw;
@@ -216,7 +216,7 @@ a {
       border: none;
       border-bottom: 1px solid #dadada;
       font-family: 'Lato', sans-serif;
-      font-weight: 100;
+      font-weight: 300;
       font-size: $p*1.5;
       @media (min-width: 640px){
         font-size: $p;
@@ -231,7 +231,7 @@ a {
       font-family: 'Lato',sans-serif;
       font-size: $p;
       @media (min-width: 640px){
-        font-size: $p*0.65;
+        font-size: $p*0.85;
       }
     }
     div{
