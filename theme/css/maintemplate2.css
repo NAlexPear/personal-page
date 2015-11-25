@@ -787,4 +787,9 @@ footer ul {
       font-size: 3.0276vmax;
       text-align: left; } }
 
+#disqus_thread {
+  width: 90%;
+  max-width: 900px;
+  margin: 0.5em auto; }
+
 /*# sourceMappingURL=maintemplate2.css.map */
