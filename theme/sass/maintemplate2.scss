@@ -220,6 +220,12 @@ a {
       font-size: $p*1.5;
       @media (min-width: 640px){
         font-size: $p;
+        &:focus{
+          font-size: $p;
+        }
+      }
+      &:focus{
+        font-size: $p*3;
       }
     }
     textarea{
