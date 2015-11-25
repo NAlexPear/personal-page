@@ -342,15 +342,21 @@ a {
           border-bottom:0.2vw solid;
       }
     }
-    code{
+    pre {
+      width: 90%;
+      max-width:900px;
+      border: 2px solid $color-mid;
+      overflow-x: scroll;
+      padding: 0.5em;
+      
+      code{
       margin: 1em;
-      border: 2px solid $color-mid-dark;
       font-size: $p;
       @media (min-width: 640px) {
         font-size:$p*0.8;
       }
-      overflow: scroll;
     }
+  }
     hr{
       width: 80%;
       color: $color-mid-light;
