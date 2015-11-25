@@ -417,12 +417,22 @@ a {
   }
   .resume-drop{
     margin: 1em;
-    box-shadow: 0 0 20px $color-mid-light;
+    border-radius: 2em;
+    box-shadow: 0 0 20px #adadad;
     .resume-title{
       padding-top: 0.5em;
       text-align: center;
       color: $color-accent;
       font-weight: 400;
+    }
+    .resume-drop-blurb{
+      width: 80%;
+      padding: 0.5em;
+      text-align: left;
+      p{
+        text-indent: 0;
+        color: $color-mid-dark;
+      }
     }
     ul{
       list-style-type: none;
@@ -434,11 +444,10 @@ a {
           margin-right: 0.5em;
           &::before{
             display: inline-block;
-            -webkit-transform: rotate(135deg);
             transform: rotate(135deg);
           }
         }
-        &:hover {
+        &:hover, &:active {
           color: $color-mid-dark;
         }
       }
