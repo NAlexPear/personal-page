@@ -380,6 +380,7 @@ h3 {
 
 h4 {
   font-size: 3.54986vmax;
+  color: #59556a;
   font-weight: 400; }
 
 p, ul, ol {
@@ -686,5 +687,21 @@ footer ul {
   font-family: helvetica, "Sans-Serif";
   font-size: 14px;
   opacity: 0.4; }
+
+#content .blogroll p {
+  text-indent: 0; }
+#content .blogroll a {
+  opacity: 0.8;
+  text-decoration: none;
+  border-bottom: none; }
+  #content .blogroll a > h4 {
+    opacity: 1;
+    text-align: left; }
+  #content .blogroll a:hover {
+    opacity: 1;
+    border-bottom: none; }
+#content .blogroll .subtitle {
+  font-size: 1.1892vmax;
+  color: #EFEFEF; }
 
 /*# sourceMappingURL=maintemplate2.css.map */
