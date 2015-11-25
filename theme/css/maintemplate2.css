@@ -720,7 +720,8 @@ a {
   #content .resume-info .resume-drop .resume-drop-blurb {
     width: 80%;
     padding: 0.5em;
-    text-align: left; }
+    text-align: left;
+    display: none; }
     #content .resume-info .resume-drop .resume-drop-blurb p {
       text-indent: 0;
       color: #51504f; }
