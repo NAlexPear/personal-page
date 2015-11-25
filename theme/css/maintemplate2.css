@@ -650,8 +650,11 @@ a {
   #content code {
     margin: 1em;
     border: 2px solid #51504f;
-    font-size: 1.35909vmax;
+    font-size: 1.69886vmax;
     overflow: scroll; }
+    @media (min-width: 640px) {
+      #content code {
+        font-size: 1.35909vmax; } }
   #content hr {
     width: 80%;
     color: #EFEFEF;
@@ -755,7 +758,10 @@ footer ul {
     opacity: 1;
     border-bottom: none; }
 #content .blogroll .subtitle {
-  font-size: 1.35909vmax;
+  font-size: 1.69886vmax;
   color: #EFEFEF; }
+  @media (min-width: 640px) {
+    #content .blogroll .subtitle {
+      font-size: 1.35909vmax; } }
 
 /*# sourceMappingURL=maintemplate2.css.map */
