@@ -348,7 +348,7 @@ a {
       border: 2px solid $color-mid;
       overflow-x: scroll;
       padding: 0.5em;
-      
+
       code{
       margin: 1em;
       font-size: $p;
@@ -464,32 +464,59 @@ footer {
 }
 
 //blog pages
-#content .blogroll{
-  p{
-    text-indent: 0;
-  }
-  a{
-    opacity: 0.8;
-    text-decoration: none;
-    border-bottom: none;
-    &>h4{
-      opacity: 1;
-      text-align: left;
+#content {
+  .blogroll{
+    p{
+      text-indent: 0;
+    }
+    a{
+      opacity: 0.8;
+      text-decoration: none;
       border-bottom: none;
+      &>h4{
+        opacity: 1;
+        text-align: left;
+        border-bottom: none;
+        &:hover{
+          border-bottom: none;
+        }
+      }
       &:hover{
+        opacity: 1;
         border-bottom: none;
       }
     }
-    &:hover{
-      opacity: 1;
-      border-bottom: none;
+    .subtitle{
+      font-size: $p;
+      @media (min-width: 640px) {
+        font-size:$p*0.8;
+      }
+      color: $color-mid-light;
     }
   }
-  .subtitle{
-    font-size: $p;
-    @media (min-width: 640px) {
-      font-size:$p*0.8;
+  .blogpost{
+    p{
+      margin-bottom: 0.5em;
     }
-    color: $color-mid-light;
+    hr{
+      opacity: 0.5;
+    }
+    h2{
+      font-size: $h2*0.7;
+      text-align: center;
+      @media (min-width: 640px) {
+        font-size: $h2;
+        text-align: left;
+      }
+    }
+    h3 {
+      font-size: $h3*0.5;
+      text-align: center;
+      @media (min-width: 640px) {
+        font-size: $h3*0.8;
+        text-align: left;
+      }
+      margin-bottom: 1em;
+    }
   }
 }

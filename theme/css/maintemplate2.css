@@ -767,5 +767,24 @@ footer ul {
   @media (min-width: 640px) {
     #content .blogroll .subtitle {
       font-size: 1.35909vmax; } }
+#content .blogpost p {
+  margin-bottom: 0.5em; }
+#content .blogpost hr {
+  opacity: 0.5; }
+#content .blogpost h2 {
+  font-size: 3.045vmax;
+  text-align: center; }
+  @media (min-width: 640px) {
+    #content .blogpost h2 {
+      font-size: 4.35vmax;
+      text-align: left; } }
+#content .blogpost h3 {
+  font-size: 1.89225vmax;
+  text-align: center;
+  margin-bottom: 1em; }
+  @media (min-width: 640px) {
+    #content .blogpost h3 {
+      font-size: 3.0276vmax;
+      text-align: left; } }
 
 /*# sourceMappingURL=maintemplate2.css.map */
