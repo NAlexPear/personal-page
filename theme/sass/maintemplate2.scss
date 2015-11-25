@@ -17,8 +17,8 @@ h1{
   font-size: $h1;
 }
 h2{
-    font-size:$h2;
-    font-weight: 400;
+  font-size:$h2;
+  font-weight: 400;
 }
 h3{
   text-align: center;
@@ -27,6 +27,7 @@ h3{
 }
 h4{
     font-size: $h4;
+    color: $color-accent;
     font-weight: 400;
 }
 
@@ -403,4 +404,26 @@ footer {
     font-family: helvetica, "Sans-Serif";
     font-size: 14px;
     opacity: 0.4;
+}
+
+//blog pages
+.blogroll{
+  p{
+    text-indent: 0;
+  }
+  a{
+    opacity: 0.8;
+    text-decoration: none;
+    border-bottom: none;
+    &>h4{
+      opacity: 1;
+    }
+    &:hover{
+      opacity: 1;
+    }
+  }
+  p.subtitle{
+    font-size: $p*0.5;
+    color: $color-mid-light;
+  }
 }
