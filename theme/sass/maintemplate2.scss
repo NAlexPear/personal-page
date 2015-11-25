@@ -418,12 +418,13 @@ a {
   .resume-drop{
     margin: 1em;
     border-radius: 2em;
-    box-shadow: 0 0 20px #adadad;
+    box-shadow: 0 0 20px #dadada;
     .resume-title{
       padding-top: 0.5em;
       text-align: center;
       color: $color-accent;
       font-weight: 400;
+      font-size: $h4;
     }
     .resume-drop-blurb{
       width: 80%;
@@ -437,18 +438,26 @@ a {
     ul{
       list-style-type: none;
       li{
-        margin-bottom: 0.5em;
+        margin-bottom: 0.75em;
         cursor: pointer;
         color: $color-mid;
         span{
           margin-right: 0.5em;
           &::before{
             display: inline-block;
+            transition: transform 0.2s;
             transform: rotate(135deg);
           }
         }
-        &:hover, &:active {
+        &:hover, {
           color: $color-mid-dark;
+        }
+        &.active {
+          color: $color-mid-dark;
+          span::before{
+            transition: transform 0.3s;
+            transform: rotate(225deg);
+          }
         }
       }
     }

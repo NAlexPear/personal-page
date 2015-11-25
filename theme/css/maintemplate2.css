@@ -710,12 +710,13 @@ a {
 #content .resume-info .resume-drop {
   margin: 1em;
   border-radius: 2em;
-  box-shadow: 0 0 20px #adadad; }
+  box-shadow: 0 0 20px #dadada; }
   #content .resume-info .resume-drop .resume-title {
     padding-top: 0.5em;
     text-align: center;
     color: #59556a;
-    font-weight: 400; }
+    font-weight: 400;
+    font-size: 2.53562vmax; }
   #content .resume-info .resume-drop .resume-drop-blurb {
     width: 80%;
     padding: 0.5em;
@@ -726,16 +727,22 @@ a {
   #content .resume-info .resume-drop ul {
     list-style-type: none; }
     #content .resume-info .resume-drop ul li {
-      margin-bottom: 0.5em;
+      margin-bottom: 0.75em;
       cursor: pointer;
       color: #A8A8A8; }
       #content .resume-info .resume-drop ul li span {
         margin-right: 0.5em; }
         #content .resume-info .resume-drop ul li span::before {
           display: inline-block;
+          transition: transform 0.2s;
           transform: rotate(135deg); }
-      #content .resume-info .resume-drop ul li:hover, #content .resume-info .resume-drop ul li:active {
+      #content .resume-info .resume-drop ul li:hover {
         color: #51504f; }
+      #content .resume-info .resume-drop ul li.active {
+        color: #51504f; }
+        #content .resume-info .resume-drop ul li.active span::before {
+          transition: transform 0.3s;
+          transform: rotate(225deg); }
 
 .socialmedia {
   margin-top: 10%; }
