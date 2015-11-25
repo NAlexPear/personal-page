@@ -14,21 +14,34 @@ h1,h2,h3,h4{
   line-height: 1.2;
 }
 h1{
-  font-size: $h1;
+  font-size: $h1 + 2;
+  @media (min-width: 640px) {
+    font-size: $h1;
+  }
 }
 h2{
-  font-size:$h2;
+  font-size: ($h1 + 2)*0.87;
+  @media (min-width: 640px) {
+    font-size:$h2;
+  }
   font-weight: 400;
+  color: $color-mid;
 }
 h3{
   text-align: center;
   color: $color-accent;
-  font-size: $h3;
+  font-size: (($h1 + 2)*0.87)*0.87;
+  @media (min-width: 640px) {
+    font-size: $h3;
+  }
 }
 h4{
+  font-size: ((($h1 + 2)*0.87)*0.87)*0.65;
+  @media (min-width: 640px) {
     font-size: $h4;
-    color: $color-accent;
-    font-weight: 400;
+  }
+  color: $color-accent;
+  font-weight: 400;
 }
 
 p, ul, ol {
@@ -180,13 +193,19 @@ a {
   padding: 2em;
   span{
     margin-left: 70vw;
-    font-size: $p;
+    font-size: $p*1.5;
+    @media (min-width: 640px){
+      font-size: $p;
+    }
   }
   form{
     label{
       font-family: 'Lato', sans-serif;
       font-weight: 400;
-      font-size: $p;
+      font-size: $p*1.5;
+      @media (min-width: 640px){
+        font-size: $p;
+      }
       margin-bottom:0.5em
     }
     input{
@@ -198,7 +217,10 @@ a {
       border-bottom: 1px solid #dadada;
       font-family: 'Lato', sans-serif;
       font-weight: 100;
-      font-size: $p;
+      font-size: $p*1.5;
+      @media (min-width: 640px){
+        font-size: $p;
+      }
     }
     textarea{
       border: 1px solid #dadada;
@@ -207,7 +229,10 @@ a {
       margin: 1em 0;
       padding: 0.5em;
       font-family: 'Lato',sans-serif;
-      font-size: $p*0.65;
+      font-size: $p;
+      @media (min-width: 640px){
+        font-size: $p*0.65;
+      }
     }
     div{
       width: 250px;
@@ -217,7 +242,10 @@ a {
     input[type=submit], button{
       width: 250px;
       @media (max-width: 640px){width: 150px;}
-      font-size: $p*0.8;
+      font-size: $p;
+      @media (min-width: 640px){
+        font-size: $p*0.8;
+      }
       border: 3px solid #dadada;
       border-radius: 1em;
       background-color: $color-base;
@@ -281,35 +309,49 @@ a {
 
 #content{
     padding:2.5vmax;
-    h1,p,ul{font-family:'Lato', 'Helvetica', 'Sans-serif';}
+    h1,p,ul,ol{font-family:'Lato', 'Helvetica', 'Sans-serif';}
 
     h1{font-weight: 400;}
+    h2{text-align: left;}
     h4{
       text-align:center;
       font-weight: 400;
       color: $color-accent;
     }
     p{
+        line-height: 1.4;
         text-indent: 5vw;
-        font-size:$p;
+        font-size: $p*1.5;
+        @media (min-width: 640px) {
+          font-size:$p;
+        }
         font-weight:300;
     }
     ul,ol{
+      @media (min-width: 640px) {
         font-size:$p;
-        font-weight: 300;
-        padding-left: 4vw;
-				padding-top: 3vh;
-				padding-bottom: 3vh;
+      }
+      font-weight: 300;
+      padding-left: 4vw;
+			padding-top: 3vh;
+			padding-bottom: 3vh;
     }
     a{
-        border-bottom:0.2vw dotted;
-        :hover{
-            border-bottom:0.2vw solid;
-        }
+      border-bottom:0.2vw dotted;
+      :hover{
+          border-bottom:0.2vw solid;
+      }
     }
     code{
-        font-size: $p*0.8;
-        overflow: scroll;
+      margin: 1em;
+      border: 2px solid $color-mid-dark;
+      font-size: $p*0.8;
+      overflow: scroll;
+    }
+    hr{
+      width: 80%;
+      color: $color-mid-light;
+      margin: 1em auto;
     }
 }
 .introduction{
@@ -391,15 +433,9 @@ footer {
         margin-right: 0;
       }
       a {
-        display:block;
         color: $color-mid;
-        overflow: hidden;
         text-decoration: none;
         -webkit-transition: all .3s ease;
-        width: 6vmin;
-        height: 8vmin;
-        margin-left:auto;
-        margin-right:auto;
 
         :hover, :focus, :active{
           color: $color-mid-dark;

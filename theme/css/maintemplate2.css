@@ -367,21 +367,34 @@ h1, h2, h3, h4 {
   line-height: 1.2; }
 
 h1 {
-  font-size: 5vmax; }
+  font-size: 7vmax; }
+  @media (min-width: 640px) {
+    h1 {
+      font-size: 5vmax; } }
 
 h2 {
-  font-size: 4.35vmax;
-  font-weight: 400; }
+  font-size: 6.09vmax;
+  font-weight: 400;
+  color: #A8A8A8; }
+  @media (min-width: 640px) {
+    h2 {
+      font-size: 4.35vmax; } }
 
 h3 {
   text-align: center;
   color: #59556a;
-  font-size: 3.7845vmax; }
+  font-size: 5.2983vmax; }
+  @media (min-width: 640px) {
+    h3 {
+      font-size: 3.7845vmax; } }
 
 h4 {
-  font-size: 2.53562vmax;
+  font-size: 3.4439vmax;
   color: #59556a;
   font-weight: 400; }
+  @media (min-width: 640px) {
+    h4 {
+      font-size: 2.53562vmax; } }
 
 p, ul, ol {
   font-size: 4vw;
@@ -505,12 +518,18 @@ a {
   padding: 2em; }
   .contact-form span {
     margin-left: 70vw;
-    font-size: 1.69886vmax; }
+    font-size: 2.54829vmax; }
+    @media (min-width: 640px) {
+      .contact-form span {
+        font-size: 1.69886vmax; } }
   .contact-form form label {
     font-family: 'Lato', sans-serif;
     font-weight: 400;
-    font-size: 1.69886vmax;
+    font-size: 2.54829vmax;
     margin-bottom: 0.5em; }
+    @media (min-width: 640px) {
+      .contact-form form label {
+        font-size: 1.69886vmax; } }
   .contact-form form input {
     margin-bottom: 1.5em;
     width: 90%; }
@@ -519,7 +538,10 @@ a {
     border-bottom: 1px solid #dadada;
     font-family: 'Lato', sans-serif;
     font-weight: 100;
-    font-size: 1.69886vmax; }
+    font-size: 2.54829vmax; }
+    @media (min-width: 640px) {
+      .contact-form form input[type=text], .contact-form form input[type=email] {
+        font-size: 1.69886vmax; } }
   .contact-form form textarea {
     border: 1px solid #dadada;
     width: 100%;
@@ -527,7 +549,10 @@ a {
     margin: 1em 0;
     padding: 0.5em;
     font-family: 'Lato',sans-serif;
-    font-size: 1.10426vmax; }
+    font-size: 1.69886vmax; }
+    @media (min-width: 640px) {
+      .contact-form form textarea {
+        font-size: 1.10426vmax; } }
   .contact-form form div {
     width: 250px;
     margin: 1.5em auto; }
@@ -536,7 +561,7 @@ a {
         width: 150px; } }
   .contact-form form input[type=submit], .contact-form form button {
     width: 250px;
-    font-size: 1.35909vmax;
+    font-size: 1.69886vmax;
     border: 3px solid #dadada;
     border-radius: 1em;
     background-color: #ffffff;
@@ -545,6 +570,9 @@ a {
     @media (max-width: 640px) {
       .contact-form form input[type=submit], .contact-form form button {
         width: 150px; } }
+    @media (min-width: 640px) {
+      .contact-form form input[type=submit], .contact-form form button {
+        font-size: 1.35909vmax; } }
     .contact-form form input[type=submit] :active, .contact-form form button :active {
       background-color: #EFEFEF; }
   .contact-form ul {
@@ -589,31 +617,45 @@ a {
 
 #content {
   padding: 2.5vmax; }
-  #content h1, #content p, #content ul {
+  #content h1, #content p, #content ul, #content ol {
     font-family: 'Lato', 'Helvetica', 'Sans-serif'; }
   #content h1 {
     font-weight: 400; }
+  #content h2 {
+    text-align: left; }
   #content h4 {
     text-align: center;
     font-weight: 400;
     color: #59556a; }
   #content p {
+    line-height: 1.4;
     text-indent: 5vw;
-    font-size: 1.69886vmax;
+    font-size: 2.54829vmax;
     font-weight: 300; }
+    @media (min-width: 640px) {
+      #content p {
+        font-size: 1.69886vmax; } }
   #content ul, #content ol {
-    font-size: 1.69886vmax;
     font-weight: 300;
     padding-left: 4vw;
     padding-top: 3vh;
     padding-bottom: 3vh; }
+    @media (min-width: 640px) {
+      #content ul, #content ol {
+        font-size: 1.69886vmax; } }
   #content a {
     border-bottom: 0.2vw dotted; }
     #content a :hover {
       border-bottom: 0.2vw solid; }
   #content code {
+    margin: 1em;
+    border: 2px solid #51504f;
     font-size: 1.35909vmax;
     overflow: scroll; }
+  #content hr {
+    width: 80%;
+    color: #EFEFEF;
+    margin: 1em auto; }
 
 .introduction p {
   text-align: center; }
@@ -683,15 +725,9 @@ footer ul {
     footer ul li :last-child {
       margin-right: 0; }
     footer ul li a {
-      display: block;
       color: #A8A8A8;
-      overflow: hidden;
       text-decoration: none;
-      -webkit-transition: all .3s ease;
-      width: 6vmin;
-      height: 8vmin;
-      margin-left: auto;
-      margin-right: auto; }
+      -webkit-transition: all .3s ease; }
       footer ul li a :hover, footer ul li a :focus, footer ul li a :active {
         color: #51504f; }
 
