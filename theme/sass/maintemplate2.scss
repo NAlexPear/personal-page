@@ -407,7 +407,7 @@ footer {
 }
 
 //blog pages
-.blogroll{
+#content .blogroll{
   p{
     text-indent: 0;
   }
@@ -417,12 +417,14 @@ footer {
     border-bottom: none;
     &>h4{
       opacity: 1;
+      text-align: left;
     }
     &:hover{
       opacity: 1;
+      border-bottom: none;
     }
   }
-  p.subtitle{
+  .subtitle{
     font-size: $p*0.5;
     color: $color-mid-light;
   }
