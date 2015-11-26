@@ -478,23 +478,44 @@ a {
 }
 
   //portfolio previews and github links
-.portfolio-display{
+#content .portfolio-display{
   height: auto;
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-around;
+  // justify-content: space-around;
   margin-bottom: 1em;
+  .subtitle{
+    text-indent: 0;
+    text-align: center;
+  }
   div{
-    width: 200px;
+    width: 22vw;
     height: auto;
     margin: auto;
     padding: 0.5em;
+    cursor: pointer;
+    vertical-align: bottom;
+    position: relative;
+    img{
+      width:22vw;
+    }
   }
 }
 
 #gh-projects{
+  width: 80%;
+  margin: 2em auto;
   ul{
     list-style-type: none;
+    li{
+      margin-bottom: 0.75em;
+    }
+  }
+  p{
+    text-indent: 0;
+  }
+  span{
+    font-weight: 400;
   }
 }
 
