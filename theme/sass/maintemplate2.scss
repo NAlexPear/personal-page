@@ -489,7 +489,7 @@ a {
     text-align: center;
   }
   div{
-    width: 22vw;
+    width: 220px;
     height: auto;
     margin: auto;
     padding: 0.5em;
@@ -497,7 +497,34 @@ a {
     vertical-align: bottom;
     position: relative;
     img{
-      width:22vw;
+      width:100%;
+    }
+    button{
+      position: absolute;
+      top: 35%;
+      left: 50%;
+      margin-left: -75px;
+      width: 150px;
+      padding: 0.25em;
+      background-color: transparent;
+      border-radius: 2em;
+      border: 3px solid $color-mid;
+      color: $color-mid;
+      font-size: 1.4em;
+      font-family: 'Lato', sans-serif;
+      font-weight: 700;
+      cursor: pointer;
+      &:hover{
+        box-shadow: 0 0 5px #adadad;
+      }
+    }
+    &:hover{
+      img {
+        opacity: 0.20;
+      }
+      button{
+        opacity: 1;
+      }
     }
   }
 }
