@@ -174,8 +174,7 @@ a {
   }
 }
 
-//contact forms
-
+//CONTACT FORMS
 //mobile overlay version
 .contact-form{
   box-sizing: border-box;
@@ -282,7 +281,7 @@ a {
     }
   }
 }
-//desktop-specific overrides
+//desktop-specific contact form overrides
 .desktop-only.contact-form{
   position: relative;
   border-radius: 0;
@@ -369,6 +368,7 @@ a {
       margin: 1em auto;
     }
 }
+  //landing page introduction
 .introduction{
   p{
     text-align: center;
@@ -399,7 +399,7 @@ a {
         color:$color-accent;
     }
 }
-
+  //resume styles
 #content .resume-links{
     list-style:none;
     display:table;
@@ -475,6 +475,13 @@ a {
       }
     }
   }
+}
+
+  //portfolio
+.portfolio-display>div{
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 
 //footer links

@@ -755,6 +755,11 @@ a {
           transition: transform 0.3s;
           transform: rotate(225deg); }
 
+.portfolio-display > div {
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: space-around; }
+
 .socialmedia {
   margin-top: 10%; }
 
