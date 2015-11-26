@@ -755,10 +755,20 @@ a {
           transition: transform 0.3s;
           transform: rotate(225deg); }
 
-.portfolio-display > div {
-  display: inline-flex;
-  flex-wrap: wrap;
-  justify-content: space-around; }
+.portfolio-display {
+  height: auto;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  margin-bottom: 1em; }
+  .portfolio-display div {
+    width: 200px;
+    height: auto;
+    margin: auto;
+    padding: 0.5em; }
+
+#gh-projects ul {
+  list-style-type: none; }
 
 .socialmedia {
   margin-top: 10%; }

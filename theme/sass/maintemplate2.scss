@@ -477,11 +477,25 @@ a {
   }
 }
 
-  //portfolio
-.portfolio-display>div{
-  display: inline-flex;
-  flex-wrap: wrap;
+  //portfolio previews and github links
+.portfolio-display{
+  height: auto;
+  display: flex;
+  flex-flow: row wrap;
   justify-content: space-around;
+  margin-bottom: 1em;
+  div{
+    width: 200px;
+    height: auto;
+    margin: auto;
+    padding: 0.5em;
+  }
+}
+
+#gh-projects{
+  ul{
+    list-style-type: none;
+  }
 }
 
 //footer links
