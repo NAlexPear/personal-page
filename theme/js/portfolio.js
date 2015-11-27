@@ -16,8 +16,7 @@ $('.portfolio-display>div').on('click', 'button.learn-more', function(){
         $(this).parent().animate({
           width: "220px"
         }, 500, function(){
-          console.log('animation complete');
-          $('div.portfolio-description').addClass('hidden');
+          $(this).children('div.portfolio-description').addClass('hidden');
         });
         //remove expanded class on parent div
         $(this).parent().removeClass('expanded');
@@ -29,7 +28,7 @@ $('.portfolio-display>div').on('click', 'button.learn-more', function(){
       $(this).parent().animate({
         width: "90%"
       }, 500, function(){
-        $('div.portfolio-description').removeClass('hidden');
+        $(this).children('div.portfolio-description').removeClass('hidden');
       });
       //add expanded class on parent div
       $(this).parent().addClass('expanded');

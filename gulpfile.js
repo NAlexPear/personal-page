@@ -11,6 +11,9 @@ var gzip = require('gulp-gzip');
 var critical = require('critical');
 var useref = require('gulp-useref');
 var gulpif = require('gulp-if');
+var postcss = require('gulp-postcss');
+var sourcemaps = require('gulp-sourcemaps');
+var autoprefixer = require('autoprefixer');
 
 //Porters of non-critical content
 gulp.task('bower-port', function(){

@@ -496,6 +496,7 @@ a {
     cursor: pointer;
     vertical-align: bottom;
     position: relative;
+    transition: opacity 0.3s;
     img{
       width:100%;
     }
@@ -514,12 +515,10 @@ a {
       font-family: 'Lato', sans-serif;
       font-weight: 700;
       cursor: pointer;
-      &:hover{
-        box-shadow: 0 0 5px #adadad;
-      }
     }
     &:hover{
       img {
+        transition: opacity 0.3s;
         opacity: 0.20;
       }
       button{

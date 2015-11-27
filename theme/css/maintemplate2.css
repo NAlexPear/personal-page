@@ -770,7 +770,8 @@ a {
     padding: 0.5em;
     cursor: pointer;
     vertical-align: bottom;
-    position: relative; }
+    position: relative;
+    transition: opacity 0.3s; }
     #content .portfolio-display div img {
       width: 100%; }
     #content .portfolio-display div button {
@@ -788,9 +789,8 @@ a {
       font-family: 'Lato', sans-serif;
       font-weight: 700;
       cursor: pointer; }
-      #content .portfolio-display div button:hover {
-        box-shadow: 0 0 5px #adadad; }
     #content .portfolio-display div:hover img {
+      transition: opacity 0.3s;
       opacity: 0.20; }
     #content .portfolio-display div:hover button {
       opacity: 1; }
