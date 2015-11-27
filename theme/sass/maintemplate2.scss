@@ -177,6 +177,7 @@ a {
 //CONTACT FORMS
 //mobile overlay version
 .contact-form{
+  z-index: 100;
   box-sizing: border-box;
   position: absolute;
   overflow-y: auto;
@@ -520,8 +521,7 @@ a {
       width: 150px;
       padding: 0.25em;
       background-color: transparent;
-      border-radius: 2em;
-      border: 3px solid $color-mid;
+      border: none;
       color: $color-mid;
       font-size: 1.4em;
       font-family: 'Lato', sans-serif;
