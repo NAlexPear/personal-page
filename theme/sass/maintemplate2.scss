@@ -482,8 +482,8 @@ a {
   height: auto;
   display: flex;
   flex-flow: row wrap;
-  // justify-content: space-around;
   margin-bottom: 1em;
+  transition: all 0.8s ease;
   .subtitle{
     text-indent: 0;
     text-align: center;
@@ -497,12 +497,24 @@ a {
     vertical-align: bottom;
     position: relative;
     transition: opacity 0.3s;
+    .portfolio-description{
+      width: 90%;
+      display: none;
+      &>p:first-child{
+        text-align: center;
+        text-indent: 0;
+        font-size: $p*1.5;
+        @media (min-width: 640px) {
+          font-size:$p*1.2;
+        }
+      }
+    }
     img{
       width:100%;
     }
     button{
       position: absolute;
-      top: 35%;
+      top: 80px;
       left: 50%;
       margin-left: -75px;
       width: 150px;

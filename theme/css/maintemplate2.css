@@ -473,6 +473,10 @@ a {
 
 .navreact a, .navreact span {
   color: #A8A8A8;
+  -o-transition: .5s color;
+  -ms-transition: .5s color;
+  -moz-transition: .5s color;
+  -webkit-transition: .5s color;
   transition: .5s color; }
   .navreact a :hover, .navreact span :hover {
     color: #51504f; }
@@ -741,31 +745,22 @@ a {
         margin-right: 0.5em; }
         #content .resume-info .resume-drop ul li span::before {
           display: inline-block;
-          transition: -webkit-transform 0.2s;
           transition: transform 0.2s;
-          transition: transform 0.2s, -webkit-transform 0.2s;
-          -webkit-transform: rotate(135deg);
-                  transform: rotate(135deg); }
+          transform: rotate(135deg); }
       #content .resume-info .resume-drop ul li:hover {
         color: #51504f; }
       #content .resume-info .resume-drop ul li.active {
         color: #51504f; }
         #content .resume-info .resume-drop ul li.active span::before {
-          transition: -webkit-transform 0.3s;
           transition: transform 0.3s;
-          transition: transform 0.3s, -webkit-transform 0.3s;
-          -webkit-transform: rotate(225deg);
-                  transform: rotate(225deg); }
+          transform: rotate(225deg); }
 
 #content .portfolio-display {
   height: auto;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-flex-flow: row wrap;
-      -ms-flex-flow: row wrap;
-          flex-flow: row wrap;
-  margin-bottom: 1em; }
+  flex-flow: row wrap;
+  margin-bottom: 1em;
+  transition: all 0.8s ease; }
   #content .portfolio-display .subtitle {
     text-indent: 0;
     text-align: center; }
@@ -778,11 +773,21 @@ a {
     vertical-align: bottom;
     position: relative;
     transition: opacity 0.3s; }
+    #content .portfolio-display div .portfolio-description {
+      width: 90%;
+      display: none; }
+      #content .portfolio-display div .portfolio-description > p:first-child {
+        text-align: center;
+        text-indent: 0;
+        font-size: 2.54829vmax; }
+        @media (min-width: 640px) {
+          #content .portfolio-display div .portfolio-description > p:first-child {
+            font-size: 2.03863vmax; } }
     #content .portfolio-display div img {
       width: 100%; }
     #content .portfolio-display div button {
       position: absolute;
-      top: 35%;
+      top: 80px;
       left: 50%;
       margin-left: -75px;
       width: 150px;
@@ -900,7 +905,5 @@ footer ul {
   width: 90%;
   max-width: 900px;
   margin: 0.5em auto; }
-
-/*# sourceMappingURL=maintemplate2.css.map */
 
 /*# sourceMappingURL=maintemplate2.css.map */
