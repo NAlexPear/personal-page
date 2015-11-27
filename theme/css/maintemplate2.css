@@ -473,10 +473,6 @@ a {
 
 .navreact a, .navreact span {
   color: #A8A8A8;
-  -o-transition: .5s color;
-  -ms-transition: .5s color;
-  -moz-transition: .5s color;
-  -webkit-transition: .5s color;
   transition: .5s color; }
   .navreact a :hover, .navreact span :hover {
     color: #51504f; }
@@ -745,20 +741,30 @@ a {
         margin-right: 0.5em; }
         #content .resume-info .resume-drop ul li span::before {
           display: inline-block;
+          transition: -webkit-transform 0.2s;
           transition: transform 0.2s;
-          transform: rotate(135deg); }
+          transition: transform 0.2s, -webkit-transform 0.2s;
+          -webkit-transform: rotate(135deg);
+                  transform: rotate(135deg); }
       #content .resume-info .resume-drop ul li:hover {
         color: #51504f; }
       #content .resume-info .resume-drop ul li.active {
         color: #51504f; }
         #content .resume-info .resume-drop ul li.active span::before {
+          transition: -webkit-transform 0.3s;
           transition: transform 0.3s;
-          transform: rotate(225deg); }
+          transition: transform 0.3s, -webkit-transform 0.3s;
+          -webkit-transform: rotate(225deg);
+                  transform: rotate(225deg); }
 
 #content .portfolio-display {
   height: auto;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
-  flex-flow: row wrap;
+  -webkit-flex-flow: row wrap;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
   margin-bottom: 1em; }
   #content .portfolio-display .subtitle {
     text-indent: 0;
@@ -894,5 +900,7 @@ footer ul {
   width: 90%;
   max-width: 900px;
   margin: 0.5em auto; }
+
+/*# sourceMappingURL=maintemplate2.css.map */
 
 /*# sourceMappingURL=maintemplate2.css.map */
