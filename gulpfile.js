@@ -45,13 +45,13 @@ gulp.task('image-min', function () {
 });
 
 //css auto-prefixer for compatibility
-gulp.task('autoprefixer', function(){
-  gulp.src('theme/css/*.css')
-    .pipe(sourcemaps.init())
-    .pipe(postcss([ autoprefixer({ browsers: ['last 2 versions'] }) ]))
-    .pipe(sourcemaps.write('.'))
-    .pipe(gulp.dest('theme/css/'));
-});
+// gulp.task('autoprefixer', function(){
+//   gulp.src('theme/css/*.css')
+//     .pipe(sourcemaps.init())
+//     .pipe(postcss([ autoprefixer({ browsers: ['last 2 versions'] }) ]))
+//     .pipe(sourcemaps.write('.'))
+//     .pipe(gulp.dest('theme/css/'));
+// });
 
 //jekyll builder (through executables)
 gulp.task('jekyll', function (){
@@ -61,7 +61,7 @@ exec('jekyll build --source blog/ --destination public/blog/', function(err, std
 });
 
 //CSS and JS minifier, retaining async on javascript files, after all other files have been ported over
-gulp.task('async',['autoprefixer','bower-port', 'misc-port', 'downloads-port','image-min', 'other-image-port', 'jekyll'],function(){
+gulp.task('async',['bower-port', 'misc-port', 'downloads-port','image-min', 'other-image-port', 'jekyll'],function(){
   var assets = useref.assets();
   return gulp.src('index.html')
     .pipe(assets)
