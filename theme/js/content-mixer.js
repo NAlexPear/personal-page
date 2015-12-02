@@ -1,4 +1,4 @@
-$('#navbubbles').on('click','a', function(){
+$('.navbubbles, #menubar, .contact-target').not('.post-nav').on('click','a', function(){
   var class_section = $(this).attr('data-action');
   if(class_section==='blog-link'){
     return true;

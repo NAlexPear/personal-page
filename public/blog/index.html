@@ -2,14 +2,14 @@
 <html lang="en-us">
 
 <head>
-<meta charset="utf-8">
+  <meta charset="utf-8">
 <!-- Set the viewport width to device width for mobile -->
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
-<link rel="shortcut icon" href="../theme/images/favicon.ico" type="image/x-icon">
-<link rel="icon" href="../theme/images/favicon.ico" type="image/x-icon">
+<link rel="shortcut icon" href="/theme/images/favicon.ico" type="image/x-icon">
+<link rel="icon" href="/theme/images/favicon.ico" type="image/x-icon">
 <title>Alex Pearson</title>
 <!-- Included CSS Files, generated through Gulp -->
-<link rel="stylesheet" href="../theme/css/site.css">
+<link rel="stylesheet" href="/theme/css/site.css">
 <!--[if lt IE 9]>
 		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
@@ -17,66 +17,157 @@
 <link rel="canonical" href="http://alexpear.com">
 <link rel="shortlink" href="http://alexpear.com">
 
-<link href='https://fonts.googleapis.com/css?family=Lato:100,300,400' rel='stylesheet' type='text/css'>
-
 </head>
 
 <body>
-    <div style="background-color: #EEEEEE;">
+    <div>
     <div class="topstuff">
-        <img src="../theme/images/alexsmilin3.jpg" width="100%" height="auto"></img>
-        <div class="splash">
-            <a href="http://alexpear.com">
-                <div id="splashname">
-                    ALEX PEARSON
-                </div>
-                <div id="splashtag">
-                    educator / entrepreneur / web developer
-                </div>
-            </a>
+  <picture>
+    <source srcset="/theme/images/alexsmilin3_hi_res.jpg" media='(min-width:1280px)'>
+    <img srcset="/theme/images/alexsmilin3.jpg" width="100%" height="auto" alt="Alex's Home Page"></img>
+  </picture>
+    <div class="splash">
+        <a href=".">
+            <div id="splashname">
+                ALEX PEARSON
+            </div>
+            <div id="splashtag">
+                educator / entrepreneur / web developer
+            </div>
+        </a>
+        <div class="desktop-only">
+          <ul>
+            <li><a href="https://github.com/nalexpear" title="github"><span class="ti ti-github"></span></a></li>
+            <li><a href="https://www.facebook.com/alex.pearson.568" title="facebook"><span class="ti ti-facebook"></span></a></li>
+            <li><a href="https://www.linkedin.com/pub/alex-pearson/a4/492/a16" title="linkedin"><span class="ti ti-linkedin"></span></a></li>
+            <li><a href="https://twitter.com/NAlexPearson" title="twitter"><span class="ti ti-twitter"></span></a></li>
+            <li class="contact-target"><a href="#" data-action="contact-form" title="email" alt="email Alex"><span class="ti ti-email"></span></a></li>
+          </ul>
         </div>
     </div>
-        <ul id="navbubbles">
-            <li id="about">
-                <div class="navreact">
-                    <a href="http://www.alexpear.com/about#content" title="About Alex" alt="About Alex">
-                        <div>about me</div>
-                    </a>
-                </div>
-            </li>
-            <li id="resume">
-                <div class="navreact">
-                    <a href="http://alexpear.com/resume#content" title="Alex's Resume" alt="Alex's Resume">
-                        <div>résumé</div>
-                    </a>
-                </div>
-            </li>
-            <li id="blog">
-                <div class="navreact">
-                    <a href="#content" title="Alex's Blog" alt="Alex's Blog">
-                        <div style="color:#51504f;">blog</div>
-                    </a>
-                </div>
-            </li>
-            <li id="blog">
-                <div class="navreact">
-                    <a href="http://alexpear.com/portfolio" title="Alex's Twitter Feed" alt="Alex's Tweets">
-                        <div>portfolio</div>
-                    </a>
-                </div>
-            </li>
-        </ul>
+</div>
+<div class="desktop-only">
+  <ul class="navbubbles">
+      <li id="about">
+          <div class="navreact">
+              <a href="#" data-action="about-me" title="About Alex" alt="About Alex">
+                  <div>about me</div>
+              </a>
+          </div>
+      </li>
+      <li id="resume">
+          <div class="navreact">
+              <a href="#" data-action="resume-info" title="Alex's Resume" alt="Alex's Resume">
+                  <div>résumé</div>
+              </a>
+          </div>
+      </li>
+      <li id="blog">
+          <div class="navreact">
+              <a href="#" data-action="blogroll" title="Alex's Blog" alt="Alex's Blog">
+                  <div>blog</div>
+              </a>
+          </div>
+      </li>
+      <li id="portfolio">
+          <div class="navreact">
+              <a href="#" data-action="preview-portfolio" title="Alex's Portfolio" alt="Alex's Portfolio">
+                  <div>portfolio</div>
+              </a>
+          </div>
+      </li>
+      <li id="contact">
+        <div class="navreact">
+          <a href="#" data-action ="contact-form" title="Contact Alex" alt="Contact Alex">
+            <div>contact</div>
+          </a>
+        </div>
+      </li>
+  </ul>
+</div>
+<div class="mobile-only">
+  <ul class="navbubbles" id="mobile-nav">
+    <li>
+      <div class="navreact">
+        <span class="ti ti-menu"></span>
+      </div>
+    </li>
+    <li>
+      <div class="navreact">
+        <span class="ti ti-email"></span>
+      </div>
+    </li>
+  </ul>
+  <ul id="menubar" class="mobile-only">
+      <li>
+        <a href="#" data-action="about-me" title="About Alex" alt="About Alex">
+            <div>about me</div>
+        </a>
+      </li>
+      <li>
+        <a href="#" data-action="resume-info" title="Alex's Resume" alt="Alex's Resume">
+            <div>résumé</div>
+        </a>
+      </li>
+      <li>
+        <a href="#" title="Alex's Blog" alt="Alex's Blog">
+            <div>blog</div>
+        </a>
+      </li>
+      <li>
+        <a href="#" data-action="preview-portfolio" title="Alex's Twitter Feed" alt="Alex's Tweets">
+            <div>portfolio</div>
+        </a>
+      </li>
+  </ul>
+</div>
+<div class="hidden" id="mobile-contact-overlay">
+  <div class="mobile-only contact-form">
+    <form action="https://formspree.io/alex@alexpear.com" method="POST">
+      <span class="ti ti-close"></span>
+      <h3>Contact Alex</h3>
+      <br>
+      <label for="firstname">First Name:</label><br>
+      <input type="text" name="firstname" placeholder="first name" required><br>
+      <label for="lastname">Last Name:</label><br>
+      <input type="text" name="lastname" placeholder="last name" required><br>
+      <label for="sender">Your Email Address:</label><br>
+      <input type="email" name="sender" placeholder="email@youraddress.com" required>
+      <label for="subject">Message Subject:</label><br>
+      <input type="text" name="subject" value="new message for Alex"><br>
+      <label for="message">Message:</label><br>
+      <textarea name="message" placeholder="Write your message here"></textarea><br>
+      <div>
+        <input type="submit" value="send message">
+        <button type="button" name="cancel" class="cancel">cancel</button>
+      </div>
+    </form>
+    <br>
+    <div class="hidden">
+      <h4>Thanks for the message!</h4>
+      <p>I'll respond as soon as I can. Don't forget to also follow me on social media:</p>
+      <ul>
+        <li><a href="https://github.com/nalexpear" title="github"><span class="ti ti-github"></span></a></li>
+        <li><a href="https://www.facebook.com/alex.pearson.568" title="facebook"><span class="ti ti-facebook"></span></a></li>
+        <li><a href="https://www.linkedin.com/pub/alex-pearson/a4/492/a16" title="linkedin"><span class="ti ti-linkedin"></span></a></li>
+        <li><a href="https://twitter.com/NAlexPearson" title="twitter"><span class="ti ti-twitter"></span></a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
     </div>
     <div id="content-wrapper">
         <div id="content">
-            <ul id="resume-links">
-                <li><a href="http://alexpear.com/blog/archive">archive</a></li>
-                <li><a href="http://alexpear.com/blog/feed.xml">feed</a></li>
-            </ul>
-            
+            <div class="blogroll">
+    <ul id="resume-links">
+        <li><a href="http://alexpear.com/blog/archive">archive</a></li>
+        <li><a href="http://alexpear.com/blog/feed.xml">feed</a></li>
+    </ul>
+
   <br>
-    <a href="/blog/2015/06/30/workflow-1-the-past/"><p style="font-size:2.5vw; font-weight:400;margin-bottom:0; line-height:100%;">Workflow pt. 1 - the Old Way</p></a>
-    <p style="font-size:1.5vw; color:#dadada;">30 June 2015</p>
+    <a href="/blog/2015/06/30/workflow-1-the-past/"><h4>Workflow pt. 1 - the Old Way</h4></a>
+    <p class="subtitle">30 June 2015</p>
     <p>
       Workflow pt. 1
 
@@ -89,8 +180,8 @@
     <br>
 
   <br>
-    <a href="/blog/2015/05/04/blog-tech-2/"><p style="font-size:2.5vw; font-weight:400;margin-bottom:0; line-height:100%;">Blog Tech 2</p></a>
-    <p style="font-size:1.5vw; color:#dadada;">04 May 2015</p>
+    <a href="/blog/2015/05/04/blog-tech-2/"><h4>Blog Tech 2</h4></a>
+    <p class="subtitle">04 May 2015</p>
     <p>
       Blog Tech pt. 2
 
@@ -103,8 +194,8 @@
     <br>
 
   <br>
-    <a href="/blog/2015/04/30/learn-to-be-useful/"><p style="font-size:2.5vw; font-weight:400;margin-bottom:0; line-height:100%;">Learn to be Useful</p></a>
-    <p style="font-size:1.5vw; color:#dadada;">30 April 2015</p>
+    <a href="/blog/2015/04/30/learn-to-be-useful/"><h4>Learn to be Useful</h4></a>
+    <p class="subtitle">30 April 2015</p>
     <p>
       Learn to be useful
 
@@ -117,8 +208,8 @@
     <br>
 
   <br>
-    <a href="/blog/2015/04/14/on-trust/"><p style="font-size:2.5vw; font-weight:400;margin-bottom:0; line-height:100%;">On Trust</p></a>
-    <p style="font-size:1.5vw; color:#dadada;">14 April 2015</p>
+    <a href="/blog/2015/04/14/on-trust/"><h4>On Trust</h4></a>
+    <p class="subtitle">14 April 2015</p>
     <p>
       On Trust
 
@@ -131,8 +222,8 @@ Building a machine that needs tuning, not driving
     <br>
 
   <br>
-    <a href="/blog/2015/03/15/mistakes-of-ambition/"><p style="font-size:2.5vw; font-weight:400;margin-bottom:0; line-height:100%;">Mistakes of Ambition</p></a>
-    <p style="font-size:1.5vw; color:#dadada;">15 March 2015</p>
+    <a href="/blog/2015/03/15/mistakes-of-ambition/"><h4>Mistakes of Ambition</h4></a>
+    <p class="subtitle">15 March 2015</p>
     <p>
       Mistakes of Ambition vs Mistakes of Sloth
 
@@ -143,8 +234,8 @@ Building a machine that needs tuning, not driving
     <br>
 
   <br>
-    <a href="/blog/2015/02/16/barleycakes-and-water-and-weightlifting/"><p style="font-size:2.5vw; font-weight:400;margin-bottom:0; line-height:100%;">Barley Cakes and Water and Weightlifting</p></a>
-    <p style="font-size:1.5vw; color:#dadada;">16 February 2015</p>
+    <a href="/blog/2015/02/16/barleycakes-and-water-and-weightlifting/"><h4>Barley Cakes and Water and Weightlifting</h4></a>
+    <p class="subtitle">16 February 2015</p>
     <p>
       Barleycakes and Water and Weightlifting
 
@@ -157,8 +248,8 @@ The importance of temperament on success and survival
     <br>
 
   <br>
-    <a href="/blog/2015/01/29/specialization-is-for-insects/"><p style="font-size:2.5vw; font-weight:400;margin-bottom:0; line-height:100%;">Specialization is for Insects</p></a>
-    <p style="font-size:1.5vw; color:#dadada;">29 January 2015</p>
+    <a href="/blog/2015/01/29/specialization-is-for-insects/"><h4>Specialization is for Insects</h4></a>
+    <p class="subtitle">29 January 2015</p>
     <p>
       Specialization is for Insects
 
@@ -171,8 +262,8 @@ The importance of temperament on success and survival
     <br>
 
   <br>
-    <a href="/blog/2015/01/02/but-their-overhead-was-low/"><p style="font-size:2.5vw; font-weight:400;margin-bottom:0; line-height:100%;">...But Their Overhead Was Low</p></a>
-    <p style="font-size:1.5vw; color:#dadada;">02 January 2015</p>
+    <a href="/blog/2015/01/02/but-their-overhead-was-low/"><h4>...But Their Overhead Was Low</h4></a>
+    <p class="subtitle">02 January 2015</p>
     <p>
       ...But Their Overhead Was Low
 
@@ -183,8 +274,8 @@ The importance of temperament on success and survival
     <br>
 
   <br>
-    <a href="/blog/2014/12/03/blog-tech-1/"><p style="font-size:2.5vw; font-weight:400;margin-bottom:0; line-height:100%;">Blog Tech 1</p></a>
-    <p style="font-size:1.5vw; color:#dadada;">03 December 2014</p>
+    <a href="/blog/2014/12/03/blog-tech-1/"><h4>Blog Tech 1</h4></a>
+    <p class="subtitle">03 December 2014</p>
     <p>
       Blog Tech pt.1
 
@@ -197,8 +288,8 @@ The importance of temperament on success and survival
     <br>
 
   <br>
-    <a href="/blog/2014/11/12/starting-from-scratch/"><p style="font-size:2.5vw; font-weight:400;margin-bottom:0; line-height:100%;">Starting from Scratch</p></a>
-    <p style="font-size:1.5vw; color:#dadada;">12 November 2014</p>
+    <a href="/blog/2014/11/12/starting-from-scratch/"><h4>Starting from Scratch</h4></a>
+    <p class="subtitle">12 November 2014</p>
     <p>
       Getting Started
 
@@ -210,19 +301,149 @@ The importance of temperament on success and survival
     <br>
     <br>
 
+</div>
+
+            
+<div class="about-me hidden">
+    <h4>My name is Alex, and I build things.</h4>
+    <br>
+    <br>
+    <p>Maybe not kitchen tables or log cabins (not yet, anyway), but you'll always find me building <i>something</i>.
+    Those somethings that I'm most proud of have been made-from-scratch businesses or programs. I take pride in creating organizations that are useful and meaningful (more on what that means later in <a href="http://alexpear.com/blog">my blog</a>).
+    </p>
+    <br>
+    <p>
+    The desire to build things has taken me a lot of places. The need to build has lead me to create teaching opportunities for musicians and artists, or help to turn a student-run nightclub into a successful event space, or create a place for unlikely athletes to meet their full potential, or build a program that helps aspiring programmers learn the skills that they need to change careers into full-time software development.
+    </p>
+    <br>
+    <p>
+    That's the most important thing to know about me. Some other less important information:</p>
+    </p>
+    <ul>
+        <li>Born in Dallas, TX, raised in Cedar Rapids, IA, educated in Northfield, MN, former resident and life-long fan of Nashville, TN.</li>
+        <li>I currently live in St. Louis with my lady love and a dog that looks like a mix of Yoda, a Wampa, and a Siberian Husky.</li>
+        <li>I was the founding Director of Curriculum, Instruction, and Outreach at <a href="http://claimacademystl.com">Claim Academy</a>, St. Louis's first developer bootcamp.</li>
+        <li>Currently, I work as a freelance web developer and technology education consultant.</li>
+        <li>I enjoy proper grammar and punctuation, and I'm a strong advocate for the Oxford comma.</li>
+        <li>To hire me, <a href='mailto:alex@alexpear.com'>send me a message</a></li>
+    </ul>
+    <p>
+    Thanks once again for visiting. If you're here to marvel at my professional accomplishments, you can visit the résumé link above.
+    If you'd like to see get a more personal view of my thoughts on building things, breaking things, or just being, check out <a href="http://alexpear.com/blog">my blog</a>.
+    </p>
+    <br>
+    <p>
+    I can always be contacted casually through social media, but you can also email me directly at alex@alexpear.com.
+    <br>
+    <br>
+    Cheers,<br>
+    -Alex
+    </p>
+
+</div>
+<div class="resume-info hidden">
+  <p> For a more complete view of my professional history, checkout out my LinkedInprofile or download my full résumé as a .pdf.</p>
+  <ul class="resume-links">
+      <li><span class="ti ti-linkedin"></span><br><a href="https://www.linkedin.com/in/nalexpearson">View my full LinkedIn profile</a></li>
+      <li><span class="ti ti-file"></span><br><a href="../download/AP2014ResumeNov.pdf">Download a .pdf of my full résumé</a></li>
+  </ul>
+  <br>
+  <br>
+  <div>
+    <div class="resume-drop">
+      <p class="resume-title">Click on a position to learn more</p>
+      <ul>
+        <li><span class="ti ti-location-arrow"></span>JavaScript Instructor, Savvy Coders
+          <div class="resume-drop-blurb">
+            <p>In partnership with renowned bootcamp Hack Reactor, built an intro to programming in HTML, CSS, and JavaScript. Classes launched in Nashville in late 2015. For more details, see the <a href="https://savvycoders.com">Savvy Coders website</a></p>
+          </div>
+        </li>
+        <li><span class="ti ti-location-arrow"></span>Freelance Web Developer
+          <div class="resume-drop-blurb">
+            <p>Custom websites built using HTML, CSS, and JavaScript, optimized for the modern web.</p>
+          </div>
+        </li>
+        <li><span class="ti ti-location-arrow"></span>Technology Education Consultant
+          <div class="resume-drop-blurb">
+            <p>Helped bootcamps across the country revitalize their online and in-person curriculum as a consultant.</p>
+          </div>
+        </li>
+        <li><span class="ti ti-location-arrow"></span>Director of Curriculum, Claim Academy
+          <div class="resume-drop-blurb">
+            <p>Built St. Louis's first developer bootcamp from the ground up. First class began 4 months after being hired, first Java developers graduated 7 months after joining the team, and all graduates connected to St. Louis technology jobs.</p>
+          </div>
+        </li>
+        <li><span class="ti ti-location-arrow"></span>Owner, Shackle Island CrossFit &amp; Weightlifting
+          <div class="resume-drop-blurb">
+            <p>Built Shackle Island CrossFit into Nashville's largest CrossFit and Weightlifting gym. SICF is still going strong under the management of former clients and athletes turned coaches.</p>
+          </div>
+        </li>
+        <li><span class="ti ti-location-arrow"></span>Public Relations Officer, Lion's Pause Nighclub
+          <div class="resume-drop-blurb">
+            <p>Promoted and managed events at St. Olaf College's student-run nightclub, including the largest single event in Lion's Pause history.</p>
+          </div>
+        </li>
+        <li><span class="ti ti-location-arrow"></span>President, DreamBox
+          <div class="resume-drop-blurb">
+            <p>After winning an Estenson Entrepreurial Grant, helped St. Olaf college students teach music and art to k-12 residents of Northfield, MN.</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="preview-portfolio hidden"></div>
+<div class="desktop-only contact-form hidden">
+  <form action="https://formspree.io/alex@alexpear.com" method="POST">
+    <span class="ti ti-close mobile-only"></span>
+    <h3>Contact Alex</h3>
+    <br>
+    <label for="firstname">First Name:</label><br>
+    <input type="text" name="firstname" placeholder="first name" required><br>
+    <label for="lastname">Last Name:</label><br>
+    <input type="text" name="lastname" placeholder="last name" required><br>
+    <label for="sender">Your Email Address:</label><br>
+    <input type="email" name="sender" placeholder="email@youraddress.com" required>
+    <label for="subject">Message Subject:</label><br>
+    <input type="text" name="subject" value="new message for Alex"><br>
+    <label for="message">Message:</label><br>
+    <textarea name="message" placeholder="Write your message here"></textarea><br>
+    <div>
+      <input type="submit" value="send message">
+      <button type="button" name="cancel" class="cancel">cancel</button>
+    </div>
+  </form>
+  <br>
+  <div class="hidden">
+    <h4>Thanks for the message!</h4>
+    <p>I'll respond as soon as I can. Don't forget to also follow me on social media:</p>
+    <ul>
+      <li><a href="https://github.com/nalexpear" title="github"><span class="ti ti-github"></span></a></li>
+      <li><a href="https://www.facebook.com/alex.pearson.568" title="facebook"><span class="ti ti-facebook"></span></a></li>
+      <li><a href="https://www.linkedin.com/pub/alex-pearson/a4/492/a16" title="linkedin"><span class="ti ti-linkedin"></span></a></li>
+      <li><a href="https://twitter.com/NAlexPearson" title="twitter"><span class="ti ti-twitter"></span></a></li>
+    </ul>
+  </div>
+</div>
 
         </div>
     </div>
-    <script type="text/javascript" src="../theme/js/site.js"></script>
-</body>
+
+    
 <footer>
     <div class="socialmedia">
-        <ul id="socialmediabuttons">
-            <li id="fb"><a href="https://www.facebook.com/alex.pearson.568" title="facebook">f</a></li>
-            <li id="in"><a href="https://www.linkedin.com/pub/alex-pearson/a4/492/a16" title="linkedin">in</a></li>
-            <li id="twit"><a href="https://twitter.com/NAlexPearson" title="twitter"><img src="theme/images/twitterwhite.png" width="80%"></a></li>
-
+        <ul>
+          <li><a href="https://github.com/nalexpear" title="github"><span class="ti ti-github"></span></a></li>
+          <li><a href="https://www.facebook.com/alex.pearson.568" title="facebook"><span class="ti ti-facebook"></span></a></li>
+          <li><a href="https://www.linkedin.com/pub/alex-pearson/a4/492/a16" title="linkedin"><span class="ti ti-linkedin"></span></a></li>
+          <li><a href="https://twitter.com/NAlexPearson" title="twitter"><span class="ti ti-twitter"></span></a></li>
+          <li class="contact-target"><a href="#" data-action="contact-form" title="email" alt="email Alex"><span class="ti ti-email"></span></a></li>
         </ul>
     </div>
     <div class="copyright">©2014 Alex Pearson</div>
 </footer>
+
+    <script type="text/javascript" src="/theme/js/site.js"></script>
+
+</body>
+</html>

@@ -1,150 +1,96 @@
-@import "syntax";
+@import 'syntax';
+@import 'basevars';
+@import 'reset';
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote,
-a, abbr, acronym, address, big, cite,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-  -webkit-font-smoothing: antialised;
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
-	display: block;
-}
-body {
-	line-height: 1;
-}
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
-}
-
-// ******************
-// CUSTOM SASS BELOW
-// ******************
-
+// HTML element styles
 body{
-    background-color: rgb(255,255,255);
+    background-color: $color-base;
+    &>div:first-child{
+      background-color: $color-head;
+    }
 }
-
+h1,h2,h3,h4{
+  font-family: 'Lato', 'Helvetica', 'sans-serif';
+  line-height: 1.2;
+}
+h1{
+  font-size: $h1 + 2;
+  @media (min-width: 640px) {
+    font-size: $h1;
+  }
+}
 h2{
-    font-family: 'Lato', 'Helvetica', 'sans-serif';
-    font-size:3vw;
-    font-weight: 400;
-    line-height: 50%;
+  font-size: ($h1 + 2)*0.87;
+  @media (min-width: 640px) {
+    font-size:$h2;
+  }
+  font-weight: 400;
+  color: $color-mid;
+}
+h3{
+  text-align: center;
+  color: $color-accent;
+  font-size: (($h1 + 2)*0.87)*0.87;
+  @media (min-width: 640px) {
+    font-size: $h3;
+  }
 }
 h4{
-    font-family: 'Lato', 'Helvetica', 'sans-serif';
-    font-weight: 400;
+  font-size: ((($h1 + 2)*0.87)*0.87)*0.65;
+  @media (min-width: 640px) {
+    font-size: $h4;
+  }
+  color: $color-accent;
+  font-weight: 400;
 }
 
 p, ul, ol {
     font-size: 4vw;
-		line-height: 1.7;
-    color: rgb(155,155,155);
+		line-height: 1.5;
+    color: $color-mid;
 }
 
 a {
     text-decoration: none;
-    color: rgba(100,100,100,0.7);
+    color: $color-mid;
     &:hover {
-        color: rgba(100,100,100,1.0);
+        color: $color-mid-dark;
     }
 }
 
+//header and splash photo style
 .topstuff{
-		background-color: #EFEFEF;
+		background-color: $color-mid-light;
     width: 100%;
 }
 
-.splash {
+.splash{
     width: 50%;
     position: absolute;
     margin-top: -30%;
-}
-
-#content-wrapper{
-    width:90%;
-    max-width: 1200px;
-    margin-left:auto;
-    margin-right:auto;
-    margin-top: 5%;
-    border: 0.3vw dashed #dadada;
-    border-radius: 15px;
-}
-
-#content{
-    padding:2.5vmax;
-    h1,p,ul{font-family:'Lato', 'Helvetica', 'Sans-serif';}
-
-    h1{font-weight: 400;}
-    p{
-        font-size:2vw;
-        font-weight:300;
+    @media (min-width: 640px){
+        margin-top: -32%;
     }
-    ul,ol{
-        font-size:2vw;
-        padding-left: 4vw;
-				padding-top: 3vh;
-				padding-bottom: 3vh;
-    }
-    a{
-        border-bottom:0.2vw dotted;
-        :hover{
-            border-bottom:0.2vw solid;
+    &>div>ul{
+      display: table;
+      table-layout: fixed;
+      width: 50%;
+      margin-left: auto;
+      margin-right: auto;
+      li{
+        margin-right: 1em;
+        display: table-cell;
+        a{
+          color: $color-mid-light;
+          :hover{
+            color: $color-mid;
+          }
         }
-    }
-    code{
-        font-size: 2vw;
-    }
-}
-
-.signature{
-    width:40%;
-    height:auto;
-    margin-left:auto;
-    margin-right:auto;
-    margin-top:-2%;
-    img{
-        margin-left:27%;
-        width:40%;
-        height:14vw;
-        margin-bottom:0;
-        opacity: 0.1;
-        border: 0.3vw solid #59556a;
-        border-radius:50%;
-    }
-    h1{
-        font-family: 'Shadows Into Light', 'cursive';
-        font-size: 7vw;
-        font-weight:300;
-        margin-left:29%;
-        margin-top:-23%;
-        padding-top:0;
-        color:#59556a;
+        span{
+          font-size: $h4;
+          font-weight: 100;
+        }
+      }
     }
 }
 
@@ -156,7 +102,7 @@ a {
     font-size:9vw;
     line-height:90%;
     padding-bottom: 0vw;
-    color: rgb(255,255,255);
+    color: $color-base;
 }
 
 #splashtag{
@@ -164,60 +110,454 @@ a {
     font-family:'Lato',"Sans-Serif";
     font-size:4vw;
     font-weight: 100;
-    color: rgb(255,255,255);
+    color: $color-base;
     text-align: center;
 }
 
-#navbubbles{
+//navigation bar styles
+.navbubbles{
     list-style-type:none;
     display:table;
     table-layout:fixed;
     width: 100%;
-    padding-bottom: 2vw;
+    max-width: 1500px;
+    margin: 0 auto;
+    padding-bottom: 5px;
     padding-left: 0px;
 
     li{
-        display: table-cell;
-        text-align: center;
-        font-family: 'Lato', "Sans-Serif";
-        font-size: 4vw;
-        font-weight: 300;
-        color:#ffffff;;
+      vertical-align: middle;
+      display: table-cell;
+      text-align: center;
+      font-family: 'Lato', "Sans-Serif";
+      font-size: 2.75vw;
+      font-weight: 300;
+      color:$color-base;
     }
 }
 
-
-
 .navreact {
-  a{
-     color:#A8A8A8;
+  a, span{
+     color:$color-mid;
     -o-transition:.5s color;
     -ms-transition:.5s color;
     -moz-transition:.5s color;
     -webkit-transition:.5s color;
      transition: .5s color;
      :hover{
-         color: #51504f;
+         color: $color-mid-dark;
      }
   }
 }
 
-#resume-links{
+#mobile-nav span{
+  font-size: 8vmin;
+  font-weight: 100;
+  padding: 0.75em;
+}
+
+#menubar {
+  position: fixed;
+  left: -400px;
+  padding-top: 2.5em;
+  font-family: 'Lato', sans-serif;
+  font-weight: 100;
+  font-size: 2.2em;
+  width: 300px;
+  height: 100vh;
+  background-color: $color-base;
+  opacity: 0.9;
+  box-shadow: 0 0 15px #dadada;
+  li{
+    opacity: 1;
+    padding-left: 1em;
+  }
+}
+
+//CONTACT FORMS
+//mobile overlay version
+.contact-form{
+  z-index: 100;
+  box-sizing: border-box;
+  position: absolute;
+  overflow-y: auto;
+  top: 3vh;
+  left: 3.5vw;
+  height: auto;
+  width: 90vw;
+  max-width:900px;
+  background-color: $color-base;
+  opacity: 0.95;
+  box-shadow: 0 0 25px #adadad;
+  border-radius: 2em;
+  padding: 2em;
+  span{
+    margin-left: 70vw;
+    font-size: $p*1.5;
+    @media (min-width: 640px){
+      font-size: $p;
+    }
+  }
+  form{
+    label{
+      font-family: 'Lato', sans-serif;
+      font-weight: 400;
+      font-size: $p*1.5;
+      @media (min-width: 640px){
+        font-size: $p;
+      }
+      margin-bottom:0.5em
+    }
+    input{
+      margin-bottom: 1.5em;
+      width: 90%;
+    }
+    input[type=text], input[type=email]{
+      border: none;
+      border-bottom: 1px solid #dadada;
+      font-family: 'Lato', sans-serif;
+      font-weight: 300;
+      font-size: $p*1.5;
+      @media (min-width: 640px){
+        font-size: $p;
+        &:focus{
+          font-size: $p;
+        }
+      }
+      &:focus{
+        font-size: $p*3;
+      }
+    }
+    textarea{
+      border: 1px solid #dadada;
+      width: 100%;
+      height: 150px;
+      margin: 1em 0;
+      padding: 0.5em;
+      font-family: 'Lato',sans-serif;
+      font-size: $p;
+      @media (min-width: 640px){
+        font-size: $p*0.85;
+      }
+    }
+    div{
+      width: 250px;
+      @media (max-width: 640px){width: 150px;}
+      margin: 1.5em auto;
+    }
+    input[type=submit], button{
+      width: 250px;
+      @media (max-width: 640px){width: 150px;}
+      font-size: $p;
+      @media (min-width: 640px){
+        font-size: $p*0.8;
+      }
+      border: 3px solid #dadada;
+      border-radius: 1em;
+      background-color: $color-base;
+      color: $color-mid-dark;
+      padding: 0.5em;
+      :active{
+        background-color: $color-mid-light;
+      }
+    }
+  }
+  ul{
+    display: table;
+    table-layout: fixed;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    li{
+      opacity: 1;
+      margin-right: 1em;
+      display: table-cell;
+      a{
+        color: $color-mid;
+      }
+      span{
+        font-size: $p*1.5;
+        font-weight: 100;
+      }
+    }
+  }
+}
+//desktop-specific contact form overrides
+.desktop-only.contact-form{
+  position: relative;
+  border-radius: 0;
+  box-shadow: none;
+  left: 0;
+  top: 0;
+  width: 80vw;
+  input[type=submit], button {
+    cursor: pointer;
+    &:hover{
+      border: 3px solid $color-mid;
+      background-color: $color-mid-light;
+    }
+    &:active{
+      box-shadow: 0 0 15px $color-mid inset;
+    }
+  }
+}
+
+//main content styles
+#content-wrapper{
+    width:90%;
+    max-width: 960px;
+    margin-left:auto;
+    margin-right:auto;
+    margin-top: 5%;
+    border: 0.3vw dashed $color-main;
+    border-radius: 15px;
+}
+
+#content{
+    padding:2.5vmax;
+    h1,p,ul,ol{font-family:'Lato', 'Helvetica', 'Sans-serif';}
+
+    h1{font-weight: 400;}
+    h2{text-align: left;}
+    h4{
+      text-align:center;
+      font-weight: 400;
+      color: $color-accent;
+    }
+    p{
+        line-height: 1.4;
+        text-indent: 5vw;
+        font-size: $p*1.5;
+        @media (min-width: 640px) {
+          font-size:$p;
+        }
+        font-weight:300;
+    }
+    ul,ol{
+      @media (min-width: 640px) {
+        font-size:$p;
+      }
+      font-weight: 300;
+      padding-left: 4vw;
+			padding-top: 3vh;
+			padding-bottom: 3vh;
+    }
+    a{
+      border-bottom:0.2vw dotted;
+      :hover{
+          border-bottom:0.2vw solid;
+      }
+    }
+    pre {
+      width: 90%;
+      max-width:900px;
+      border: 2px solid $color-mid;
+      overflow-x: scroll;
+      padding: 0.5em;
+
+      code{
+      margin: 1em;
+      font-size: $p;
+      @media (min-width: 640px) {
+        font-size:$p*0.8;
+      }
+    }
+  }
+    hr{
+      width: 80%;
+      color: $color-mid-light;
+      margin: 1em auto;
+    }
+}
+  //landing page introduction
+.introduction{
+  p{
+    text-align: center;
+  }
+}
+#content .signature{
+    width:40%;
+    height:auto;
+    margin-left:auto;
+    margin-right:auto;
+    margin-top:-2%;
+    img{
+        margin-left:27%;
+        width:14vw;
+        height:14vw;
+        margin-bottom:0;
+        opacity: 0.1;
+        border: 0.3vw solid $color-accent;
+        border-radius:50%;
+    }
+    h1{
+        font-family: 'Shadows Into Light', 'cursive';
+        font-size: $h1;
+        font-weight:300;
+        margin-left:29%;
+        margin-top:-23%;
+        padding-top:0;
+        color:$color-accent;
+    }
+}
+  //resume styles
+#content .resume-links{
     list-style:none;
     display:table;
     table-layout: fixed;
     width: 80%;
     max-width:800px;
     height:auto;
-    margin-left:auto;
-    margin-right:auto;
     text-align:center;
+    padding: 0;
+    margin: 1em auto;
     li{
         font-size:3vw;
         display:table-cell;
     }
 }
 
+#content .resume-info{
+  &>p:first-child{
+    text-indent: 0;
+    text-align: center;
+  }
+  .resume-drop{
+    margin: 1em;
+    padding: 0.5em;
+    border-radius: 2em;
+    box-shadow: 0 0 20px #dadada;
+    .resume-title{
+      padding-top: 0.5em;
+      text-align: center;
+      text-indent: 0;
+      color: $color-accent;
+      font-weight: 400;
+      font-size: $h4;
+    }
+    .resume-drop-blurb{
+      width: 80%;
+      padding: 0.5em;
+      text-align: left;
+      display: none;
+      p{
+        text-indent: 0;
+        color: $color-mid-dark;
+        @media (max-width:640px) {
+          font-size: 1.2em;
+        }
+      }
+    }
+    ul{
+      list-style-type: none;
+      padding-right: 4vw;
+      li{
+        margin-bottom: 0.75em;
+        cursor: pointer;
+        color: $color-mid;
+        span{
+          margin-right: 0.5em;
+          &::before{
+            display: inline-block;
+            transition: transform 0.2s;
+            transform: rotate(135deg);
+          }
+        }
+        &:hover, {
+          color: $color-mid-dark;
+        }
+        &.active {
+          color: $color-mid-dark;
+          span::before{
+            transition: transform 0.3s;
+            transform: rotate(225deg);
+          }
+        }
+      }
+    }
+  }
+}
+
+  //portfolio previews and github links
+#content .portfolio-display{
+  height: auto;
+  display: flex;
+  flex-flow: row wrap;
+  margin-bottom: 1em;
+  transition: all 0.8s ease;
+  .subtitle{
+    text-indent: 0;
+    text-align: center;
+  }
+  div{
+    width: 220px;
+    height: auto;
+    margin: auto;
+    padding: 0.5em;
+    cursor: pointer;
+    vertical-align: bottom;
+    position: relative;
+    transition: opacity 0.3s;
+    .portfolio-description{
+      width: 90%;
+      display: none;
+      &>p:first-child{
+        text-align: center;
+        text-indent: 0;
+        font-size: $p*1.5;
+        @media (min-width: 640px) {
+          font-size:$p*1.2;
+        }
+      }
+    }
+    img{
+      width:100%;
+    }
+    button{
+      position: absolute;
+      top: 80px;
+      left: 50%;
+      margin-left: -75px;
+      width: 150px;
+      padding: 0.25em;
+      background-color: transparent;
+      border: none;
+      color: $color-mid;
+      font-size: 1.4em;
+      font-family: 'Lato', sans-serif;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    &:hover{
+      img {
+        transition: opacity 0.3s;
+        opacity: 0.20;
+      }
+      button{
+        opacity: 1;
+      }
+    }
+  }
+}
+
+#gh-projects{
+  width: 80%;
+  margin: 2em auto;
+  ul{
+    list-style-type: none;
+    li{
+      margin-bottom: 0.75em;
+    }
+  }
+  p{
+    text-indent: 0;
+  }
+  span{
+    font-weight: 400;
+  }
+}
+
+//footer links
 .socialmedia{
     margin-top: 10%;
 }
@@ -228,30 +568,37 @@ footer {
     margin: 0 auto;
     overflow: hidden;
     padding: 0;
-    width: 50%;
-    min-width:200px;
-    max-width:350px;
+    width: 70%;
+    min-width:300px;
+    max-width:550px;
     display: table;
     table-layout:fixed;
     li {
-      display: table-cell; font-family: lato, "sans-serif"; font-size: 2.2em; font-weight: bold;
-      :last-child {margin-right: 0; }
-      a {
-        background: #DADADA; display:block; color: #fff; overflow: hidden; text-decoration: none; -webkit-transition: all .3s ease; width: 48px; height: 48px;margin-left:auto;margin-right:auto;
-        :hover, :focus, :active{background: #51504f; color: #fff;}
+      text-align: center;
+      display: table-cell;
+      font-family: 'lato', "sans-serif";
+      font-size: $h4;
+      @media (min-width: 640px){
+      font-size: $h3;
       }
+      font-weight: 400;
+      padding:0;
+      vertical-align: middle;
+      margin-right: 1em;
+      :last-child {
+        margin-right: 0;
+      }
+      a {
+        color: $color-mid;
+        text-decoration: none;
+        -webkit-transition: all .3s ease;
 
+        :hover, :focus, :active{
+          color: $color-mid-dark;
+        }
+      }
     }
   }
-}
-
-#socialmediabuttons {
-    text-align: center;
-    /*direction:ltr;*/
-}
-
-#in{
-    font-weight: bolder;
 }
 
 .copyright {
@@ -263,6 +610,66 @@ footer {
     opacity: 0.4;
 }
 
-.hidden{
-	display: none;
+//blog pages
+#content {
+  .blogroll{
+    p{
+      text-indent: 0;
+    }
+    a{
+      opacity: 0.8;
+      text-decoration: none;
+      border-bottom: none;
+      &>h4{
+        opacity: 1;
+        text-align: left;
+        border-bottom: none;
+        &:hover{
+          border-bottom: none;
+        }
+      }
+      &:hover{
+        opacity: 1;
+        border-bottom: none;
+      }
+    }
+    .subtitle{
+      font-size: $p;
+      @media (min-width: 640px) {
+        font-size:$p*0.8;
+      }
+      color: $color-mid-light;
+    }
+  }
+  .blogpost{
+    p{
+      margin-bottom: 0.5em;
+    }
+    hr{
+      opacity: 0.5;
+    }
+    h2{
+      font-size: $h2*0.7;
+      text-align: center;
+      @media (min-width: 640px) {
+        font-size: $h2;
+        text-align: left;
+      }
+    }
+    h3 {
+      font-size: $h3*0.5;
+      text-align: center;
+      @media (min-width: 640px) {
+        font-size: $h3*0.8;
+        text-align: left;
+      }
+      margin-bottom: 1em;
+    }
+  }
+}
+
+#disqus_thread {
+  width: 90%;
+  max-width: 900px;
+  margin: 0.5em auto;
 }

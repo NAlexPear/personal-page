@@ -35,17 +35,19 @@ At this point I should back up a bit. Some of you might have seen GZip and thoug
 
 The reason you wouldn't is that it can be a bit of a pain to zip up every HTML, CSS, and JavaScript file that is served to the end user. My solution was two-pronged. First, we I needed to change some of the default settings on nearlyfreespeech's Apache server using a special file in the root directory called `.htaccess`. Inside that file, I have the following:
 
-```apache
+
+```
 RewriteEngine on
 RewriteCond %{HTTP:Accept-Encoding} gzip
 RewriteCond %{REQUEST_FILENAME}.gz -f
 RewriteRule ^(.*)$ $1.gz [L]
 ```
+
 It basically says, "If the browser accepts .gzip files, send them a .gzip, otherwise send them the regular ol' HTML, CSS, or JS file." Now it's just up to us to make sure that every text file has a .gz equivalent.
 
 To solve that problem, I used the solution given in [this post from LeMoDa](http://www.lemoda.net/mod_rewrite/gzip-static/index.html). I uploaded the following perl script to a document in the root directory of the optimized branch of my site:
 
-```perl
+{% highlight perl %}
 #!/usr/local/bin/perl
 use warnings;
 use strict;
@@ -89,8 +91,8 @@ sub age
     my @stat = stat $file;
     return $stat[9];
 }
+{% endhighlight %}
 
-```
 It might look intimidating, but it's pretty simple in practice. Running `perl [filename].pl` from the command-line will search through every file in your directory tree and create a GZipped version right next to the original file. From there, it's a matter of firing up SFTP from the console, putting in host and username information, and using `put -r [directory or file]` to upload the zipped and unzipped contents of a directory.
 
 All of this can easily be done within the Cloud9 workspace, too. The problem (besides the latter issues mentioned above) gets to be the tedium at times. `git checkout optimized` + `git merge master` + `perl compressor.pl` + `git add .` + `git commit -m "Commit message"` + `git push origin optimized` + `sftp [username]@[hostname]` + `put [filename]` + `put -r [directory name]` is a long operation for every single push. Add in a command-line [minifier and uglifier](https://developers.google.com/speed/docs/insights/MinifyResources?hl=en) before compression, and you've got quite the set of tasks to run before you can call the job done.

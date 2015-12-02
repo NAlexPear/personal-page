@@ -2,16 +2,14 @@
 <html lang="en-us">
 
 <head>
-<meta charset="utf-8">
+  <meta charset="utf-8">
 <!-- Set the viewport width to device width for mobile -->
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
-<link rel="shortcut icon" href="http://alexpear.com/blog/theme/images/favicon.ico" type="image/x-icon">
-<link rel="icon" href="http://alexpear.com/blog/theme/images/favicon.ico" type="image/x-icon">
+<link rel="shortcut icon" href="/theme/images/favicon.ico" type="image/x-icon">
+<link rel="icon" href="/theme/images/favicon.ico" type="image/x-icon">
 <title>Alex Pearson</title>
 <!-- Included CSS Files, generated through Gulp -->
-<link rel="stylesheet" href="../../../../../theme/css/site.css">
-
-<!-- IE Fix for HTML5 Tags -->
+<link rel="stylesheet" href="/theme/css/site.css">
 <!--[if lt IE 9]>
 		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
@@ -19,63 +17,125 @@
 <link rel="canonical" href="http://alexpear.com">
 <link rel="shortlink" href="http://alexpear.com">
 
-<link href='https://fonts.googleapis.com/css?family=Lato:100,300,400' rel='stylesheet' type='text/css'>
-
 </head>
 
 <body>
-    <div style="background-color: #EEEEEE;">
+    <div>
     <div class="topstuff">
-        <img src="http://alexpear.com/blog/theme/images/alexsmilin3.jpg" width="100%" height="auto"></img>
-        <div class="splash">
-            <a href="http://alexpear.com">
-                <div id="splashname">
-                    ALEX PEARSON
-                </div>
-                <div id="splashtag">
-                    educator / entrepreneur / web developer
-                </div>
-            </a>
+  <picture>
+    <source srcset="/theme/images/alexsmilin3_hi_res.jpg" media='(min-width:1280px)'>
+    <img srcset="/theme/images/alexsmilin3.jpg" width="100%" height="auto" alt="Alex's Home Page"></img>
+  </picture>
+    <div class="splash">
+        <a href="https://alexpear.com">
+            <div id="splashname">
+                ALEX PEARSON
+            </div>
+            <div id="splashtag">
+                educator / entrepreneur / web developer
+            </div>
+        </a>
+        <div class="desktop-only">
+          <ul>
+            <li><a href="https://github.com/nalexpear" title="github"><span class="ti ti-github"></span></a></li>
+            <li><a href="https://www.facebook.com/alex.pearson.568" title="facebook"><span class="ti ti-facebook"></span></a></li>
+            <li><a href="https://www.linkedin.com/pub/alex-pearson/a4/492/a16" title="linkedin"><span class="ti ti-linkedin"></span></a></li>
+            <li><a href="https://twitter.com/NAlexPearson" title="twitter"><span class="ti ti-twitter"></span></a></li>
+            <li class="contact-target"><a href="#" data-action="contact-form" title="email" alt="email Alex"><span class="ti ti-email"></span></a></li>
+          </ul>
         </div>
     </div>
-        <ul id="navbubbles">
-            <li id="about">
-                <div class="navreact">
-                    <a href="http://www.alexpear.com/about#content" title="About Alex" alt="About Alex">
-                        <div>about me</div>
-                    </a>
-                </div>
-            </li>
-            <li id="resume">
-                <div class="navreact">
-                    <a href="http://alexpear.com/resume#content" title="Alex's Resume" alt="Alex's Resume">
-                        <div>résumé</div>
-                    </a>
-                </div>
-            </li>
-            <li id="blog">
-                <div class="navreact">
-                    <a href="#content" title="Alex's Blog" alt="Alex's Blog">
-                        <div style="color:#51504f;">blog</div>
-                    </a>
-                </div>
-            </li>
-            <li id="blog">
-                <div class="navreact">
-                    <a href="http://alexpear.com/porfolio" title="Alex's Twitter Feed" alt="Alex's Tweets">
-                        <div>portfolio</div>
-                    </a>
-                </div>
-            </li>
-        </ul>
+</div>
+<div class="desktop-only">
+  <ul class="navbubbles post-nav">
+      <li id="about">
+        <div class="navreact">
+          <a href="//alexpear.com" alt="Back to Home Page">
+            <div>home</div>
+          </a>
+        </div>
+      </li>
+      <li id="blog">
+        <div class="navreact">
+          <a href="//alexpear.com/blog" title="Alex's Blog" alt="Alex's Blog">
+            <div>blog</div>
+          </a>
+        </div>
+      </li>
+      <li id="contact">
+        <div class="navreact">
+          <a href="#" data-action ="contact-form" title="Contact Alex" alt="Contact Alex">
+            <div>contact</div>
+          </a>
+        </div>
+      </li>
+  </ul>
+</div>
+<div class="mobile-only">
+  <ul class="navbubbles post-nav" id="mobile-nav">
+    <li>
+      <div class="navreact">
+        <span class="ti ti-menu"></span>
+      </div>
+    </li>
+    <li>
+      <div class="navreact">
+        <span class="ti ti-email"></span>
+      </div>
+    </li>
+  </ul>
+  <ul id="menubar" class="mobile-only">
+      <li>
+        <a href="//alexpear.com" title="About Alex" alt="About Alex">
+            <div>home</div>
+        </a>
+      </li>
+      <li>
+        <a href="//alexpear.com/blog" title="Alex's Blog" alt="Alex's Blog">
+            <div>blog</div>
+        </a>
+      </li>
+  </ul>
+</div>
+<div class="hidden" id="mobile-contact-overlay">
+  <div class="mobile-only contact-form">
+    <form action="https://formspree.io/alex@alexpear.com" method="POST">
+      <span class="ti ti-close"></span>
+      <h3>Contact Alex</h3>
+      <br>
+      <label for="firstname">First Name:</label><br>
+      <input type="text" name="firstname" placeholder="first name" required><br>
+      <label for="lastname">Last Name:</label><br>
+      <input type="text" name="lastname" placeholder="last name" required><br>
+      <label for="sender">Your Email Address:</label><br>
+      <input type="email" name="sender" placeholder="email@youraddress.com" required>
+      <label for="subject">Message Subject:</label><br>
+      <input type="text" name="subject" value="new message for Alex"><br>
+      <label for="message">Message:</label><br>
+      <textarea name="message" placeholder="Write your message here"></textarea><br>
+      <div>
+        <input type="submit" value="send message">
+        <button type="button" name="cancel" class="cancel">cancel</button>
+      </div>
+    </form>
+    <br>
+    <div class="hidden">
+      <h4>Thanks for the message!</h4>
+      <p>I'll respond as soon as I can. Don't forget to also follow me on social media:</p>
+      <ul>
+        <li><a href="https://github.com/nalexpear" title="github"><span class="ti ti-github"></span></a></li>
+        <li><a href="https://www.facebook.com/alex.pearson.568" title="facebook"><span class="ti ti-facebook"></span></a></li>
+        <li><a href="https://www.linkedin.com/pub/alex-pearson/a4/492/a16" title="linkedin"><span class="ti ti-linkedin"></span></a></li>
+        <li><a href="https://twitter.com/NAlexPearson" title="twitter"><span class="ti ti-twitter"></span></a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
     </div>
     <div id="content-wrapper">
         <div id="content">
-            <ul id="resume-links">
-                <li><a href="http://alexpear.com/blog/">back to preview page</a></li>
-                <li><a href="http://alexpear.com/blog/archive">archive</a></li>
-                <li><a href="http://alexpear.com/blog/feed.xml">feed</a></li>
-            </ul>
+          <div class="blogpost">
             <h2>Blog Tech pt. 2</h2>
 
 <h3>...on themes and layouts with Jekyll</h3>
@@ -88,102 +148,49 @@
 
 <p>With just a little bit of syntax help, though, Jekyll is much easier to customize at almost every level. To get started, all you need is an index.html file in the root of the blog directory. Here's mine:</p>
 
-<pre><code class="html">---
+<div class="highlight"><pre><code class="language-html" data-lang="html">---
 layout: preview
 ---
 
 {% for post in site.posts limit: 10 %}
-  &lt;br&gt;
-    &lt;a href="/blog{{ post.url }}"&gt;&lt;p&gt;{{ post.title }}&lt;/p&gt;&lt;/a&gt;
-    &lt;p&gt;{{ post.date | date_to_long_string }}&lt;/p&gt;
-    &lt;p&gt;
+  <span class="nt">&lt;br&gt;</span>
+    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"/blog{{ post.url }}"</span><span class="nt">&gt;&lt;p&gt;</span>{{ post.title }}<span class="nt">&lt;/p&gt;&lt;/a&gt;</span>
+    <span class="nt">&lt;p&gt;</span>{{ post.date | date_to_long_string }}<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;p&gt;</span>
       {{ post.excerpt | strip_html }}
-      &lt;br&gt;
-      &lt;a href="/blog{{ post.url }}"&gt; [read more...]&lt;/a&gt;
-    &lt;/p&gt;
-    &lt;br&gt;
-    &lt;br&gt;
-{% endfor %}
-</code></pre>
+      <span class="nt">&lt;br&gt;</span>
+      <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"/blog{{ post.url }}"</span><span class="nt">&gt;</span> [read more...]<span class="nt">&lt;/a&gt;</span>
+    <span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;br&gt;</span>
+    <span class="nt">&lt;br&gt;</span>
+{% endfor %}</code></pre></div>
+
 
 <p>Perhaps not your typical root file, but it makes a bit of sense with some explanation. First is the stuff at the head of the document, written in YAML ('Yet Another Markup Language') format of key-value pairs of data. This sort of markup is required at the head of every rendered document, and it helps Jekyll parse through lots of important data before it gets to the actual content. There can be data about base urls, authors, dates, scheduled publishing dates... a whole host of things. For this base file, though, we only need to call out the template that will apply.</p>
 
 <p>Layouts are called out by name in the YAML, and saved in a separate directory called <code>_layouts</code>. Remember, directories with an underscore in their name aren't rendered into the final site as their own directory, but are rather just used as mixins or resources for other parts of a template. I primarily use two different layouts: <code>preview</code> for the front page/index view, and <code>post</code> for individual posts. Here's what my layout file (<code>preview.html</code>) might look like:</p>
 
-<pre><code class="html">&lt;!DOCTYPE html&gt;
-&lt;html lang="en-us"&gt;
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">"en-us"</span><span class="nt">&gt;</span>
 
 {% include head.html %}
 
-&lt;body&gt;
-    &lt;div style="background-color: #EEEEEE;"&gt;
-    &lt;div class="topstuff"&gt;
-        &lt;img src="../theme/images/alexsmilin3.jpg" width="100%" height="auto"&gt;&lt;/img&gt;
-        &lt;div class="splash"&gt;
-            &lt;a href="http://alexpear.com"&gt;
-                &lt;div id="splashname"&gt;
-                    ALEX PEARSON
-                &lt;/div&gt;
-                &lt;div id="splashtag"&gt;
-                    educator / entrepreneur / web developer
-                &lt;/div&gt;
-            &lt;/a&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-        &lt;ul id="navbubbles"&gt;
-            &lt;li id="about"&gt;
-                &lt;div class="navreact"&gt;
-                    &lt;a href="http://www.alexpear.com/about#content" title="About Alex" alt="About Alex"&gt;
-                        &lt;div&gt;about me&lt;/div&gt;
-                    &lt;/a&gt;
-                &lt;/div&gt;
-            &lt;/li&gt;
-            &lt;li id="resume"&gt;
-                &lt;div class="navreact"&gt;
-                    &lt;a href="http://alexpear.com/resume#content" title="Alex's Resume" alt="Alex's Resume"&gt;
-                        &lt;div&gt;résumé&lt;/div&gt;
-                    &lt;/a&gt;
-                &lt;/div&gt;
-            &lt;/li&gt;
-            &lt;li id="blog"&gt;
-                &lt;div class="navreact"&gt;
-                    &lt;a href="#content" title="Alex's Blog" alt="Alex's Blog"&gt;
-                        &lt;div style="color:#51504f;"&gt;blog&lt;/div&gt;
-                    &lt;/a&gt;
-                &lt;/div&gt;
-            &lt;/li&gt;
-            &lt;li id="blog"&gt;
-                &lt;div class="navreact"&gt;
-                    &lt;a href="http://alexpear.com/portfolio" title="Alex's Twitter Feed" alt="Alex's Tweets"&gt;
-                        &lt;div&gt;portfolio&lt;/div&gt;
-                    &lt;/a&gt;
-                &lt;/div&gt;
-            &lt;/li&gt;
-        &lt;/ul&gt;
-    &lt;/div&gt;
-    &lt;div id="content-wrapper"&gt;
-        &lt;div id="content"&gt;
-            &lt;ul id="resume-links"&gt;
-                &lt;li&gt;&lt;a href="http://alexpear.com/blog/archive"&gt;archive&lt;/a&gt;&lt;/li&gt;
-                &lt;li&gt;&lt;a href="http://alexpear.com/blog/feed.xml"&gt;feed&lt;/a&gt;&lt;/li&gt;
-            &lt;/ul&gt;
+<span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">style=</span><span class="s">"background-color: #EEEEEE;"</span><span class="nt">&gt;</span>
+    {% include nav.html %}
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"content-wrapper"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"content"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;ul</span> <span class="na">id=</span><span class="s">"resume-links"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"http://alexpear.com/blog/archive"</span><span class="nt">&gt;</span>archive<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+                <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"http://alexpear.com/blog/feed.xml"</span><span class="nt">&gt;</span>feed<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+            <span class="nt">&lt;/ul&gt;</span>
             {{ content }}
-        &lt;/div&gt;
-    &lt;/div&gt;
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    {% include foot.html %}
+<span class="nt">&lt;/body&gt;</span></code></pre></div>
 
-&lt;/body&gt;
-&lt;footer&gt;
-    &lt;div class="socialmedia"&gt;
-        &lt;ul id="socialmediabuttons"&gt;
-            &lt;li id="fb"&gt;&lt;a href="https://www.facebook.com/alex.pearson.568" title="facebook"&gt;f&lt;/a&gt;&lt;/li&gt;
-            &lt;li id="in"&gt;&lt;a href="https://www.linkedin.com/pub/alex-pearson/a4/492/a16" title="linkedin"&gt;in&lt;/a&gt;&lt;/li&gt;
-            &lt;li id="twit"&gt;&lt;a href="https://twitter.com/NAlexPearson" title="twitter"&gt;&lt;img src="theme/images/twitterwhite.png" width="80%"&gt;&lt;/a&gt;&lt;/li&gt;
-
-        &lt;/ul&gt;
-    &lt;/div&gt;
-    &lt;div class="copyright"&gt;©2014 Alex Pearson&lt;/div&gt;
-&lt;/footer&gt;
-</code></pre>
 
 <p>Now we're starting to see something that looks like a real HTML document. These layouts are where the majority of your HTML will reside. You can also make these layouts even more abstract by saving chunks of HTML as mixins in an <code>_includes</code> directory. These files are included using the bracket-percentage notation of
  <code>{% include [file.ext] %}</code>. These are very useful for things like header content that you know will be a part of every page (and my real preview template both the head content and navigation bars are abstracted away into separate mixins like this). The <code>{{ content }}</code> is generated from the body of the HTML document that calls this layout as a template, whether it's entirely generated (like posts) or entirely pre-constructed using HTML (like my <code>index.html</code> file).</p>
@@ -200,8 +207,7 @@ layout: preview
 
 <p>While some of these properties are auto-generated (like the url, which is generated from the name of each post file), many are explicitly declared in the YAML front matter of individual posts. Just like the index.html template above, each post will have its own front matter contained between two sets of triple-hyphens. The YAML for this post, for example, looks like this:</p>
 
-<pre><code class="html">
----
+<pre><code>---
 layout: posts
 title: Blog Tech 2
 author: Alex
@@ -214,8 +220,7 @@ published: yes
 
 <p>Hopefully the details have begun to make a bit more sense. The final step, then is to take a higher-level view at that ever-important directory structure that I've been harping about over the last two Blog Tech posts. While there are some variations on this directory structure theme that you can explore in the <a href="http://jekyllrb.com/docs/home/">Jekyll Documentation</a>, mine works pretty well for my purposes. Here's a quick layout of the whole tree:</p>
 
-<pre><code class="bash">
-/blog/
+<pre><code>/blog/
 |
 |--_drafts/
 |   |-*.md files in post format (unpublished)
@@ -245,6 +250,130 @@ published: yes
 
 <p>And there you have it. In the next blog tech post, I'll talk about how I integrate this system with my current web development workflow. Thanks for reading!</p>
 
+          </div>
+            
+<div class="about-me hidden">
+    <h4>My name is Alex, and I build things.</h4>
+    <br>
+    <br>
+    <p>Maybe not kitchen tables or log cabins (not yet, anyway), but you'll always find me building <i>something</i>.
+    Those somethings that I'm most proud of have been made-from-scratch businesses or programs. I take pride in creating organizations that are useful and meaningful (more on what that means later in <a href="http://alexpear.com/blog">my blog</a>).
+    </p>
+    <br>
+    <p>
+    The desire to build things has taken me a lot of places. The need to build has lead me to create teaching opportunities for musicians and artists, or help to turn a student-run nightclub into a successful event space, or create a place for unlikely athletes to meet their full potential, or build a program that helps aspiring programmers learn the skills that they need to change careers into full-time software development.
+    </p>
+    <br>
+    <p>
+    That's the most important thing to know about me. Some other less important information:</p>
+    </p>
+    <ul>
+        <li>Born in Dallas, TX, raised in Cedar Rapids, IA, educated in Northfield, MN, former resident and life-long fan of Nashville, TN.</li>
+        <li>I currently live in St. Louis with my lady love and a dog that looks like a mix of Yoda, a Wampa, and a Siberian Husky.</li>
+        <li>I was the founding Director of Curriculum, Instruction, and Outreach at <a href="http://claimacademystl.com">Claim Academy</a>, St. Louis's first developer bootcamp.</li>
+        <li>Currently, I work as a freelance web developer and technology education consultant.</li>
+        <li>I enjoy proper grammar and punctuation, and I'm a strong advocate for the Oxford comma.</li>
+        <li>To hire me, <a href='mailto:alex@alexpear.com'>send me a message</a></li>
+    </ul>
+    <p>
+    Thanks once again for visiting. If you're here to marvel at my professional accomplishments, you can visit the résumé link above.
+    If you'd like to see get a more personal view of my thoughts on building things, breaking things, or just being, check out <a href="http://alexpear.com/blog">my blog</a>.
+    </p>
+    <br>
+    <p>
+    I can always be contacted casually through social media, but you can also email me directly at alex@alexpear.com.
+    <br>
+    <br>
+    Cheers,<br>
+    -Alex
+    </p>
+
+</div>
+<div class="resume-info hidden">
+  <p> For a more complete view of my professional history, checkout out my LinkedInprofile or download my full résumé as a .pdf.</p>
+  <ul class="resume-links">
+      <li><span class="ti ti-linkedin"></span><br><a href="https://www.linkedin.com/in/nalexpearson">View my full LinkedIn profile</a></li>
+      <li><span class="ti ti-file"></span><br><a href="../download/AP2014ResumeNov.pdf">Download a .pdf of my full résumé</a></li>
+  </ul>
+  <br>
+  <br>
+  <div>
+    <div class="resume-drop">
+      <p class="resume-title">Click on a position to learn more</p>
+      <ul>
+        <li><span class="ti ti-location-arrow"></span>JavaScript Instructor, Savvy Coders
+          <div class="resume-drop-blurb">
+            <p>In partnership with renowned bootcamp Hack Reactor, built an intro to programming in HTML, CSS, and JavaScript. Classes launched in Nashville in late 2015. For more details, see the <a href="https://savvycoders.com">Savvy Coders website</a></p>
+          </div>
+        </li>
+        <li><span class="ti ti-location-arrow"></span>Freelance Web Developer
+          <div class="resume-drop-blurb">
+            <p>Custom websites built using HTML, CSS, and JavaScript, optimized for the modern web.</p>
+          </div>
+        </li>
+        <li><span class="ti ti-location-arrow"></span>Technology Education Consultant
+          <div class="resume-drop-blurb">
+            <p>Helped bootcamps across the country revitalize their online and in-person curriculum as a consultant.</p>
+          </div>
+        </li>
+        <li><span class="ti ti-location-arrow"></span>Director of Curriculum, Claim Academy
+          <div class="resume-drop-blurb">
+            <p>Built St. Louis's first developer bootcamp from the ground up. First class began 4 months after being hired, first Java developers graduated 7 months after joining the team, and all graduates connected to St. Louis technology jobs.</p>
+          </div>
+        </li>
+        <li><span class="ti ti-location-arrow"></span>Owner, Shackle Island CrossFit &amp; Weightlifting
+          <div class="resume-drop-blurb">
+            <p>Built Shackle Island CrossFit into Nashville's largest CrossFit and Weightlifting gym. SICF is still going strong under the management of former clients and athletes turned coaches.</p>
+          </div>
+        </li>
+        <li><span class="ti ti-location-arrow"></span>Public Relations Officer, Lion's Pause Nighclub
+          <div class="resume-drop-blurb">
+            <p>Promoted and managed events at St. Olaf College's student-run nightclub, including the largest single event in Lion's Pause history.</p>
+          </div>
+        </li>
+        <li><span class="ti ti-location-arrow"></span>President, DreamBox
+          <div class="resume-drop-blurb">
+            <p>After winning an Estenson Entrepreurial Grant, helped St. Olaf college students teach music and art to k-12 residents of Northfield, MN.</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="preview-portfolio hidden"></div>
+<div class="desktop-only contact-form hidden">
+  <form action="https://formspree.io/alex@alexpear.com" method="POST">
+    <span class="ti ti-close mobile-only"></span>
+    <h3>Contact Alex</h3>
+    <br>
+    <label for="firstname">First Name:</label><br>
+    <input type="text" name="firstname" placeholder="first name" required><br>
+    <label for="lastname">Last Name:</label><br>
+    <input type="text" name="lastname" placeholder="last name" required><br>
+    <label for="sender">Your Email Address:</label><br>
+    <input type="email" name="sender" placeholder="email@youraddress.com" required>
+    <label for="subject">Message Subject:</label><br>
+    <input type="text" name="subject" value="new message for Alex"><br>
+    <label for="message">Message:</label><br>
+    <textarea name="message" placeholder="Write your message here"></textarea><br>
+    <div>
+      <input type="submit" value="send message">
+      <button type="button" name="cancel" class="cancel">cancel</button>
+    </div>
+  </form>
+  <br>
+  <div class="hidden">
+    <h4>Thanks for the message!</h4>
+    <p>I'll respond as soon as I can. Don't forget to also follow me on social media:</p>
+    <ul>
+      <li><a href="https://github.com/nalexpear" title="github"><span class="ti ti-github"></span></a></li>
+      <li><a href="https://www.facebook.com/alex.pearson.568" title="facebook"><span class="ti ti-facebook"></span></a></li>
+      <li><a href="https://www.linkedin.com/pub/alex-pearson/a4/492/a16" title="linkedin"><span class="ti ti-linkedin"></span></a></li>
+      <li><a href="https://twitter.com/NAlexPearson" title="twitter"><span class="ti ti-twitter"></span></a></li>
+    </ul>
+  </div>
+</div>
+
         </div>
     </div>
     <div id="disqus_thread"></div>
@@ -265,15 +394,21 @@ published: yes
     })();
 </script>
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
-</body>
+
+    
 <footer>
     <div class="socialmedia">
-        <ul id="socialmediabuttons">
-            <li id="fb"><a href="https://www.facebook.com/alex.pearson.568" title="facebook">f</a></li>
-            <li id="in"><a href="https://www.linkedin.com/pub/alex-pearson/a4/492/a16" title="linkedin">in</a></li>
-            <li id="twit"><a href="https://twitter.com/NAlexPearson" title="twitter"><img src="http://i.imgur.com/KlB8yzw.png" width="80%"></a></li>
-
+        <ul>
+          <li><a href="https://github.com/nalexpear" title="github"><span class="ti ti-github"></span></a></li>
+          <li><a href="https://www.facebook.com/alex.pearson.568" title="facebook"><span class="ti ti-facebook"></span></a></li>
+          <li><a href="https://www.linkedin.com/pub/alex-pearson/a4/492/a16" title="linkedin"><span class="ti ti-linkedin"></span></a></li>
+          <li><a href="https://twitter.com/NAlexPearson" title="twitter"><span class="ti ti-twitter"></span></a></li>
+          <li class="contact-target"><a href="#" data-action="contact-form" title="email" alt="email Alex"><span class="ti ti-email"></span></a></li>
         </ul>
     </div>
     <div class="copyright">©2014 Alex Pearson</div>
 </footer>
+
+    <script type="text/javascript" src="/theme/js/site.js"></script>
+</body>
+</html>
