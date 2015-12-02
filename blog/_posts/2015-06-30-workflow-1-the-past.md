@@ -36,19 +36,16 @@ At this point I should back up a bit. Some of you might have seen GZip and thoug
 The reason you wouldn't is that it can be a bit of a pain to zip up every HTML, CSS, and JavaScript file that is served to the end user. My solution was two-pronged. First, we I needed to change some of the default settings on nearlyfreespeech's Apache server using a special file in the root directory called `.htaccess`. Inside that file, I have the following:
 
 ```apache
-
 RewriteEngine on
 RewriteCond %{HTTP:Accept-Encoding} gzip
 RewriteCond %{REQUEST_FILENAME}.gz -f
 RewriteRule ^(.*)$ $1.gz [L]
-
 ```
 It basically says, "If the browser accepts .gzip files, send them a .gzip, otherwise send them the regular ol' HTML, CSS, or JS file." Now it's just up to us to make sure that every text file has a .gz equivalent.
 
 To solve that problem, I used the solution given in [this post from LeMoDa](http://www.lemoda.net/mod_rewrite/gzip-static/index.html). I uploaded the following perl script to a document in the root directory of the optimized branch of my site:
 
 ```perl
-
 #!/usr/local/bin/perl
 use warnings;
 use strict;
