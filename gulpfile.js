@@ -6,14 +6,11 @@ var minifyCss = require('gulp-minify-css');
 var imagemin = require('gulp-imagemin');
 var pngquant = require('imagemin-pngquant');
 var exec = require('child_process').exec;
-var gutil = require('gulp-util');
 var gzip = require('gulp-gzip');
 var critical = require('critical');
 var useref = require('gulp-useref');
 var gulpif = require('gulp-if');
-var postcss = require('gulp-postcss');
-var sourcemaps = require('gulp-sourcemaps');
-var autoprefixer = require('autoprefixer');
+var autoprefixer = require('gulp-autoprefixer');
 
 //Porters of non-critical content
 gulp.task('bower-port', function(){
@@ -25,8 +22,8 @@ gulp.task('misc-port', function(){
     .pipe(gulp.dest('public'));
 });
 gulp.task('downloads-port', function(){
-  gulp.src(['downloads/**/*'])
-    .pipe(gulp.dest('public/downloads'));
+  gulp.src(['download/**/*'])
+    .pipe(gulp.dest('public/download'));
 });
 gulp.task('other-image-port', function () {
     gulp.src(['theme/images/**/*.svg','theme/images/**/*.ico'])
@@ -46,11 +43,12 @@ gulp.task('image-min', function () {
 
 //css auto-prefixer for compatibility
 gulp.task('autoprefixer', function(){
-  gulp.src('theme/css/*.css')
-    .pipe(sourcemaps.init())
-    .pipe(postcss([ autoprefixer({ browsers: ['last 2 versions'] }) ]))
-    .pipe(sourcemaps.write('.'))
-    .pipe(gulp.dest('theme/css/'));
+  return gulp.src('theme/css/*.css')
+    .pipe(autoprefixer({
+          browsers: ['last 2 versions'],
+          cascade:'false'
+          }))
+    .pipe(gulp.dest('./theme/css/'));
 });
 
 //jekyll builder (through executables)
