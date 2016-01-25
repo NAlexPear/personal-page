@@ -6,14 +6,14 @@ var minifyCss = require('gulp-minify-css');
 var imagemin = require('gulp-imagemin');
 var pngquant = require('imagemin-pngquant');
 var exec = require('child_process').exec;
-// var gutil = require('gulp-util');
+var gutil = require('gulp-util');
 var gzip = require('gulp-gzip');
 var critical = require('critical');
 var useref = require('gulp-useref');
 var gulpif = require('gulp-if');
-// var postcss = require('gulp-postcss');
-// var sourcemaps = require('gulp-sourcemaps');
-// var autoprefixer = require('autoprefixer');
+var postcss = require('gulp-postcss');
+var sourcemaps = require('gulp-sourcemaps');
+var autoprefixer = require('autoprefixer');
 
 //Porters of non-critical content
 gulp.task('bower-port', function(){
@@ -45,13 +45,13 @@ gulp.task('image-min', function () {
 });
 
 //css auto-prefixer for compatibility
-// gulp.task('autoprefixer', function(){
-//   gulp.src('theme/css/*.css')
-//     .pipe(sourcemaps.init())
-//     .pipe(postcss([ autoprefixer({ browsers: ['last 2 versions'] }) ]))
-//     .pipe(sourcemaps.write('.'))
-//     .pipe(gulp.dest('theme/css/'));
-// });
+gulp.task('autoprefixer', function(){
+  gulp.src('theme/css/*.css')
+    .pipe(sourcemaps.init())
+    .pipe(postcss([ autoprefixer({ browsers: ['last 2 versions'] }) ]))
+    .pipe(sourcemaps.write('.'))
+    .pipe(gulp.dest('theme/css/'));
+});
 
 //jekyll builder (through executables)
 gulp.task('jekyll', function (){
@@ -65,7 +65,7 @@ exec('jekyll build --source blog/ --destination public/blog/', function(err, std
 });
 
 //CSS and JS minifier, retaining async on javascript files, after all other files have been ported over
-gulp.task('async',['bower-port', 'misc-port', 'downloads-port','image-min', 'other-image-port', 'jekyll'],function(){
+gulp.task('async',['bower-port', 'misc-port', 'downloads-port','image-min', 'other-image-port', 'jekyll', 'autoprefixer'],function(){
   var assets = useref.assets();
   return gulp.src('index.html')
     .pipe(assets)
@@ -88,7 +88,7 @@ gulp.task('css-inline',['async'], function(){
 });
 
 //HTML minifier (run after ports, image-minification, and critical CSS inlining)
-gulp.task('cruncher', function() {
+gulp.task('cruncher', ['css-inline'], function() {
    gulp.src('public/index.html')
         .pipe(usemin({
             assetsDir: '',
