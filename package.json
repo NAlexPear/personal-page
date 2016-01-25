@@ -1,0 +1,20 @@
+{
+  "name": "alexpearpersonalpage",
+  "version": "1.0.0",
+  "description": "Alex's personal blog",
+  "main": "index.html",
+  "private": "true",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NAlexPear/personal-page.git"
+  },
+  "author": "Alex Pearson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NAlexPear/personal-page/issues"
+  },
+  "homepage": "https://github.com/NAlexPear/personal-page#readme"
+}

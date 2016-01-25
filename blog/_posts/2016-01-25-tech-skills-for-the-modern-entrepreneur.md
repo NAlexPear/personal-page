@@ -3,6 +3,7 @@ layout: posts
 title: Tech Skills for the Modern Entrepreneur
 author: Alex
 date: 2016-01-25
+published: yes
 ---
 
 ## The Bare Minimum
