@@ -88,7 +88,7 @@ gulp.task('css-inline',['async'], function(){
 });
 
 //HTML minifier (run after ports, image-minification, and critical CSS inlining)
-gulp.task('cruncher', ['css-inline'], function() {
+gulp.task('cruncher', function() {
    gulp.src('public/index.html')
         .pipe(usemin({
             assetsDir: '',
