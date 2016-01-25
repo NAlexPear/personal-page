@@ -6,14 +6,14 @@ var minifyCss = require('gulp-minify-css');
 var imagemin = require('gulp-imagemin');
 var pngquant = require('imagemin-pngquant');
 var exec = require('child_process').exec;
-var gutil = require('gulp-util');
+// var gutil = require('gulp-util');
 var gzip = require('gulp-gzip');
 var critical = require('critical');
 var useref = require('gulp-useref');
 var gulpif = require('gulp-if');
-var postcss = require('gulp-postcss');
-var sourcemaps = require('gulp-sourcemaps');
-var autoprefixer = require('autoprefixer');
+// var postcss = require('gulp-postcss');
+// var sourcemaps = require('gulp-sourcemaps');
+// var autoprefixer = require('autoprefixer');
 
 //Porters of non-critical content
 gulp.task('bower-port', function(){
@@ -56,7 +56,11 @@ gulp.task('image-min', function () {
 //jekyll builder (through executables)
 gulp.task('jekyll', function (){
 exec('jekyll build --source blog/ --destination public/blog/', function(err, stdout, stderr) {
+    if(err){
+      console.log('There was an error! Error message: ' + err);
+    } else {
       console.log(stdout);
+    }
   });
 });
 

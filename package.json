@@ -16,7 +16,7 @@
   "bugs": {
     "url": "https://github.com/NAlexPear/personal-page/issues"
   },
-  "homepage": "https://github.com/NAlexPear/personal-page#readme",
+  "homepage": "https://alexpear.com",
   "devDependencies": {
     "critical": "^0.7.0",
     "gulp": "^3.9.0",
