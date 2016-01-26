@@ -8,3 +8,14 @@ $('.navbubbles, #menubar, .contact-target').not('.post-nav').on('click','a', fun
     $('.'+class_section).removeClass('hidden');
   }
 });
+
+var url = window.location.href;
+
+if(url.match('/?/')){
+  console.log(url);
+  var targetClass = url.split('?')[1];
+  console.log(targetClass);
+  
+  $('#content>div').not($('.'+targetClass)).addClass('hidden');
+  $('.'+targetClass).removeClass('hidden');
+}
