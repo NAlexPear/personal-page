@@ -13,11 +13,26 @@ var gulpif = require('gulp-if');
 var autoprefixer = require('gulp-autoprefixer');
 var blog = require('blog-runner');
 
-//blog-runner build task (independent of all others for testing)
+//jekyll builder (through shell/child process)
+gulp.task('jekyll', function (){
+exec('jekyll build --source blog/ --destination public/blog/', function(err, stdout, stderr) {
+    if(err){
+      console.log('There was an error! Error message: ' + err);
+    } else {
+      console.log(stdout);
+    }
+  });
+});
+
+//blog-runner build task
 gulp.task('build',function(){
   blog.build('blog');
 });
-
+//Porter of blog content
+gulp.task('blog-port',['build'],function(){
+  gulp.src('blog/_site/**/*')
+    .pipe(gulp.dest('public/blog'));
+});
 //Porters of non-critical content
 gulp.task('bower-port', function(){
   gulp.src(['bower_components/**/*'])
@@ -57,19 +72,8 @@ gulp.task('autoprefixer', function(){
     .pipe(gulp.dest('./theme/css/'));
 });
 
-//jekyll builder (through executables)
-gulp.task('jekyll', function (){
-exec('jekyll build --source blog/ --destination public/blog/', function(err, stdout, stderr) {
-    if(err){
-      console.log('There was an error! Error message: ' + err);
-    } else {
-      console.log(stdout);
-    }
-  });
-});
-
 //CSS and JS minifier, retaining async on javascript files, after all other files have been ported over
-gulp.task('async',['bower-port', 'misc-port', 'downloads-port','image-min', 'other-image-port', 'jekyll', 'autoprefixer'],function(){
+gulp.task('async',['blog-port','bower-port', 'misc-port', 'downloads-port','image-min', 'other-image-port', 'autoprefixer'],function(){
   var assets = useref.assets();
   return gulp.src('index.html')
     .pipe(assets)
