@@ -11,6 +11,12 @@ var critical = require('critical');
 var useref = require('gulp-useref');
 var gulpif = require('gulp-if');
 var autoprefixer = require('gulp-autoprefixer');
+var blog = require('blog-runner');
+
+//blog-runner build task (independent of all others for testing)
+gulp.task('build',function(){
+  blog.build('blog');
+});
 
 //Porters of non-critical content
 gulp.task('bower-port', function(){
