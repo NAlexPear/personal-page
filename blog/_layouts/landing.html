@@ -2,22 +2,24 @@
 <html lang="en-us">
 
 <head>
-  {% include head.html %}
+  {{{ head }}}
 </head>
 
 <body>
     <div>
-    {% include nav.html %}
+    {{{ nav }}}
     </div>
     <div id="content-wrapper">
         <div id="content">
-            {{ content }}
-            {% include extra.html %}
+          <div class="blogpost">
+            {{{ content }}}
+          </div>
+            {{{ extra }}}
         </div>
     </div>
+    {{{ disqus }}}
 
-    {% include foot.html %}
+    {{{ foot }}}
     <script type="text/javascript" src="/theme/js/site.js"></script>
-
 </body>
 </html>
