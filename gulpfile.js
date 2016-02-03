@@ -40,7 +40,7 @@ var sync = require('browser-sync').create();
         baseDir: "./build"
       }
     });
-    gulp.watch(['theme/css/*', 'theme/js/*'],['dev-watch']);
+    gulp.watch(['blog/_site/**/*'],['dev-watch']);
   });
 
 //blog-runner build task
