@@ -1,19 +1,11 @@
----
-layout: posts
-author: Alex
-title: Barley Cakes and Water and Weightlifting
-date: 2015-02-16
-published: yes
----
-
-##Barleycakes and Water and Weightlifting
-###The importance of temperament on success and survival
+## Barleycakes and Water and Weightlifting
+### The importance of temperament on success and survival
 
 Happiness is a tricky thing to pin down. Some folks will tell you happiness
 happens at the extremes, in moments of indulgence.
 Some folks will say that hedonism is fleeting,
 and that real happiness comes from a sense of purpose.
-Others wil say that new experiences are key, while others will say that routine is key.
+Others will say that new experiences are key, while others will say that routine is key.
 It's almost like the term "happiness" is so vague that it ceases to be a terribly useful term.
 Almost.
 
@@ -46,7 +38,7 @@ The impetus for these thoughts came from three sources: an ancient Greek philoso
 a cabin in rural Alaska, and sweaty people in spandex. There will be another post
 on the Alaskan Cabin Experience later, but we'll cover the intersection of weightlifting and philosophy in this post.
 I promise that it will be loads of fun, and I promise that all of these things
-apply to our discussion of the temprament towards progress (and, thus, happiness).
+apply to our discussion of the temperament towards progress (and, thus, happiness).
 The coolest ideas happen at the interface!
 
 The first influence that introduced me to the idea of steady progress over wild swings
@@ -63,7 +55,7 @@ These gardens will not provoke your appetite by artificial dainties,
 but satisfy it with natural supplies.
 Will you not then be well entertained?
 
-Here poor chaps might have come across the Epicurean "mansion" with hopes of bacchanalean pleasure,
+Here poor chaps might have come across the Epicurean "mansion" with hopes of Bacchanalian pleasure,
 only to find that the head honcho thought that entertainment came from a calm, cool, collected demeanor
 and the pursuit of higher questions of the Age. While I'm not one to advocate for barley cakes,
 it's a good lesson for starters that maybe these wild swings of emotion (both high and low)
@@ -96,6 +88,6 @@ A disastrous lift on the international stage? A chin held high,
 a quick adjustment from the Coach, and a cool drink of water are all that's needed.
 
 It takes some getting used to, for sure.
-But the idea of progress in the long haul depends on a temprament that understands that
+But the idea of progress in the long haul depends on a temperament that understands that
 "this, too, shall pass" and that the solid and dependable will often be happier
-than the frenetic and exciteable, simply by virtue of their sustained progress.
+than the frenetic and excite-able, simply by virtue of their sustained progress.
