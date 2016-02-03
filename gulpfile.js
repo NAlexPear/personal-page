@@ -12,17 +12,36 @@ var useref = require('gulp-useref');
 var gulpif = require('gulp-if');
 var autoprefixer = require('gulp-autoprefixer');
 var blog = require('blog-runner');
+var sync = require('browser-sync').create();
 
-//jekyll builder (through shell/child process)
-gulp.task('jekyll', function (){
-exec('jekyll build --source blog/ --destination public/blog/', function(err, stdout, stderr) {
-    if(err){
-      console.log('There was an error! Error message: ' + err);
-    } else {
-      console.log(stdout);
-    }
+//DEVELOPMENT ENVIRONMENT TASKS (for ./build)
+  //port in relevant content without any async operations
+  gulp.task('dev-port',function(){
+    gulp.src('index.html')
+      .pipe(gulp.dest('build/'));
+    gulp.src('blog/_site/**/*')
+      .pipe(gulp.dest('build/blog/'));
+    gulp.src('theme/**/*')
+      .pipe(gulp.dest('build/theme/'));
+    gulp.src('bower_components/jquery/**/*')
+      .pipe(gulp.dest('build/bower_components/jquery'));
+    gulp.src('bower_components/picturefill/**/*')
+      .pipe(gulp.dest('build/bower_components/picturefill'));
+    gulp.src('bower_components/themify-icons/**/*')
+      .pipe(gulp.dest('build/bower_components/themify-icons'));
   });
-});
+  //set up watcher
+  gulp.task('dev-watch', ['dev-port'], sync.reload);
+
+  //browserSync server
+  gulp.task('serve', ['dev-port'], function(){
+    sync.init({
+      server:{
+        baseDir: "./build"
+      }
+    });
+    gulp.watch(['theme/css/*', 'theme/js/*'],['dev-watch']);
+  });
 
 //blog-runner build task
 gulp.task('build',function(){

@@ -19,6 +19,7 @@
   "homepage": "https://alexpear.com",
   "devDependencies": {
     "blog-runner": "^0.1.1",
+    "browser-sync": "^2.11.1",
     "critical": "^0.7.0",
     "gulp": "^3.9.0",
     "gulp-autoprefixer": "^3.1.0",
