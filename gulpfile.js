@@ -43,10 +43,12 @@ var sync = require('browser-sync').create();
     gulp.watch(['blog/_site/**/*'],['dev-watch']);
   });
 
-//blog-runner build task
-gulp.task('build',function(){
+//blog-runner build tasks
+gulp.task('build', function(){
+  blog.roll('blog', {snippetChars: 400});
   blog.build('blog');
 });
+
 //Porter of blog content
 gulp.task('blog-port',['build'],function(){
   gulp.src('blog/_site/**/*')
