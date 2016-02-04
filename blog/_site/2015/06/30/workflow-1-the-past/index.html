@@ -174,49 +174,50 @@ RewriteCond %{REQUEST_FILENAME}.gz -f
 RewriteRule ^(.*)$ $1.gz [L]
 </code></pre><p>It basically says, &quot;If the browser accepts .gzip files, send them a .gzip, otherwise send them the regular ol&#39; HTML, CSS, or JS file.&quot; Now it&#39;s just up to us to make sure that every text file has a .gz equivalent.</p>
 <p>To solve that problem, I used the solution given in <a href="http://www.lemoda.net/mod_rewrite/gzip-static/index.html">this post from LeMoDa</a>. I uploaded the following perl script to a document in the root directory of the optimized branch of my site:</p>
-<p>{% highlight perl %}</p>
-<p>#!/usr/local/bin/perl
+<pre><code class="lang-perl">#!/usr/local/bin/perl
 use warnings;
-use strict;</p>
-<h1 id="set-verbose-to-a-true-value-if-you-need-to-debug-this-script-">Set $verbose to a true value if you need to debug this script.</h1>
-<p>my $verbose;
+use strict;
+# Set $verbose to a true value if you need to debug this script.
+my $verbose;
 use File::Find;
 find (\&amp;wanted, (&quot;.&quot;));
 sub wanted
 {
-    if (/(.*.(?:html|css|js)$)/) {
-        my $gz = &quot;$<em>.gz&quot;;
+    if (/(.*\.(?:html|css|js)$)/) {
+        my $gz = &quot;$_.gz&quot;;
         if (-f $gz) {
-            if (age ($</em>) &lt;= age ($gz)) {
+            if (age ($_) &lt;= age ($gz)) {
                 if ($verbose) {
-                    print &quot;Don&#39;t need to compress $<em>\n&quot;;
+                    print &quot;Don&#39;t need to compress $_\n&quot;;
                 }
                 return;
             }
         }
         if ($verbose) {
-            print &quot;Compressing $</em>\n&quot;;
-        }</p>
-<pre><code>    # The following substitution is for the case that the file
-    # name contains double quotation marks &quot;.
-    $_ =~ s/&quot;/\\&quot;/g;
-    # Now compress the file.
-    system (&quot;gzip --keep --best --force \&quot;$_\&quot;&quot;);
-}
-else {
-    if ($verbose) {
-        print &quot;Rejecting $_\n&quot;;
+            print &quot;Compressing $_\n&quot;;
+        }
+        # The following substitution is for the case that the file
+        # name contains double quotation marks &quot;.
+        $_ =~ s/&quot;/\\&quot;/g;
+        # Now compress the file.
+        system (&quot;gzip --keep --best --force \&quot;$_\&quot;&quot;);
+    }
+    else {
+        if ($verbose) {
+            print &quot;Rejecting $_\n&quot;;
+        }
     }
 }
-</code></pre><p>}</p>
-<h1 id="this-returns-the-age-of-the-file-">This returns the age of the file.</h1>
-<p>sub age
+
+# This returns the age of the file.
+
+sub age
 {
     my ($file) = @_;
     my @stat = stat $file;
     return $stat[9];
 }
-{% endhighlight %}</p>
+</code></pre>
 <p>It might look intimidating, but it&#39;s pretty simple in practice. Running <code>perl [filename].pl</code> from the command-line will search through every file in your directory tree and create a GZipped version right next to the original file. From there, it&#39;s a matter of firing up SFTP from the console, putting in host and username information, and using <code>put -r [directory or file]</code> to upload the zipped and unzipped contents of a directory.</p>
 <p>All of this can easily be done within the Cloud9 workspace, too. The problem (besides the latter issues mentioned above) gets to be the tedium at times. <code>git checkout optimized</code> + <code>git merge master</code> + <code>perl compressor.pl</code> + <code>git add .</code> + <code>git commit -m &quot;Commit message&quot;</code> + <code>git push origin optimized</code> + <code>sftp [username]@[hostname]</code> + <code>put [filename]</code> + <code>put -r [directory name]</code> is a long operation for every single push. Add in a command-line <a href="https://developers.google.com/speed/docs/insights/MinifyResources?hl=en">minifier and uglifier</a> before compression, and you&#39;ve got quite the set of tasks to run before you can call the job done.</p>
 <p>If only there were some sort of <em>task runner</em> that we could use to speed up the process. Stay tuned for the next post about workflow to learn how we might automate the processes above. Until then, have fun compressing assets from the command line!</p>

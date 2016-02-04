@@ -642,8 +642,13 @@ footer {
     }
   }
   .blogpost{
+    &>.date {
+      font-family: 'Lato', sans-serif;
+      color: $color-accent;
+      margin: 0.25em;
+    }
     p{
-      margin-bottom: 0.5em;
+      margin-bottom: 0.75em;
     }
     hr{
       opacity: 0.5;
@@ -663,7 +668,6 @@ footer {
         font-size: $h3*0.8;
         text-align: left;
       }
-      margin-bottom: 1em;
     }
   }
 }

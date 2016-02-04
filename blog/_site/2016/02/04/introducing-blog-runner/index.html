@@ -150,98 +150,21 @@
     <div id="content-wrapper">
         <div id="content">
           <div class="blogpost">
-            <h2 id="blog-tech-pt-2">Blog Tech pt. 2</h2>
-<h3 id="-on-themes-and-layouts-with-jekyll">...on themes and layouts with Jekyll</h3>
-<p>Last time we covered blog tech (in <a href="http://alexpear.com/blog/2014/12/03/blog-tech-1/">Blog Tech pt. 1</a>), we outlined how to use Jekyll to create a blog by &#39;baking&#39; static files formatted according to certain conventions into a blog that doesn&#39;t need a database to retrieve data and posts. This jives nicely with my own needs as a small (but growing!) blog, totally customized at every step of along the way.</p>
-<p>Also, WordPress and Joomla are the worst. So consider some of these posts as contributions towards the ultimate goal of ending WordPress&#39;s dominance of the mom-and-pop blog space.</p>
-<p>When most people think of WordPress blogs, if they&#39;re thinking about their options at all, they&#39;re usually accepting the need for convoluted php-based mixins and cumbersome database set-ups because they had heard that WordPress is fully theme-able and customize-able. The alternative to WP themes must be something awful if so many are drawn to a de facto behemoth installation like WP.</p>
-<p>With just a little bit of syntax help, though, Jekyll is much easier to customize at almost every level. To get started, all you need is an index.html file in the root of the blog directory. Here&#39;s mine:</p>
-<pre><code class="lang-html">---
-layout: preview
----
-
-{% for post in site.posts limit: 10 %}
-  &lt;br&gt;
-    &lt;a href=&quot;/blog{{ post.url }}&quot;&gt;&lt;p&gt;{{ post.title }}&lt;/p&gt;&lt;/a&gt;
-    &lt;p&gt;{{ post.date | date_to_long_string }}&lt;/p&gt;
-    &lt;p&gt;
-      {{ post.excerpt | strip_html }}
-      &lt;br&gt;
-      &lt;a href=&quot;/blog{{ post.url }}&quot;&gt; [read more...]&lt;/a&gt;
-    &lt;/p&gt;
-    &lt;br&gt;
-    &lt;br&gt;
-{% endfor %}
-</code></pre>
-<p>Perhaps not your typical root file, but it makes a bit of sense with some explanation. First is the stuff at the head of the document, written in YAML (&#39;Yet Another Markup Language&#39;) format of key-value pairs of data. This sort of markup is required at the head of every rendered document, and it helps Jekyll parse through lots of important data before it gets to the actual content. There can be data about base urls, authors, dates, scheduled publishing dates... a whole host of things. For this base file, though, we only need to call out the template that will apply.</p>
-<p>Layouts are called out by name in the YAML, and saved in a separate directory called <code>_layouts</code>. Remember, directories with an underscore in their name aren&#39;t rendered into the final site as their own directory, but are rather just used as mixins or resources for other parts of a template. I primarily use two different layouts: <code>preview</code> for the front page/index view, and <code>post</code> for individual posts. Here&#39;s what my layout file (<code>preview.html</code>) might look like:</p>
-<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en-us&quot;&gt;
-
-{% include head.html %}
-
-&lt;body&gt;
-    &lt;div style=&quot;background-color: #EEEEEE;&quot;&gt;
-    {% include nav.html %}
-    &lt;/div&gt;
-    &lt;div id=&quot;content-wrapper&quot;&gt;
-        &lt;div id=&quot;content&quot;&gt;
-            &lt;ul id=&quot;resume-links&quot;&gt;
-                &lt;li&gt;&lt;a href=&quot;http://alexpear.com/blog/archive&quot;&gt;archive&lt;/a&gt;&lt;/li&gt;
-                &lt;li&gt;&lt;a href=&quot;http://alexpear.com/blog/feed.xml&quot;&gt;feed&lt;/a&gt;&lt;/li&gt;
-            &lt;/ul&gt;
-            {{ content }}
-        &lt;/div&gt;
-    &lt;/div&gt;
-    {% include foot.html %}
-&lt;/body&gt;
-</code></pre>
-<p>Now we&#39;re starting to see something that looks like a real HTML document. These layouts are where the majority of your HTML will reside. You can also make these layouts even more abstract by saving chunks of HTML as mixins in an <code>_includes</code> directory. These files are included using the bracket-percentage notation of
- <code>{% include [file.ext] %}</code>. These are very useful for things like header content that you know will be a part of every page (and my real preview template both the head content and navigation bars are abstracted away into separate mixins like this). The <code>{{ content }}</code> is generated from the body of the HTML document that calls this layout as a template, whether it&#39;s entirely generated (like posts) or entirely pre-constructed using HTML (like my <code>index.html</code> file).</p>
-<p>Inside <code>index.html</code> we can see that there are regular HTML elements wrapping the content that&#39;s pulled in from other sources. The difference, though, is that we&#39;re pulling in an unknown number of posts from a variety of sources, so it&#39;s not quite so simple as copy-&gt;pasting some content into a block of HTML. Let&#39;s walk through the body of this doc to see what&#39;s going on to show us an indexed view of posts.</p>
-<p>First, we have this thing: <code>{% for post in site.posts limit:10 %}</code>. Those of you with a bit of programming background will recognize the &#39;for x in y&#39; structure of a for-in loop for iterating over Objects, and that&#39;s exactly what this is. In this case, though, <code>post</code> is defined as a markdown document in the <code>_posts</code> directory, and <code>site.posts</code> is the collection of all of those documents. So this same set of information will apply to each individual (and properly-formatted) document in the <code>_posts</code> folder.</p>
-<p>You&#39;ll then notice that we can pull in metadata from each post using the double-bracket notation of <a href="http://liquidmarkup.org/">Liquid Markup</a>. It looks a bit like <a href="http://handlebarsjs.com/">handlebars.js</a>, and it does a lot of the same stuff, just using Ruby instead of JavaScript. Normally I&#39;d opt for the JS option, but Liquid comes packaged with Jekyll, so we go with Liquid in this case.</p>
-<p>Each bit of supra-index.html data comes packaged in a form of Object notation, where for each Jekyll-generated <code>post</code> Object, we can access YAML-specified or <code>_config.yml</code>-generated properties using dot-notation. Common ones include <code>post.url</code>, <code>post.title</code>, and <code>post.excerpt</code>.</p>
-<p>You can also apply modifiers to some of these properties to change the way that Liquid renders them. So <code>{{ post.date | date_to_long_string }}</code> goes from a cumbersome sequence of numbers to &#39;February 3, 2015&#39; (for example).</p>
-<p>While some of these properties are auto-generated (like the url, which is generated from the name of each post file), many are explicitly declared in the YAML front matter of individual posts. Just like the index.html template above, each post will have its own front matter contained between two sets of triple-hyphens. The YAML for this post, for example, looks like this:</p>
-<pre><code class="lang-yaml">---
-layout: posts
-title: Blog Tech 2
-author: Alex
-date: 2015-02-03
-published: yes
----
-</code></pre>
-<p>These key-value pairs should make sense when thinking about how we&#39;ve applied properties to a post object for each post in the blog directory. Pretty neat, isn&#39;t it?</p>
-<p>Hopefully the details have begun to make a bit more sense. The final step, then is to take a higher-level view at that ever-important directory structure that I&#39;ve been harping about over the last two Blog Tech posts. While there are some variations on this directory structure theme that you can explore in the <a href="http://jekyllrb.com/docs/home/">Jekyll Documentation</a>, mine works pretty well for my purposes. Here&#39;s a quick layout of the whole tree:</p>
-<pre><code class="lang-shell">/blog/
-|
-|--_drafts/
-|   |-*.md files in post format (unpublished)
-|
-|--_includes/
-|   |-*.html files for mixing into templates
-|
-|--_layouts/
-|   |-posts.html
-|   |-preview.html
-|
-|--_posts/
-|   |-*.md files in post format (unpublished)
-|
-|--_site/ (compiled and baked site)
-|   |--2014/
-|   |   |-sub directories organized by post date (for 2014)
-|   |
-|   |--2015/
-|   |   |-sub directories organized by post date (for 2015)
-|   |
-|   |-index.html (fully baked home page)
-|
-|-_config.yml (configuration file)
-|-index.html (root template for landing page content)
-</code></pre>
-<p>And there you have it. In the next blog tech post, I&#39;ll talk about how I integrate this system with my current web development workflow. Thanks for reading!</p>
+            <h2 id="blog-runner">Blog Runner</h2>
+<h3 id="-a-lightweight-static-blog-generator-for-javascript-developers">...a lightweight static blog generator for JavaScript developers</h3>
+<p>I&#39;ve published a few posts so far about the tech behind this blog (like <a href="/blog/2014/12/03/blog-tech-1/">these</a> <a href="/blog/2015/05/04/blog-tech-2/">posts</a> on Jekyll, and <a href="/blog/2015/06/30/workflow-part-1/">this post</a> on incorporating the blog into my build process). Hopefully you get a chance to go through those at some point, as they&#39;re meant to be step-by-step discussions of what ended up being a fairly widely-used build tool in Jekyll. Today, though, I&#39;m announcing that my use of Jekyll on this blog has come to an end. Today, I made the switch to Blog Runner (GitHub repo <a href="https://github.com/NAlexPear/blog-runner">here</a> and <code>npm</code> module page <a href="https://www.npmjs.com/package/blog-runner">here</a>).</p>
+<p>Now, you&#39;ve probably never heard of this tool (<em>cue hipster glasses</em>). But that&#39;s OK, because it&#39;s brand new, and built just for me. Well, not just for me, but certainly just <em>by</em> me, and for the very specific use of building this blog (or blogs like it). The goal is to package up just the tools that I have needed from Jekyll while abstracting away those configurables and options that aren&#39;t needed for this blog. Or, I would argue, for <em>most</em> blogs.</p>
+<p>So what&#39;s wrong with Jekyll? Nothing, really... there&#39;s lots of exciting stuff going on in the world of Jekyll, and I still use it every day for production sites like the <a href="https://savvycoders.com">Savvy Coders home page and blog</a>. It&#39;s extremely powerful, totally customize-able, and impressively fast with the new update to 3.0. That said, there were still some major pain points that affected my personal workflow, including the following:</p>
+<ol>
+<li><strong>Jekyll is written in Ruby, for Ruby devs</strong>. This shouldn&#39;t be a surprise to anyone, of course. But as much as I think Ruby is a fun language, and as mature and stable as Ruby development for the Web has gotten, I still prefer <code>npm</code> over <code>gem</code>, a <code>package.json</code> over <code>Gemfile</code>, and coding, building, and deploying with JavaScript tools. It&#39;s just personal preference (and my job), but the disconnect between Jekyll the Ruby Gem and the rest of my environment lead to a few other problems, like...</li>
+<li><strong>Jekyll doesn&#39;t play nicely with Gulp/streams/others during builds</strong>. Nobody has <em>really</em> solved the issue of running Jekyll as a part of a build process with a task runner like Gulp. Sure, you can <a href="http://blog.webbb.be/use-jekyll-with-gulp/">spawn a child process</a> or execute Jekyll from a build script. I&#39;ve done both, with varying levels of success. It&#39;s still a pain, though, to move between multiple terminals, <code>*.sh</code> files, or hope that a child process through Gulp runs as you&#39;d like it to. Which it probably won&#39;t, because I never figured out a way to get a child-process-spawned Jekyll command to return any kind of Promise or play nicely with Gulp Streams. Because Gulp is asynchronous by default, there was no waiting for Jekyll to finish building. So Jekyll always had to be run as a separate command (again, either as a task in Gulp, from the command line directly, or as part of a shell script), since it wouldn&#39;t ever fit nicely into streams. Blegh. <em>NOTE: if anyone has a solution to the streaming problem, post it to the comments!</em></li>
+<li><strong>YAML is silly</strong>. Jekyll requires <code>YAML</code> for every post and page, and I think that&#39;s silly in most cases for most people. Much simpler to get all of that information from <code>_include</code>s, filenames, and a strictly-enforced directory structure.</li>
+<li><strong>Jekyll is OP (for me)</strong>. While it&#39;s great to be able to <code>build</code>, <code>watch</code>, and <code>serve</code> a site, I want to do all of those things myself. I already need to set up <code>gulp.watch</code> tasks for SASS (which integrates very nicely with Gulp, by the way), and I&#39;m not usually using Jekyll to build an entire site, so <code>build</code> should be able to be called as a part of a larger build process, and <code>serve</code> should happen in a different place altogether. In fact, all of those things should be taken care of in a <code>gulpfile</code>. So, really, my blog builder only needs to return a single <code>build</code> command that can be called on a specific <code>source</code> directory from Gulp. Nothing fancy!</li>
+<li><strong>Liquid Markup is OP (and oversteps some boundaries)</strong>. As a rule of thumb, if content needs to be generated programmatically, I&#39;d prefer that to happen in a separate script file (in my case, probably a <code>*.js</code> file) rather than inside <code>HTML</code>. While it&#39;s unavoidable in some larger apps (and it&#39;s embraced whole-heartedly by many frameworks), creating components out of Liquid-based <code>for</code> loops and <code>if-else</code> statements seems too convoluted for a simple blog. Especially when every blogger needs those things for simple things like an index view of recent posts or an archive view of all posts, and <em>not much else</em>. If the relevant information is provided as a <code>JSON</code>-formatted Object during the build process, savvy programmers should be able to create their own mixins programmatically without needing to relay on yet another type of markup.</li>
+<li><strong>Liquid Markup doesn&#39;t Markdown</strong>. The code snippets you see in this blog are all written in markdown... sort of. Liquid defaulted to a different kind of syntax highlighting and often needed escape characters or special markup when trying to write about Liquid Markup itself (using something nasty like <code>{% raw %}</code> and <code>{% endraw %}</code> wrappers). In Liquid, the previous sentence would have thrown an error or gone haywire without some extra markup. I like Markdown just fine, thank you very much, and it would be nice to use it all of the time without worrying about additional grammar.</li>
+<li><strong>Jekyll requires a lot of programming knowledge to get started</strong>. If you want an index view of posts on your landing page, you have to make it yourself out of Liquid-based <code>for</code> loops. That&#39;s tough for a beginner. Instead, it would be nice if Jekyll returned at least a couple of components out of the box. Good candidates for components might be the landing page index view, or an archive view, or a search tool. And these could be packaged as includes, for users to add to their pages or to ignore.</li>
+</ol>
+<p>These 7 points are why I created Blog Runner. I&#39;ll make a separate post later about more of the specifics and about what features I&#39;d like to add in the future. But for now, if you like the idea of a simple, JavaScript-based <code>npm</code> package that will build your static blog quickly, without <code>YAML</code>, and without superfluous markup in your <code>HTML</code>, give Blog Runner a try!</p>
 
           </div>
             

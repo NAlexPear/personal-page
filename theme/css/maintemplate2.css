@@ -473,6 +473,10 @@ a {
 
 .navreact a, .navreact span {
   color: #A8A8A8;
+  -o-transition: .5s color;
+  -ms-transition: .5s color;
+  -moz-transition: .5s color;
+  -webkit-transition: .5s color;
   transition: .5s color; }
   .navreact a :hover, .navreact span :hover {
     color: #51504f; }
@@ -742,30 +746,20 @@ a {
         margin-right: 0.5em; }
         #content .resume-info .resume-drop ul li span::before {
           display: inline-block;
-          transition: -webkit-transform 0.2s;
           transition: transform 0.2s;
-          transition: transform 0.2s, -webkit-transform 0.2s;
-          -webkit-transform: rotate(135deg);
-                  transform: rotate(135deg); }
+          transform: rotate(135deg); }
       #content .resume-info .resume-drop ul li:hover {
         color: #51504f; }
       #content .resume-info .resume-drop ul li.active {
         color: #51504f; }
         #content .resume-info .resume-drop ul li.active span::before {
-          transition: -webkit-transform 0.3s;
           transition: transform 0.3s;
-          transition: transform 0.3s, -webkit-transform 0.3s;
-          -webkit-transform: rotate(225deg);
-                  transform: rotate(225deg); }
+          transform: rotate(225deg); }
 
 #content .portfolio-display {
   height: auto;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-flex-flow: row wrap;
-      -ms-flex-flow: row wrap;
-          flex-flow: row wrap;
+  flex-flow: row wrap;
   margin-bottom: 1em;
   transition: all 0.8s ease; }
   #content .portfolio-display .subtitle {
@@ -887,8 +881,12 @@ footer ul {
   @media (min-width: 640px) {
     #content .blogroll .subtitle {
       font-size: 1.35909vmax; } }
+#content .blogpost > .date {
+  font-family: 'Lato', sans-serif;
+  color: #59556a;
+  margin: 0.25em; }
 #content .blogpost p {
-  margin-bottom: 0.5em; }
+  margin-bottom: 0.75em; }
 #content .blogpost hr {
   opacity: 0.5; }
 #content .blogpost h2 {
@@ -900,8 +898,7 @@ footer ul {
       text-align: left; } }
 #content .blogpost h3 {
   font-size: 1.89225vmax;
-  text-align: center;
-  margin-bottom: 1em; }
+  text-align: center; }
   @media (min-width: 640px) {
     #content .blogpost h3 {
       font-size: 3.0276vmax;
@@ -911,3 +908,5 @@ footer ul {
   width: 90%;
   max-width: 900px;
   margin: 0.5em auto; }
+
+/*# sourceMappingURL=maintemplate2.css.map */

@@ -39,7 +39,7 @@ It basically says, "If the browser accepts .gzip files, send them a .gzip, other
 
 To solve that problem, I used the solution given in [this post from LeMoDa](http://www.lemoda.net/mod_rewrite/gzip-static/index.html). I uploaded the following perl script to a document in the root directory of the optimized branch of my site:
 
-{% highlight perl %}
+```perl
 #!/usr/local/bin/perl
 use warnings;
 use strict;
@@ -83,7 +83,7 @@ sub age
     my @stat = stat $file;
     return $stat[9];
 }
-{% endhighlight %}
+```
 
 It might look intimidating, but it's pretty simple in practice. Running `perl [filename].pl` from the command-line will search through every file in your directory tree and create a GZipped version right next to the original file. From there, it's a matter of firing up SFTP from the console, putting in host and username information, and using `put -r [directory or file]` to upload the zipped and unzipped contents of a directory.
 

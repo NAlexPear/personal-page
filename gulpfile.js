@@ -45,7 +45,7 @@ var sync = require('browser-sync').create();
 
 //blog-runner build tasks
 gulp.task('build', function(){
-  blog.roll('blog', {snippetChars: 400});
+  blog.roll('blog', {snippetChars: 300});
   blog.build('blog');
 });
 
