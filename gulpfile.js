@@ -11,6 +11,7 @@ var critical = require('critical');
 var useref = require('gulp-useref');
 var gulpif = require('gulp-if');
 var autoprefixer = require('gulp-autoprefixer');
+var sitemap = require('gulp-sitemap');
 var blog = require('blog-runner');
 var sync = require('browser-sync').create();
 
@@ -43,37 +44,37 @@ var sync = require('browser-sync').create();
     gulp.watch(['blog/_site/**/*'],['dev-watch']);
   });
 
-//blog-runner build tasks
-gulp.task('build', function(){
-  blog.roll('blog', {snippetChars: 300});
-  blog.build('blog');
-});
+//PRODUCTION BUILD TASKS
+  //watch for production-level changes
+  gulp.task('prod-watch', ['default'], sync.reload);
+  gulp.task('prod-serve', ['default'], function(){
+    sync.init({
+      server:{
+        baseDir: "./public"
+      }
+    });
+    gulp.watch(['theme/**/*', 'blog/_includes/**/*', 'blog/_posts/**/*','index.html'], ['prod-watch']);
+  });
+  //blog-runner build tasks
+  gulp.task('build', function(){
+    blog.roll('blog', {snippetChars: 300});
+    blog.build('blog');
+  });
 
-//Porter of blog content
-gulp.task('blog-port',['build'],function(){
-  gulp.src('blog/_site/**/*')
-    .pipe(gulp.dest('public/blog'));
-});
-//Porters of non-critical content
-gulp.task('bower-port', function(){
-  gulp.src(['bower_components/**/*'])
-    .pipe(gulp.dest('public/bower_components'));
-});
-gulp.task('misc-port', function(){
-  gulp.src(['misc/**/*'])
-    .pipe(gulp.dest('public'));
-});
-gulp.task('downloads-port', function(){
-  gulp.src(['download/**/*'])
-    .pipe(gulp.dest('public/download'));
-});
-gulp.task('other-image-port', function () {
+  //Porters of non-async content
+  gulp.task('prod-port', function(){
+    gulp.src(['bower_components/**/*'])
+      .pipe(gulp.dest('public/bower_components'));
+    gulp.src(['misc/**/*'])
+      .pipe(gulp.dest('public'));
+    gulp.src(['download/**/*'])
+      .pipe(gulp.dest('public/download'));
     gulp.src(['theme/images/**/*.svg','theme/images/**/*.ico'])
         .pipe(gulp.dest('public/theme/images'));
-});
+  });
 
-//image minifier (no CSS, HTML, or JS)
-gulp.task('image-min', function () {
+  //image minifier (no CSS, HTML, or JS)
+  gulp.task('image-min', function () {
     gulp.src(['theme/images/**/*.jpg','theme/images/**/*.png'])
         .pipe(imagemin({
           optimizationLevel: 7,
@@ -81,54 +82,66 @@ gulp.task('image-min', function () {
           use: [pngquant()]
         }))
         .pipe(gulp.dest('public/theme/images'));
-});
-
-//css auto-prefixer for compatibility
-gulp.task('autoprefixer', function(){
-  return gulp.src('theme/css/*.css')
-    .pipe(autoprefixer({
-          browsers: ['last 2 versions'],
-          cascade:'false'
-          }))
-    .pipe(gulp.dest('./theme/css/'));
-});
-
-//CSS and JS minifier, retaining async on javascript files, after all other files have been ported over
-gulp.task('async',['blog-port','bower-port', 'misc-port', 'downloads-port','image-min', 'other-image-port', 'autoprefixer'],function(){
-  var assets = useref.assets();
-  return gulp.src('index.html')
-    .pipe(assets)
-    .pipe(gulpif('*.js', uglify()))
-    .pipe(gulpif('*.css', minifyCss()))
-    .pipe(assets.restore())
-    .pipe(useref())
-    .pipe(gulp.dest('public'));
-});
-
-//CSS inliner post-CSS and JS minification, pre-HTML minification and gzipping
-gulp.task('css-inline',['async'], function(){
-  return critical.generateInline({
-    base:'public/',
-    src:'index.html',
-    dest: 'public/index.html',
-    width: 1300,
-    height: 900
   });
-});
 
-//HTML minifier (run after ports, image-minification, and critical CSS inlining)
-gulp.task('cruncher', ['css-inline'], function() {
-   gulp.src('public/index.html')
-        .pipe(usemin({
-            assetsDir: '',
-            html: [minifyHtml({empty:true})]
-        }))
-        .pipe(gulp.dest('public'));
-});
+  //css auto-prefixer for compatibility
+  gulp.task('autoprefixer', function(){
+    return gulp.src('theme/css/*.css')
+      .pipe(autoprefixer({
+            browsers: ['last 2 versions'],
+            cascade:'false'
+            }))
+      .pipe(gulp.dest('./theme/css/'));
+  });
+
+  //CSS and JS minifier, retaining async on javascript files, after all other files have been ported over
+  gulp.task('async',['build','prod-port','image-min','autoprefixer'],function(){
+    gulp.src(['index.html'])
+      .pipe(useref({searchPath: '.'}))
+      .pipe(gulpif('*.js', uglify()))
+      .pipe(gulpif('*.css', minifyCss()))
+      .pipe(gulp.dest('public'));
+    gulp.src(['blog/_site/**/*.html'])
+      .pipe(useref({searchPath: '.'}))
+      .pipe(gulpif('*.js', uglify()))
+      .pipe(gulpif('*.css', minifyCss()))
+      .pipe(gulp.dest('public/blog'));
+  });
+
+  //Sitemap generator for SEO and search engine ease-of-use (XML format)
+    gulp.task('sitemapper',['async'],function() {
+        return gulp.src('public/**/*.html')
+          .pipe(sitemap({
+            siteUrl: 'https://alexpear.com'
+          }))
+          .pipe(gulp.dest('./public'));
+    });
+
+  //CSS inliner post-CSS and JS minification, pre-HTML minification and gzipping
+  gulp.task('css-inline',['sitemapper'], function(){
+    return critical.generateInline({
+      base:'public/',
+      src:'index.html',
+      dest: 'public/index.html',
+      ignore: ['@font-face'],
+      width: 1300,
+      height: 900
+    });
+  });
+
+  //HTML minifier (run after ports, image-minification, and critical CSS inlining)
+  gulp.task('cruncher', ['css-inline'], function() {
+     gulp.src('public/index.html')
+          .pipe(usemin({
+              assetsDir: '',
+              html: [minifyHtml({empty:true})]
+          }))
+          .pipe(gulp.dest('public'));
+  });
 
 
-// Post-port zipping (renamed default)
-gulp.task('default', ['cruncher'], function(){
-  gulp.src(['public/**/*','!public/**/*.gz','!public/**/*.md','!public/**/*.txt', '!public/**/*.json','!public/**/*.xml', '!public/theme/images/**/*'])
-    .pipe(gzip()).pipe(gulp.dest('public'));
-});
+  // Post-port zipping (renamed default) and
+  gulp.task('default', ['cruncher'], function(){
+    gulp.src(['public/**/*','!public/**/*.gz','!public/**/*.md','!public/**/*.txt', '!public/**/*.json','!public/**/*.xml', '!public/theme/images/**/*'])
+      .pipe(gzip()).pipe(gulp.dest('public'));
+  });

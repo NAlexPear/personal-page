@@ -13,9 +13,7 @@ $('.navbubbles, #menubar, .contact-target').not('.post-nav').on('click','a', fun
   'use strict';
 
   var url = window.location.href
-  console.log(url);
   var targetClass = url.split('?')[1];
-  console.log(targetClass);
   if (targetClass !== undefined) {
     $('#content>div').not($('.'+targetClass)).addClass('hidden');
     $('.'+targetClass).removeClass('hidden');
