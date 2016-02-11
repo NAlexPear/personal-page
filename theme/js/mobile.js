@@ -1,4 +1,4 @@
-$(function(){
+(function(window, document, $){
   //navigation menu options, slide in from the left
   $('.ti-menu').click(function(){
     if($('#menubar').hasClass('expanded')){
@@ -28,4 +28,4 @@ $(function(){
   $('button.cancel').on('click', function(){
     $('#mobile-contact-overlay').addClass('hidden');
   });
-});
+}(window, document, window.jQuery));
