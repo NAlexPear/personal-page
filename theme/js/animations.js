@@ -2,6 +2,20 @@ function Animate() {
 
   var obj = {};
 
+  //open/close side menu on
+  obj.menu = {
+    close($menu, menu, icon){
+      $menu.animate({left:'-400px'},function(){
+        menu.className = menu.className.replace(' expanded','');
+      });
+      icon.className = icon.className.replace('ti-close', 'ti-menu');
+    },
+    open($menu, icon){
+      $menu.addClass('expanded').animate({left:'0px'});
+      icon.className = icon.className.replace('ti-menu', 'ti-close');
+    }
+  }
+
   obj.scroller = function () {
     $('a[href*=#]:not([href=#])').click(function() {
         if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {

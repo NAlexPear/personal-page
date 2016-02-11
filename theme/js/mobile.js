@@ -1,31 +1,39 @@
-(function(window, document, $){
+(function(window, document, Animate){
   //navigation menu options, slide in from the left
-  $('.ti-menu').click(function(){
-    if($('#menubar').hasClass('expanded')){
-        $('#menubar').animate({left:'-400px'},function(){
-          $('#menubar').removeClass('expanded');
-        });
-        $('#mobile-nav>li>div>span:first-child').removeClass('ti-close').addClass('ti-menu');
+  var nav = document.getElementById('mobile-nav');
+  var mobileIcon = nav.querySelector('.ti-menu');
+  var mobileMenu = document.getElementById('menubar');
+  var $mobileMenu = $(mobileMenu);
+
+  var contact = nav.querySelector('.ti-email');
+  var overlay = document.getElementById('mobile-contact-overlay');
+  var exit = overlay.querySelector('.ti-close');
+  var cancel = overlay.querySelector('button.cancel');
+
+  mobileIcon.addEventListener('click', function(){
+    if(mobileMenu.className.match('expanded')){
+      Animate.menu.close($mobileMenu, mobileMenu, mobileIcon);
     } else {
-        $('#menubar').addClass('expanded').animate({left:'0px'});
-        $('#mobile-nav>li>div>span:first-child').removeClass('ti-menu').addClass('ti-close');
+      Animate.menu.open($mobileMenu, mobileIcon);
+    }
+  });
+
+  mobileMenu.addEventListener('click', function(e){
+    if (e.target && e.target.nodeName === 'DIV'){
+      if(mobileMenu.className.match('expanded')){
+        Animate.menu.close($mobileMenu, mobileMenu, mobileIcon);
       }
-    });
-  $('#menubar a').click(function(){
-    if($('#menubar').hasClass('expanded')){
-      $('#menubar').removeClass('expanded').animate({left:'-400px'});
-      $('#mobile-nav>li>div>span:first-child').removeClass('ti-close').addClass('ti-menu');
     }
   });
 
   //contact form options, appearing as full screen overlay
-  $('#mobile-nav .ti-email').on('click', function () {
-    $('#mobile-contact-overlay').removeClass('hidden');
+  contact.addEventListener('click', function () {
+    overlay.className = overlay.className.replace('hidden', '');
   });
-  $('.contact-form>form>span').on('click', function(){
-    $('#mobile-contact-overlay').addClass('hidden');
+  exit.addEventListener('click', function(){
+    overlay.className += ' hidden';
   });
-  $('button.cancel').on('click', function(){
-    $('#mobile-contact-overlay').addClass('hidden');
+  cancel.addEventListener('click', function(){
+    overlay.className += ' hidden';
   });
-}(window, document, window.jQuery));
+}(window, document, Animate()));
