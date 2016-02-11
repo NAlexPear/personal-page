@@ -19,7 +19,7 @@
   });
 
   mobileMenu.addEventListener('click', function(e){
-    if (e.target && e.target.nodeName === 'DIV'){
+    if (e.target){
       if(mobileMenu.className.match('expanded')){
         Animate.menu.close($mobileMenu, mobileMenu, mobileIcon);
       }
