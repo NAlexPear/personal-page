@@ -24,8 +24,8 @@ var sync = require('browser-sync').create();
       .pipe(gulp.dest('build/blog/'));
     gulp.src('theme/**/*')
       .pipe(gulp.dest('build/theme/'));
-    gulp.src('bower_components/jquery/**/*')
-      .pipe(gulp.dest('build/bower_components/jquery'));
+    gulp.src('node_modules/gsap/src/minified/**/*')
+      .pipe(gulp.dest('build/node_modules/gsap'));
     gulp.src('bower_components/picturefill/**/*')
       .pipe(gulp.dest('build/bower_components/picturefill'));
     gulp.src('bower_components/themify-icons/**/*')
@@ -41,7 +41,7 @@ var sync = require('browser-sync').create();
         baseDir: "./build"
       }
     });
-    gulp.watch(['blog/_site/**/*'],['dev-watch']);
+    gulp.watch(['blog/_site/**/*', 'index.html'],['dev-watch']);
   });
 
 //PRODUCTION BUILD TASKS
