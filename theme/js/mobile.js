@@ -3,7 +3,6 @@
   var nav = document.getElementById('mobile-nav');
   var mobileIcon = nav.querySelector('.ti-menu');
   var mobileMenu = document.getElementById('menubar');
-  var $mobileMenu = $(mobileMenu);
 
   var contact = nav.querySelector('.ti-email');
   var overlay = document.getElementById('mobile-contact-overlay');
@@ -12,16 +11,16 @@
 
   mobileIcon.addEventListener('click', function(){
     if(mobileMenu.className.match('expanded')){
-      Animate.menu.close($mobileMenu, mobileMenu, mobileIcon);
+      Animate.menu.close(mobileMenu, mobileIcon);
     } else {
-      Animate.menu.open($mobileMenu, mobileIcon);
+      Animate.menu.open(mobileMenu, mobileIcon);
     }
   });
 
   mobileMenu.addEventListener('click', function(e){
     if (e.target){
       if(mobileMenu.className.match('expanded')){
-        Animate.menu.close($mobileMenu, mobileMenu, mobileIcon);
+        Animate.menu.close(mobileMenu, mobileIcon);
       }
     }
   });

@@ -4,14 +4,15 @@ function Animate() {
 
   //open/close side menu on
   obj.menu = {
-    close($menu, menu, icon){
-      $menu.animate({left:'-400px'},function(){
-        menu.className = menu.className.replace(' expanded','');
-      });
+    close(menu, icon){
+      TweenLite.to(menu, 0.2, {left:"-400px"});
+      menu.className = menu.className.replace(' expanded','');
       icon.className = icon.className.replace('ti-close', 'ti-menu');
     },
-    open($menu, icon){
-      $menu.addClass('expanded').animate({left:'0px'});
+    open(menu, icon){
+      TweenLite.to(menu, 0.2, {left:"0px"});
+      console.log(menu.className);
+      menu.className += ' expanded';
       icon.className = icon.className.replace('ti-menu', 'ti-close');
     }
   }
