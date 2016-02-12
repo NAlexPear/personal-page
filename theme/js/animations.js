@@ -11,7 +11,6 @@ function Animate() {
     },
     open(menu, icon){
       TweenLite.to(menu, 0.2, {left:"0px"});
-      console.log(menu.className);
       menu.className += ' expanded';
       icon.className = icon.className.replace('ti-menu', 'ti-close');
     }

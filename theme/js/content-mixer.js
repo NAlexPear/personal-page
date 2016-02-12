@@ -1,3 +1,5 @@
+
+
 $('.navbubbles, #menubar, .contact-target').not('.post-nav').on('click','a', function(){
   var class_section = $(this).attr('data-action');
   if(class_section==='blog-link'){
@@ -9,13 +11,23 @@ $('.navbubbles, #menubar, .contact-target').not('.post-nav').on('click','a', fun
   }
 });
 
-(function(window, document, $) {
+(function(window, document) {
   'use strict';
 
-  var url = window.location.href
+  var url = window.location.href;
+  var content = document.getElementById('content');
+  var children = content.childNodes;
+
   var targetClass = url.split('?')[1];
+
   if (targetClass !== undefined) {
-    $('#content>div').not($('.'+targetClass)).addClass('hidden');
-    $('.'+targetClass).removeClass('hidden');
+    for(var i = 0; i < children.length; i++){
+      var el = children[i];
+      if(el.className && el.className.match(targetClass)){
+        el.className = el.className.replace('hidden', '');
+      } else {
+        el.className += ' hidden';
+      }
+    }
   }
-}(window, document, window.jQuery));
+}(window, document));
