@@ -4,10 +4,11 @@
 
 // HTML element styles
 body{
-    background-color: $color-base;
-    &>div:first-child{
-      background-color: $color-head;
-    }
+  -webkit-tap-highlight-color:  transparent;
+  background-color: $color-base;
+  &>div:first-child{
+    background-color: $color-head;
+  }
 }
 h1,h2,h3,h4{
   font-family: 'Lato', 'Helvetica', 'sans-serif';
@@ -18,7 +19,7 @@ h1{
   @media (min-width: 640px) {
     font-size: $h1;
   }
-}
+} 
 h2{
   font-size: ($h1 + 2)*0.87;
   @media (min-width: 640px) {

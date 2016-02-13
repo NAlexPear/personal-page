@@ -362,6 +362,7 @@ table {
   border-spacing: 0; }
 
 body {
+  -webkit-tap-highlight-color: transparent;
   background-color: #ffffff; }
   body > div:first-child {
     background-color: #EEEEEE; }
