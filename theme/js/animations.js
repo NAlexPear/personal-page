@@ -2,7 +2,7 @@ function Animate() {
 
   var obj = {};
 
-  //open/close side menu on
+  //open/close side menu on mobile
   obj.menu = {
     close(menu, icon){
       TweenLite.to(menu, 0.2, {left:"-400px"});
@@ -14,21 +14,6 @@ function Animate() {
       menu.className += ' expanded';
       icon.className = icon.className.replace('ti-menu', 'ti-close');
     }
-  };
-
-  obj.scroller = function () {
-    $('a[href*=#]:not([href=#])').click(function() {
-        if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-            var target = $(this.hash);
-            target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-            if (target.length) {
-                $('html,body').animate({
-                    scrollTop: target.offset().top
-                }, 1000);
-        return false;
-            }
-        }
-    });
   };
 
   obj.resume = function () {
