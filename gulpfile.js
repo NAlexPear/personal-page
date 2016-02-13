@@ -14,6 +14,8 @@ var autoprefixer = require('gulp-autoprefixer');
 var sitemap = require('gulp-sitemap');
 var blog = require('blog-runner');
 var sync = require('browser-sync').create();
+var expect = require('gulp-expect-file');
+var debug = require('gulp-debug');
 
 //DEVELOPMENT ENVIRONMENT TASKS (for ./build)
   //port in relevant content without any async operations
@@ -25,7 +27,7 @@ var sync = require('browser-sync').create();
     gulp.src('theme/**/*')
       .pipe(gulp.dest('build/theme/'));
     gulp.src('node_modules/gsap/src/minified/**/*')
-      .pipe(gulp.dest('build/node_modules/gsap'));
+      .pipe(gulp.dest('build/node_modules/gsap/src/minified'));
     gulp.src('bower_components/picturefill/**/*')
       .pipe(gulp.dest('build/bower_components/picturefill'));
     gulp.src('bower_components/themify-icons/**/*')
@@ -70,7 +72,9 @@ var sync = require('browser-sync').create();
     gulp.src(['download/**/*'])
       .pipe(gulp.dest('public/download'));
     gulp.src(['theme/images/**/*.svg','theme/images/**/*.ico'])
-        .pipe(gulp.dest('public/theme/images'));
+      .pipe(gulp.dest('public/theme/images'));
+    gulp.src(['theme/js/animations.js'])
+      .pipe(gulp.dest('public/theme/js'));
   });
 
   //image minifier (no CSS, HTML, or JS)
@@ -95,13 +99,13 @@ var sync = require('browser-sync').create();
   });
 
   //CSS and JS minifier, retaining async on javascript files, after all other files have been ported over
-  gulp.task('async',['build','prod-port','image-min','autoprefixer'],function(){
-    gulp.src(['index.html'])
+  gulp.task('async',['build','image-min','prod-port','autoprefixer'],function(){
+    gulp.src('index.html')
       .pipe(useref({searchPath: '.'}))
       .pipe(gulpif('*.js', uglify()))
       .pipe(gulpif('*.css', minifyCss()))
       .pipe(gulp.dest('public'));
-    gulp.src(['blog/_site/**/*.html'])
+    gulp.src('blog/_site/**/*.html')
       .pipe(useref({searchPath: '.'}))
       .pipe(gulpif('*.js', uglify()))
       .pipe(gulpif('*.css', minifyCss()))
@@ -143,5 +147,6 @@ var sync = require('browser-sync').create();
   // Post-port zipping (renamed default) and
   gulp.task('default', ['cruncher'], function(){
     gulp.src(['public/**/*','!public/**/*.gz','!public/**/*.md','!public/**/*.txt', '!public/**/*.json','!public/**/*.xml', '!public/theme/images/**/*'])
-      .pipe(gzip()).pipe(gulp.dest('public'));
+      .pipe(gzip())
+      .pipe(gulp.dest('public'));
   });

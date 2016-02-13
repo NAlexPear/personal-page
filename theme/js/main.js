@@ -1,7 +1,7 @@
-(function(window, document, Animate, Tween) {
+(function(window, document, Move) {
   'use strict';
 
-  Animate.resume();
-  Animate.portfolio();
+  Move.resume();
+  Move.portfolio();
 
-}(window, document, Animate(), window.TweenLite));
+}(window, document, Move()));
