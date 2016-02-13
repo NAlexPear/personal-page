@@ -75,6 +75,7 @@ function Move() {
   obj.portfolio = function () {
     var portfolio = document.querySelector('.portfolio-display');
     var proj = portfolio.getElementsByTagName('DIV');
+    var sidebar = document.getElementById('portfolio-sidebar');
 
     portfolio.addEventListener('click', function(e){
       if(e.target.nodeName === 'IMG'){
@@ -83,23 +84,52 @@ function Move() {
         var desc = parent.querySelector('.portfolio-description');
         var sub = parent.querySelector('.subtitle');
 
+        if(!sidebar.className){
+
+          function expand(){
+            sidebar.className += ' expanded';
+          };
+
+          T.to(sidebar, 0.2, {
+            width:"25vw",
+            'border-right':"solid 1.3px lightgrey",
+            onComplete: expand
+          });
+        }
+
         //change button function based on div expansion with if-else
         if(parent.className && parent.className.match(/expanded/)){
-              //hide description before parent animation, then animate parent width
-              function parcheesi(){
-                T.to(parent, 0.2, { width:"220px" });
-              };
-              T.to(desc, 0.2, { height:"0", onComplete:parcheesi });
+          //remove sidebar (unless sidebar image is clicked)
+          function sb(){
+            function cb(){
+              sidebar.className = sidebar.className.replace(' expanded','');
+            };
 
-              //remove expanded class on parent div
-              parent.className = parent.className.replace('expanded','');
-          }
-        else {
+            T.to(sidebar, 0.2, {
+              width:"0vw",
+              'border-right':'transparent',
+              onComplete: cb
+            });
+          };
+
+          //hide description before parent animation, then animate parent width
+          function parcheesi(){
+            T.to(parent, 0.2, { width:"220px", onComplete: sb });
+            T.to(e.target, 0.15, { clearProps:"opacity" });
+          };
+          T.to(desc, 0.2, { height:"0", onComplete:parcheesi });
+
+          //remove expanded class on parent div
+          parent.className = parent.className.replace('expanded','');
+        } else {
             //animate parent width, then show portfolio-description
             function description(){
-              T.to(desc, 0.2, { height:"90vh" });
+              function opacity(){
+                T.to(e.target, 0.15, { opacity:"1" });
+              }
+              T.to(desc, 0.2, { height:"90vh", onComplete: opacity });
             };
-            T.to(parent, 0.2, { width:"90%", onComplete:description });
+            T.to(parent, 0.2, { width:"90%", onComplete: description });
 
             //add expanded class on parent div
             parent.className += ' expanded';
