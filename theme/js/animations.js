@@ -3,6 +3,19 @@ function Move() {
   var obj = {};
   var T = TweenLite;
 
+  //private helpers
+  function getChildren(n, skip){
+    var r = [];
+    for ( ; n; n = n.nextSibling){
+      if ( n.nodeType == 1 && n != skip) r.push(n);
+    }
+    return r;
+  };
+
+  function getSiblings(n){
+    return getChildren(n.parentNode.firstChild, n);
+  };
+
   //open/close side menu on mobile
   obj.menu = {
     close(menu, icon){
@@ -21,18 +34,6 @@ function Move() {
 
     var p = document.querySelector('.resume-drop');
     var ul = p.querySelector('ul');
-
-    function getChildren(n, skip){
-      var r = [];
-      for ( ; n; n = n.nextSibling){
-        if ( n.nodeType == 1 && n != skip) r.push(n);
-      }
-      return r;
-    };
-
-    function getSiblings(n){
-      return getChildren(n.parentNode.firstChild, n);
-    };
 
     ul.addEventListener('click', function(e) {
       var li = e.target;
@@ -76,6 +77,13 @@ function Move() {
     var portfolio = document.querySelector('.portfolio-display');
     var proj = portfolio.getElementsByTagName('DIV');
     var sidebar = document.getElementById('portfolio-sidebar');
+    var sbIcons = sidebar.getElementsByTagName('DIV');
+    var iconHeights = [];
+
+    for (var i = 0; i < sbIcons.length; i++) {
+      var h = sbIcons[i].clientHeight;
+      iconHeights.push(h);
+    }
 
     portfolio.addEventListener('click', function(e){
       if(e.target.nodeName === 'IMG'){
@@ -83,7 +91,9 @@ function Move() {
         var parent = picture.parentNode;
         var desc = parent.querySelector('.portfolio-description');
         var sub = parent.querySelector('.subtitle');
+        var sibs = getSiblings(parent);
 
+        //expand sidebar if it isn't already
         if(!sidebar.className){
 
           function expand(){
@@ -91,7 +101,7 @@ function Move() {
           };
 
           T.to(sidebar, 0.2, {
-            width:"25vw",
+            width:"25%",
             'border-right':"solid 1.3px lightgrey",
             onComplete: expand
           });
@@ -99,6 +109,7 @@ function Move() {
 
         //change button function based on div expansion with if-else
         if(parent.className && parent.className.match(/expanded/)){
+
           //remove sidebar (unless sidebar image is clicked)
           function sb(){
             function cb(){
@@ -116,25 +127,139 @@ function Move() {
           function parcheesi(){
             T.to(parent, 0.2, { width:"220px", onComplete: sb });
             T.to(e.target, 0.15, { clearProps:"opacity" });
+
+            //show other regular menu options
+            for (var i = 0; i < sibs.length; i++) {
+              T.to(sibs[i], 0.15, { clearProps:"height,display" });
+            }
+
+            //re-add clicked item as sidebar option
+            for (var i = 0; i < sbIcons.length; i++) {
+              if(sbIcons[i].className.match(parent.id)){
+                T.to(sbIcons[i], 0.15, { clearProps:"height,display" });
+                sbIcons[i].className = sbIcons[i].className.replace('inactive','');
+              }
+            }
           };
-          T.to(desc, 0.2, { height:"0", onComplete:parcheesi });
+
+          T.to(desc, 0.1, { height:"0", onComplete:parcheesi });
 
           //remove expanded class on parent div
           parent.className = parent.className.replace('expanded','');
-        } else {
-            //animate parent width, then show portfolio-description
-            function description(){
-              function opacity(){
-                T.to(e.target, 0.15, { opacity:"1" });
-              }
-              T.to(desc, 0.2, { height:"90vh", onComplete: opacity });
-            };
-            T.to(parent, 0.2, { width:"90%", onComplete: description });
 
-            //add expanded class on parent div
-            parent.className += ' expanded';
+        } else {
+        //ELSE => the original/default state, no sidebar
+
+          //hide other non-sidebar options
+          for (var i = 0; i < sibs.length; i++) {
+            T.to(sibs[i], 0.15, { height: "0", display: "none" });
+          }
+
+          //remove clicked item from sidebar options
+          for (var i = 0; i < sbIcons.length; i++) {
+            if(sbIcons[i].className.match(parent.id)){
+              T.to(sbIcons[i], 0.15, { height:"0", display:"none" });
+              sbIcons[i].className += ' inactive';
+            }
+          }
+
+          //animate parent width, then show portfolio-description
+          function description(){
+            function opacity(){
+              T.to(e.target, 0.15, { opacity:"1" });
+            }
+            T.to(desc, 0.2, { height:"90vh", onComplete: opacity });
+          };
+
+          T.to(parent, 0.2, { width:"90%", onComplete: description });
+
+          //add expanded class on parent div
+          parent.className += ' expanded';
         }
       }
+    });
+
+    sidebar.addEventListener('click', function (e) {
+      var pic = e.target.parentNode;
+      var div = pic.parentNode;
+      var sibs = getSiblings(div);
+
+      function clear(el){
+        T.to(el, 0.05, { clearProps: "height, display" });
+        el.className = el.className.replace(' inactive','');
+      };
+
+      function restoreSibs(el){
+        for (var i = 0; i < sibs.length; i++) {
+          if(sibs[i].className && sibs[i].className.match(/inactive/)){
+            T.to(sibs[i], 0.15, {
+              height: iconHeights[i],
+              display: "block",
+              onComplete: clear,
+              onCompleteParams: [sibs[i]]
+            });
+          }
+        }
+        el.className += ' inactive';
+      };
+
+      if(e.target.nodeName === 'IMG'){
+        //remove clicked item from sidebar options, then restore siblings
+        T.to(div, 0.15, {
+          height:"0",
+          display:"none",
+          onComplete: restoreSibs,
+          onCompleteParams: [div]
+        });
+
+        //show its corresponding info in the main display section
+        for (var i = 0; i < proj.length; i++) {
+          //hide currently displayed project
+          if(proj[i].className && proj[i].className.match(/expanded/)){
+            var project = proj[i];
+            console.log(project.id);
+            var desc = project.querySelector('.portfolio-description');
+
+            function projDisplay() {
+              T.to(project, 0.2, {
+                height:"0",
+                display:"none",
+                clearProps:"width"
+              });
+            };
+
+            T.to(desc, 0.15, {
+              height: "0",
+              onComplete:projDisplay
+            });
+
+            project.className = project.className.replace('expanded','');
+          }
+
+          //show new project
+          if(proj[i].id && proj[i].id.match(div.className)){
+            var project = proj[i];
+            var desc = project.querySelector('.portfolio-description');
+
+            function cb(el) {
+                T.to(desc, 0.15, { height: "90vh", clearProps:"display" });
+                el.className += ' expanded';
+            };
+
+            T.to(project, 0.2, {
+              width: "90%",
+              clearProps:"display, height",
+              onComplete: cb,
+              onCompleteParams: [project]
+            });
+
+
+          }
+        }
+
+      }
+
+
     });
   };
 
