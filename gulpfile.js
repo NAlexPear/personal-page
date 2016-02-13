@@ -41,7 +41,7 @@ var sync = require('browser-sync').create();
         baseDir: "./build"
       }
     });
-    gulp.watch(['blog/_site/**/*', 'index.html'],['dev-watch']);
+    gulp.watch(['blog/_site/**/*', 'index.html', 'theme/css/*.css', 'theme/js/*.js'],['dev-watch']);
   });
 
 //PRODUCTION BUILD TASKS

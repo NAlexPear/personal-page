@@ -301,6 +301,10 @@
   font-weight: 400;
   src: local("Shadows Into Light"), local("ShadowsIntoLight"), url(https://fonts.gstatic.com/s/shadowsintolight/v6/clhLqOv7MXn459PTh0gXYFK2TSYBz0eNcHnp4YqE4Ts.woff2) format("woff2");
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000; }
+.center {
+  text-align: center;
+  text-indent: 0 !important; }
+
 .hidden {
   display: none !important; }
 
@@ -473,6 +477,10 @@ a {
 
 .navreact a, .navreact span {
   color: #A8A8A8;
+  -o-transition: .5s color;
+  -ms-transition: .5s color;
+  -moz-transition: .5s color;
+  -webkit-transition: .5s color;
   transition: .5s color; }
   .navreact a :hover, .navreact span :hover {
     color: #51504f; }
@@ -742,30 +750,20 @@ a {
         margin-right: 0.5em; }
         #content .resume-info .resume-drop ul li span::before {
           display: inline-block;
-          transition: -webkit-transform 0.2s;
           transition: transform 0.2s;
-          transition: transform 0.2s, -webkit-transform 0.2s;
-          -webkit-transform: rotate(135deg);
-                  transform: rotate(135deg); }
+          transform: rotate(135deg); }
       #content .resume-info .resume-drop ul li:hover {
         color: #51504f; }
       #content .resume-info .resume-drop ul li.active {
         color: #51504f; }
         #content .resume-info .resume-drop ul li.active span::before {
-          transition: -webkit-transform 0.3s;
           transition: transform 0.3s;
-          transition: transform 0.3s, -webkit-transform 0.3s;
-          -webkit-transform: rotate(225deg);
-                  transform: rotate(225deg); }
+          transform: rotate(225deg); }
 
 #content .portfolio-display {
   height: auto;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-flex-flow: row wrap;
-      -ms-flex-flow: row wrap;
-          flex-flow: row wrap;
+  flex-flow: row wrap;
   margin-bottom: 1em;
   transition: all 0.8s ease; }
   #content .portfolio-display .subtitle {
@@ -779,10 +777,11 @@ a {
     cursor: pointer;
     vertical-align: bottom;
     position: relative;
-    transition: opacity 0.3s; }
+    transition: all 0.2s ease; }
     #content .portfolio-display div .portfolio-description {
       width: 90%;
-      display: none; }
+      height: 0;
+      overflow: hidden; }
       #content .portfolio-display div .portfolio-description > p:first-child {
         text-align: center;
         text-indent: 0;
@@ -791,25 +790,10 @@ a {
           #content .portfolio-display div .portfolio-description > p:first-child {
             font-size: 2.03863vmax; } }
     #content .portfolio-display div img {
+      opacity: 0.8;
       width: 100%; }
-    #content .portfolio-display div button {
-      position: absolute;
-      top: 80px;
-      left: 50%;
-      margin-left: -75px;
-      width: 150px;
-      padding: 0.25em;
-      background-color: transparent;
-      border: none;
-      color: #A8A8A8;
-      font-size: 1.4em;
-      font-family: 'Lato', sans-serif;
-      font-weight: 700;
-      cursor: pointer; }
     #content .portfolio-display div:hover img {
-      transition: opacity 0.3s;
-      opacity: 0.20; }
-    #content .portfolio-display div:hover button {
+      transition: all 0.1s ease;
       opacity: 1; }
 
 #gh-projects {
@@ -914,3 +898,5 @@ footer ul {
   width: 90%;
   max-width: 900px;
   margin: 0.5em auto; }
+
+/*# sourceMappingURL=maintemplate2.css.map */

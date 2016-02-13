@@ -1,7 +1,7 @@
 (function(window, document, Animate, Tween, $) {
   'use strict';
 
-  Animate.scroller();
   Animate.resume();
+  Animate.portfolio();
 
 }(window, document, Animate(), window.TweenLite, window.jQuery));

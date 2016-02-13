@@ -497,10 +497,11 @@ a {
     cursor: pointer;
     vertical-align: bottom;
     position: relative;
-    transition: opacity 0.3s;
+    transition: all 0.2s ease;
     .portfolio-description{
       width: 90%;
-      display: none;
+      height: 0;
+      overflow: hidden;
       &>p:first-child{
         text-align: center;
         text-indent: 0;
@@ -511,29 +512,12 @@ a {
       }
     }
     img{
+      opacity: 0.8;
       width:100%;
-    }
-    button{
-      position: absolute;
-      top: 80px;
-      left: 50%;
-      margin-left: -75px;
-      width: 150px;
-      padding: 0.25em;
-      background-color: transparent;
-      border: none;
-      color: $color-mid;
-      font-size: 1.4em;
-      font-family: 'Lato', sans-serif;
-      font-weight: 700;
-      cursor: pointer;
     }
     &:hover{
       img {
-        transition: opacity 0.3s;
-        opacity: 0.20;
-      }
-      button{
+        transition: all 0.1s ease;
         opacity: 1;
       }
     }
