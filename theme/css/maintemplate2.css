@@ -730,15 +730,16 @@ a {
     font-size: 2.53562vmax; }
   #content .resume-info .resume-drop .resume-drop-blurb {
     width: 80%;
-    padding: 0.5em;
-    text-align: left;
-    display: none; }
+    height: 0;
+    overflow: hidden;
+    margin: 0.5em;
+    text-align: left; }
     #content .resume-info .resume-drop .resume-drop-blurb p {
       text-indent: 0;
       color: #51504f; }
       @media (max-width: 640px) {
         #content .resume-info .resume-drop .resume-drop-blurb p {
-          font-size: 1.2em; } }
+          font-size: 0.7em; } }
   #content .resume-info .resume-drop ul {
     list-style-type: none;
     padding-right: 4vw; }
@@ -782,6 +783,8 @@ a {
       width: 90%;
       height: 0;
       overflow: hidden; }
+      #content .portfolio-display div .portfolio-description h4 {
+        margin-top: 2em; }
       #content .portfolio-display div .portfolio-description > p:first-child {
         text-align: center;
         text-indent: 0;

@@ -36,21 +36,52 @@ function Animate() {
     var p = document.querySelector('.resume-drop');
     var ul = p.querySelector('ul');
 
+    function getChildren(n, skip){
+      var r = [];
+      for ( ; n; n = n.nextSibling){
+        if ( n.nodeType == 1 && n != skip) r.push(n);
+      }
+      return r;
+    };
+
+    function getSiblings(n){
+      return getChildren(n.parentNode.firstChild, n);
+    };
+
     ul.addEventListener('click', function(e) {
-      var $el = $(e.target);
+      var li = e.target;
 
-      if( e.target && e.target.nodeName === 'LI'){
-        var $blurb = $el.children('div');
-        var $otherBlurbs = $el.siblings().children('div');
+      if( li && li.nodeName === 'LI'){
+        var blurb = li.childNodes[2];
+        var otherLi = getSiblings(li);
 
-        if($blurb.hasClass('expanded')){
-          $blurb.slideUp('fast').removeClass('expanded');
-          $el.removeClass('active');
+        function removeClasses(){
+          blurb.className = blurb.className.replace('expanded','');
+          li.className = li.className.replace('active','');
+        };
+
+        function addClasses(){
+          blurb.className += ' expanded';
+          li.className += ' active';
+        };
+
+        if(blurb.className.match(/expanded/)){
+          removeClasses();
+          TweenLite.to(blurb, 0.2, { height:"0" });
         } else {
-          $otherBlurbs.removeClass('expanded').slideUp('fast');
-          $blurb.slideDown('fast').addClass('expanded');
-          $el.addClass('active');
-          $el.siblings().removeClass('active');
+          addClasses();
+
+          TweenLite.to(blurb, 0.2, { height: "7em" });
+
+          for(var i = 0; i < otherLi.length; i++){
+            if (otherLi[i].className) {
+              var otherBlurb = otherLi[i].childNodes[2];
+              otherLi[i].className = otherLi[i].className.replace('active','');
+              otherBlurb.className = otherBlurb.className.replace('expanded','');
+              TweenLite.to(otherBlurb, 0.2, { height:"0" });
+            }
+          }
+
         }
       }
 

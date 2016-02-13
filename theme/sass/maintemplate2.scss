@@ -437,14 +437,15 @@ a {
     }
     .resume-drop-blurb{
       width: 80%;
-      padding: 0.5em;
+      height: 0;
+      overflow: hidden;
+      margin: 0.5em;
       text-align: left;
-      display: none;
       p{
         text-indent: 0;
         color: $color-mid-dark;
         @media (max-width:640px) {
-          font-size: 1.2em;
+          font-size: 0.7em;
         }
       }
     }
@@ -502,6 +503,9 @@ a {
       width: 90%;
       height: 0;
       overflow: hidden;
+      h4 {
+        margin-top: 2em;
+      }
       &>p:first-child{
         text-align: center;
         text-indent: 0;
