@@ -19,7 +19,7 @@ h1{
   @media (min-width: 640px) {
     font-size: $h1;
   }
-} 
+}
 h2{
   font-size: ($h1 + 2)*0.87;
   @media (min-width: 640px) {
@@ -500,6 +500,12 @@ a {
     vertical-align: bottom;
     position: relative;
     transition: all 0.2s ease;
+
+    .portfolio-sidebar{
+      // height: 100vh;
+      // width: 25vw;
+      // float: left;
+    }
     .portfolio-description{
       width: 90%;
       height: 0;
