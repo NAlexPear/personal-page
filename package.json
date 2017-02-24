@@ -20,12 +20,9 @@
   "devDependencies": {
     "blog-runner": "^0.1.1",
     "browser-sync": "^2.11.1",
-    "critical": "^0.7.0",
     "gsap": "^1.18.2",
     "gulp": "^3.9.0",
     "gulp-autoprefixer": "^3.1.0",
-    "gulp-debug": "^2.1.2",
-    "gulp-expect-file": "0.0.7",
     "gulp-gzip": "^1.2.0",
     "gulp-if": "^2.0.0",
     "gulp-imagemin": "^2.4.0",

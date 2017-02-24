@@ -748,30 +748,22 @@ a {
         margin-right: 0.5em; }
         #content .resume-info .resume-drop ul li span::before {
           display: inline-block;
-          transition: -webkit-transform 0.2s;
           transition: transform 0.2s;
-          transition: transform 0.2s, -webkit-transform 0.2s;
-          -webkit-transform: rotate(135deg);
-                  transform: rotate(135deg); }
+          transform: rotate(135deg); }
       #content .resume-info .resume-drop ul li:hover {
         color: #51504f; }
       #content .resume-info .resume-drop ul li.active {
         color: #51504f; }
         #content .resume-info .resume-drop ul li.active span::before {
-          transition: -webkit-transform 0.3s;
           transition: transform 0.3s;
-          transition: transform 0.3s, -webkit-transform 0.3s;
-          -webkit-transform: rotate(225deg);
-                  transform: rotate(225deg); }
+          transform: rotate(225deg); }
 
 #content .portfolio-display {
   height: auto;
-  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex-flow: row wrap;
-      -ms-flex-flow: row wrap;
-          flex-flow: row wrap;
+  -ms-flex-flow: row wrap;
+      flex-flow: row wrap;
   margin-bottom: 1em;
   transition: all 0.8s ease; }
   #content .portfolio-display .subtitle {
