@@ -1,10 +1,6 @@
-/* globals TweenLite */
-/* eslint-disable no-unused-vars */
+import T from "gsap/TweenLite.js";
 
-function Move(){
-    var obj = {};
-    var T = TweenLite;
-
+export default function Move(){
   // open/close side menu on mobile
     this.menu = {
         close( menu, icon ){
@@ -83,6 +79,4 @@ function Move(){
             }
         } );
     };
-
-    return obj;
 }

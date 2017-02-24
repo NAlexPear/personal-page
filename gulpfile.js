@@ -12,6 +12,9 @@ var autoprefixer = require( "gulp-autoprefixer" );
 var sitemap = require( "gulp-sitemap" );
 var blog = require( "blog-runner" );
 var sync = require( "browser-sync" ).create();
+var webpack = require( "webpack" );
+var webpackConfig = require( "./config/webpack" );
+var webpackStream = require( "webpack-stream" );
 
 // DEVELOPMENT ENVIRONMENT TASKS (for ./build)
     // port in relevant content without any async operations
@@ -29,6 +32,11 @@ gulp.task( "dev-port", () => {
     gulp.src( "bower_components/themify-icons/**/*" )
         .pipe( gulp.dest( "build/bower_components/themify-icons" ) );
 } );
+
+gulp.task( "webpack", () => gulp.src( "./theme/js/src/main.js" )
+    .pipe( webpackStream( webpackConfig, webpack ) )
+    .pipe( gulp.dest( "theme/js/" ) )
+);
 
 // set up watcher
 gulp.task( "dev-watch", [ "dev-port" ], sync.reload );
@@ -108,7 +116,6 @@ gulp.task( "autoprefixer", () => gulp.src( "theme/css/*.css" )
 gulp.task( "async",[ "build","prod-port","autoprefixer" ], () => {
     gulp.src( "index.html" )
       .pipe( useref( { "searchPath": "." } ) )
-      .pipe( gulpif( "*.js", uglify() ) )
       .pipe( gulpif( "*.css", minifyCss() ) )
       .pipe( gulp.dest( "public" ) );
     gulp.src( "blog/_site/**/*.html" )

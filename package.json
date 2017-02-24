@@ -18,9 +18,12 @@
   },
   "homepage": "https://alexpear.com",
   "devDependencies": {
+    "babel": "^6.23.0",
+    "babel-core": "^6.23.1",
+    "babel-loader": "^6.3.2",
     "blog-runner": "^0.1.1",
     "browser-sync": "^2.11.1",
-    "gsap": "^1.18.2",
+    "gsap": "^1.19.1",
     "gulp": "^3.9.0",
     "gulp-autoprefixer": "^3.1.0",
     "gulp-gzip": "^1.2.0",
@@ -32,6 +35,9 @@
     "gulp-uglify": "^1.5.1",
     "gulp-usemin": "^0.3.20",
     "gulp-useref": "^3.0.5",
-    "imagemin-pngquant": "^4.2.0"
+    "imagemin-pngquant": "^4.2.0",
+    "webpack": "^2.2.1",
+    "webpack-dev-server": "^2.4.1",
+    "webpack-stream": "^3.2.0"
   }
 }
