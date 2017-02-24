@@ -18,7 +18,7 @@ var webpackStream = require( "webpack-stream" );
     // port in relevant content without any async operations
 gulp.task(
     "webpack",
-    () => gulp.src( "./theme/js/src/main.js" )
+    () => gulp.src( "./theme/js/main.js" )
         .pipe( webpackStream( webpackConfig, webpack ) )
         .pipe( gulp.dest( "public/theme/js/" ) )
 );
@@ -120,7 +120,7 @@ gulp.task(
 // Post-port zipping (renamed default) and
 gulp.task(
     "default",
-    [ "html" ],
+    [ "webpack", "html" ],
     () => gulp.src( [ "public/**/*","!public/**/*.gz","!public/**/*.md","!public/**/*.txt", "!public/**/*.json","!public/**/*.xml", "!public/theme/images/**/*" ] )
       .pipe( gzip() )
       .pipe( gulp.dest( "public" ) )

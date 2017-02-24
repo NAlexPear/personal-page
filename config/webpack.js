@@ -17,5 +17,9 @@ module.exports = {
         "alias": {
             "gsap": path.resolve( __dirname, "../node_modules/gsap" )
         }
+    },
+    "devServer": {
+        "contentBase": path.resolve( __dirname, "../public" ),
+        "port": 9000
     }
 };
