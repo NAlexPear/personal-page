@@ -1,6 +1,5 @@
 var gulp = require( "gulp" );
 var usemin = require( "gulp-usemin" );
-var uglify = require( "gulp-uglify" );
 var minifyHtml = require( "gulp-minify-html" );
 var minifyCss = require( "gulp-minify-css" );
 var imagemin = require( "gulp-imagemin" );
@@ -11,100 +10,62 @@ var gulpif = require( "gulp-if" );
 var autoprefixer = require( "gulp-autoprefixer" );
 var sitemap = require( "gulp-sitemap" );
 var blog = require( "blog-runner" );
-var sync = require( "browser-sync" ).create();
 var webpack = require( "webpack" );
 var webpackConfig = require( "./config/webpack" );
 var webpackStream = require( "webpack-stream" );
 
 // DEVELOPMENT ENVIRONMENT TASKS (for ./build)
     // port in relevant content without any async operations
-gulp.task( "dev-port", () => {
-    gulp.src( "index.html" )
-        .pipe( gulp.dest( "build/" ) );
-    gulp.src( "blog/_site/**/*" )
-    .   pipe( gulp.dest( "build/blog/" ) );
-    gulp.src( "theme/**/*" )
-        .pipe( gulp.dest( "build/theme/" ) );
-    gulp.src( "node_modules/gsap/src/minified/**/*" )
-        .pipe( gulp.dest( "build/node_modules/gsap/src/minified" ) );
-    gulp.src( "bower_components/picturefill/**/*" )
-        .pipe( gulp.dest( "build/bower_components/picturefill" ) );
-    gulp.src( "bower_components/themify-icons/**/*" )
-        .pipe( gulp.dest( "build/bower_components/themify-icons" ) );
-} );
-
-gulp.task( "webpack", () => gulp.src( "./theme/js/src/main.js" )
-    .pipe( webpackStream( webpackConfig, webpack ) )
-    .pipe( gulp.dest( "theme/js/" ) )
+gulp.task(
+    "webpack",
+    () => gulp.src( "./theme/js/src/main.js" )
+        .pipe( webpackStream( webpackConfig, webpack ) )
+        .pipe( gulp.dest( "public/theme/js/" ) )
 );
 
-// set up watcher
-gulp.task( "dev-watch", [ "dev-port" ], sync.reload );
-
-// browserSync server
-gulp.task( "serve", [ "dev-port" ], () => {
-    sync.init( {
-        "server": {
-            "baseDir": "./build"
-        }
-    } );
-
-    gulp.watch(
-        [
-            "blog/_site/**/*",
-            "index.html",
-            "theme/css/*.css",
-            "theme/js/*.js"
-        ],
-        [ "dev-watch" ]
-    );
-} );
-
 // PRODUCTION BUILD TASKS
-// watch for production-level changes
-gulp.task( "prod-watch", [ "default" ], sync.reload );
-gulp.task( "prod-serve", [ "default" ], () => {
-    sync.init( {
-        "server": {
-            "baseDir": "./public"
-        }
-    } );
-    gulp.watch( [ "theme/**/*", "blog/_includes/**/*", "blog/_posts/**/*","index.html" ], [ "prod-watch" ] );
-} );
-
 // blog-runner build tasks
-gulp.task( "build", () => {
-    blog.roll( "blog", { "snippetChars": 300 } );
-    blog.build( "blog" );
-} );
+gulp.task(
+    "blog",
+    () => {
+        blog.roll( "blog", { "snippetChars": 300 } );
+        blog.build( "blog" );
+    }
+);
 
 // Porters of non-async content
-gulp.task( "prod-port", () => {
-    gulp.src( [ "bower_components/**/*" ] )
-      .pipe( gulp.dest( "public/bower_components" ) );
-    gulp.src( [ "misc/**/*" ] )
-      .pipe( gulp.dest( "public" ) );
-    gulp.src( [ "download/**/*" ] )
-      .pipe( gulp.dest( "public/download" ) );
-    gulp.src( [ "theme/images/**/*.svg","theme/images/**/*.ico" ] )
-      .pipe( gulp.dest( "public/theme/images" ) );
-    gulp.src( [ "theme/js/animations.js" ] )
-      .pipe( gulp.dest( "public/theme/js" ) );
-} );
+gulp.task(
+    "copy",
+    () => {
+        gulp.src( [ "bower_components/**/*" ] )
+          .pipe( gulp.dest( "public/bower_components" ) );
+        gulp.src( [ "misc/**/*" ] )
+          .pipe( gulp.dest( "public" ) );
+        gulp.src( [ "download/**/*" ] )
+          .pipe( gulp.dest( "public/download" ) );
+        gulp.src( [ "theme/images/**/*.svg","theme/images/**/*.ico" ] )
+          .pipe( gulp.dest( "public/theme/images" ) );
+    }
+);
 
   // image minifier (no CSS, HTML, or JS)
-gulp.task( "image-min", () => {
-    gulp.src( [ "theme/images/**/*.jpg","theme/images/**/*.png" ] )
-        .pipe( imagemin( {
-            "optimizationLevel": 7,
-            "progressive": true,
-            "use": [ pngquant() ]
-        } ) )
-        .pipe( gulp.dest( "public/theme/images" ) );
-} );
+gulp.task(
+    "imagemin",
+    () => gulp.src( [ "theme/images/**/*.jpg","theme/images/**/*.png" ] )
+        .pipe(
+            imagemin( {
+                "optimizationLevel": 7,
+                "progressive": true,
+                "use": [ pngquant() ]
+            } )
+        )
+        .pipe( gulp.dest( "public/theme/images" ) )
+);
 
   // css auto-prefixer for compatibility
-gulp.task( "autoprefixer", () => gulp.src( "theme/css/*.css" )
+gulp.task(
+    "autoprefixer",
+    () => gulp.src( "theme/css/*.css" )
       .pipe( autoprefixer( {
           "browsers": [ "last 2 versions" ],
           "cascade": "false"
@@ -112,22 +73,26 @@ gulp.task( "autoprefixer", () => gulp.src( "theme/css/*.css" )
       .pipe( gulp.dest( "./theme/css/" ) )
 );
 
-  // CSS and JS minifier, retaining async on javascript files, after all other files have been ported over
-gulp.task( "async",[ "build","prod-port","autoprefixer" ], () => {
-    gulp.src( "index.html" )
-      .pipe( useref( { "searchPath": "." } ) )
-      .pipe( gulpif( "*.css", minifyCss() ) )
-      .pipe( gulp.dest( "public" ) );
-    gulp.src( "blog/_site/**/*.html" )
-      .pipe( useref( { "searchPath": "." } ) )
-      .pipe( gulpif( "*.js", uglify() ) )
-      .pipe( gulpif( "*.css", minifyCss() ) )
-      .pipe( gulp.dest( "public/blog" ) );
-} );
-
-  // Sitemap generator for SEO and search engine ease-of-use (XML format)
+// CSS
 gulp.task(
-    "sitemapper",
+    "css",
+    [ "blog","copy","autoprefixer" ],
+    () => {
+        gulp.src( "index.html" )
+          .pipe( useref( { "searchPath": "." } ) )
+          .pipe( gulpif( "*.css", minifyCss() ) )
+          .pipe( gulp.dest( "public" ) );
+
+        gulp.src( "blog/_site/**/*.html" )
+          .pipe( useref( { "searchPath": "." } ) )
+          .pipe( gulpif( "*.css", minifyCss() ) )
+          .pipe( gulp.dest( "public/blog" ) );
+    }
+);
+
+// Sitemap generator for SEO and search engine ease-of-use (XML format)
+gulp.task(
+    "map",
     () => gulp.src( "public/**/*.html" )
       .pipe(
           sitemap( {
@@ -137,23 +102,29 @@ gulp.task(
       .pipe( gulp.dest( "./public" ) )
 );
 
-  // HTML minifier (run after ports, image-minification, and critical CSS inlining)
-gulp.task( "cruncher", [ "async" ], () => {
-    gulp.src( "public/index.html" )
-          .pipe( usemin( {
-              "assetsDir": "",
-              "html": [ minifyHtml( { "empty": true } ) ]
-          } ) )
-          .pipe( gulp.dest( "public" ) );
-} );
+// HTML minifier (run after ports, image-minification, and critical CSS inlining)
+gulp.task(
+    "html",
+    [ "css" ],
+    () => gulp.src( "public/index.html" )
+          .pipe(
+              usemin( {
+                  "assetsDir": "",
+                  "html": [ minifyHtml( { "empty": true } ) ]
+              } )
+          )
+          .pipe( gulp.dest( "public" ) )
+);
 
 
-  // Post-port zipping (renamed default) and
-gulp.task( "default", [ "cruncher" ], () => {
-    gulp.src( [ "public/**/*","!public/**/*.gz","!public/**/*.md","!public/**/*.txt", "!public/**/*.json","!public/**/*.xml", "!public/theme/images/**/*" ] )
+// Post-port zipping (renamed default) and
+gulp.task(
+    "default",
+    [ "html" ],
+    () => gulp.src( [ "public/**/*","!public/**/*.gz","!public/**/*.md","!public/**/*.txt", "!public/**/*.json","!public/**/*.xml", "!public/theme/images/**/*" ] )
       .pipe( gzip() )
-      .pipe( gulp.dest( "public" ) );
-} );
+      .pipe( gulp.dest( "public" ) )
+);
 
 
-gulp.task( "production", [ "default", "imagemin", "sitemapper" ] );
+gulp.task( "production", [ "default", "imagemin", "map" ] );
