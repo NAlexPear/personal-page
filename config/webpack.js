@@ -1,4 +1,3 @@
-/* eslint-disable new-cap */
 var path = require( "path" );
 var webpack = require( "webpack" );
 

@@ -1,4 +1,4 @@
-/* eslint-disable new-cap, no-unused-vars */
+/* eslint-disable no-unused-vars */
 // Libraries
 import { Link } from "inferno-router";
 

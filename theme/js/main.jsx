@@ -1,4 +1,4 @@
-/* eslint-disable no-unused-vars, new-cap */
+/* eslint-disable no-unused-vars */
 
 // Libraries
 import Inferno from "inferno";
