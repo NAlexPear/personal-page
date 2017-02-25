@@ -1,5 +1,4 @@
 var gulp = require( "gulp" );
-var usemin = require( "gulp-usemin" );
 var minifyHtml = require( "gulp-minify-html" );
 var minifyCss = require( "gulp-minify-css" );
 var imagemin = require( "gulp-imagemin" );
@@ -14,8 +13,6 @@ var webpack = require( "webpack" );
 var webpackConfig = require( "./config/webpack" );
 var webpackStream = require( "webpack-stream" );
 
-// DEVELOPMENT ENVIRONMENT TASKS (for ./build)
-    // port in relevant content without any async operations
 gulp.task(
     "webpack",
     () => gulp.src( "./theme/js/main.js" )
@@ -23,8 +20,6 @@ gulp.task(
         .pipe( gulp.dest( "public/theme/js/" ) )
 );
 
-// PRODUCTION BUILD TASKS
-// blog-runner build tasks
 gulp.task(
     "blog",
     () => {
@@ -33,7 +28,6 @@ gulp.task(
     }
 );
 
-// Porters of non-async content
 gulp.task(
     "copy",
     () => {
@@ -48,10 +42,10 @@ gulp.task(
     }
 );
 
-  // image minifier (no CSS, HTML, or JS)
 gulp.task(
     "imagemin",
-    () => gulp.src( [ "theme/images/**/*.jpg","theme/images/**/*.png" ] )
+    () => gulp
+        .src( [ "theme/images/**/*.jpg","theme/images/**/*.png" ] )
         .pipe(
             imagemin( {
                 "optimizationLevel": 7,
@@ -62,68 +56,57 @@ gulp.task(
         .pipe( gulp.dest( "public/theme/images" ) )
 );
 
-  // css auto-prefixer for compatibility
 gulp.task(
     "autoprefixer",
-    () => gulp.src( "theme/css/*.css" )
-      .pipe( autoprefixer( {
-          "browsers": [ "last 2 versions" ],
-          "cascade": "false"
-      } ) )
-      .pipe( gulp.dest( "./theme/css/" ) )
+    () => gulp
+        .src( "theme/css/*.css" )
+        .pipe( autoprefixer( {
+            "browsers": [ "last 2 versions" ],
+            "cascade": "false"
+        } ) )
+        .pipe( gulp.dest( "./theme/css/" ) )
 );
 
-// CSS
 gulp.task(
     "css",
     [ "blog","copy","autoprefixer" ],
     () => {
-        gulp.src( "index.html" )
-          .pipe( useref( { "searchPath": "." } ) )
-          .pipe( gulpif( "*.css", minifyCss() ) )
-          .pipe( gulp.dest( "public" ) );
+        gulp
+            .src( "index.html" )
+            .pipe( useref( { "searchPath": "." } ) )
+            .pipe( gulpif( "*.css", minifyCss() ) )
+            .pipe( minifyHtml() )
+            .pipe( gulp.dest( "public" ) );
 
-        gulp.src( "blog/_site/**/*.html" )
-          .pipe( useref( { "searchPath": "." } ) )
-          .pipe( gulpif( "*.css", minifyCss() ) )
-          .pipe( gulp.dest( "public/blog" ) );
+        gulp
+            .src( "blog/_site/**/*.html" )
+            .pipe( useref( { "searchPath": "." } ) )
+            .pipe( gulpif( "*.css", minifyCss() ) )
+            .pipe( minifyHtml() )
+            .pipe( gulp.dest( "public/blog" ) );
     }
 );
 
 // Sitemap generator for SEO and search engine ease-of-use (XML format)
 gulp.task(
     "map",
-    () => gulp.src( "public/**/*.html" )
-      .pipe(
-          sitemap( {
-              "siteUrl": "https://alexpear.com"
-          } )
-      )
-      .pipe( gulp.dest( "./public" ) )
+    () => gulp
+        .src( "public/**/*.html" )
+        .pipe(
+            sitemap( {
+                "siteUrl": "https://alexpear.com"
+            } )
+        )
+        .pipe( gulp.dest( "./public" ) )
 );
 
-// HTML minifier (run after ports, image-minification, and critical CSS inlining)
-gulp.task(
-    "html",
-    [ "css" ],
-    () => gulp.src( "public/index.html" )
-          .pipe(
-              usemin( {
-                  "assetsDir": "",
-                  "html": [ minifyHtml( { "empty": true } ) ]
-              } )
-          )
-          .pipe( gulp.dest( "public" ) )
-);
-
-
-// Post-port zipping (renamed default) and
 gulp.task(
     "default",
-    [ "webpack", "html" ],
-    () => gulp.src( [ "public/**/*","!public/**/*.gz","!public/**/*.md","!public/**/*.txt", "!public/**/*.json","!public/**/*.xml", "!public/theme/images/**/*" ] )
-      .pipe( gzip() )
-      .pipe( gulp.dest( "public" ) )
+    [ "webpack", "css" ],
+    () => gulp
+        .src( [ "public/**/*","!public/**/*.gz","!public/**/*.md","!public/**/*.txt", "!public/**/*.json","!public/**/*.xml", "!public/theme/images/**/*" ] )
+        .pipe( gzip() )
+        .pipe( gulp.dest( "public" ) )
 );
 
 

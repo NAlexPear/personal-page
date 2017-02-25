@@ -1,15 +1,21 @@
 var path = require( "path" );
 
+process.noDeprecation = true;
+
 module.exports = {
     "output": {
-        "filename": "main.js"
+        "filename": "main.js",
+        "path": path.resolve( __dirname, "../public/theme/js/main.js" )
     },
     "module": {
-        "loaders": [
+        "rules": [
             {
                 "test": /\.js$/,
-                "exclude": /node_modules/,
-                "loader": "babel-loader"
+                "exclude": /(node_modules|bower_components)/,
+                "loader": "babel-loader",
+                "options": {
+                    "presets": [ "es2015" ]
+                }
             }
         ]
     },
@@ -20,6 +26,8 @@ module.exports = {
     },
     "devServer": {
         "contentBase": path.resolve( __dirname, "../public" ),
-        "port": 9000
-    }
+        "port": 9000,
+        "compress": true
+    },
+    "devtool": "source-map"
 };
