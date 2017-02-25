@@ -1,14 +1,15 @@
-var gulp = require( "gulp" );
-var minifyHtml = require( "gulp-minify-html" );
-var minifyCss = require( "gulp-minify-css" );
-var imagemin = require( "gulp-imagemin" );
-var pngquant = require( "imagemin-pngquant" );
-var gzip = require( "gulp-gzip" );
-var useref = require( "gulp-useref" );
-var gulpif = require( "gulp-if" );
 var autoprefixer = require( "gulp-autoprefixer" );
-var sitemap = require( "gulp-sitemap" );
 var blog = require( "blog-runner" );
+var gulp = require( "gulp" );
+var gulpif = require( "gulp-if" );
+var gzip = require( "gulp-gzip" );
+var imagemin = require( "gulp-imagemin" );
+var minifyCss = require( "gulp-minify-css" );
+var minifyHtml = require( "gulp-minify-html" );
+var pngquant = require( "imagemin-pngquant" );
+var useref = require( "gulp-useref" );
+var sass = require( "gulp-sass" );
+var sitemap = require( "gulp-sitemap" );
 var webpack = require( "webpack" );
 var webpackConfig = require( "./config/webpack" );
 var webpackStream = require( "webpack-stream" );
@@ -57,14 +58,23 @@ gulp.task(
 );
 
 gulp.task(
+    "sass",
+    () => gulp
+        .src( "theme/sass/main.scss" )
+        .pipe( sass() )
+        .pipe( gulp.dest( "theme/css/" ) )
+);
+
+gulp.task(
     "autoprefixer",
+    [ "sass" ],
     () => gulp
         .src( "theme/css/*.css" )
         .pipe( autoprefixer( {
             "browsers": [ "last 2 versions" ],
             "cascade": "false"
         } ) )
-        .pipe( gulp.dest( "./theme/css/" ) )
+        .pipe( gulp.dest( "theme/css/" ) )
 );
 
 gulp.task(

@@ -2,8 +2,8 @@
 $color-base: #ffffff;
 $color-main: #dadada;
 $color-mid-light:#EFEFEF;
-$color-mid: #A8A8A8;
-$color-mid-dark: #51504f;
+$color-mid: #545454;
+$color-mid-dark: darken( $color-mid, 10 );
 $color-accent: #59556a;
 $color-head: #EEEEEE;
 
@@ -87,7 +87,7 @@ $p: $h4*0.67 ;
   display: none;
 }
 
-@media (screen and min-width:640px){
+@media screen and (min-width:640px){
   .mobile-only{
     display: none;
   }

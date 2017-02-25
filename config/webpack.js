@@ -17,8 +17,7 @@ module.exports = {
                     "presets": [ "es2015" ],
                     "plugins": [
                         "syntax-jsx",
-                        [ "inferno", { "imports": true } ],
-                        "lodash"
+                        [ "inferno", { "imports": true } ]
                     ]
                 }
             }

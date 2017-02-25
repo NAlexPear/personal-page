@@ -259,6 +259,7 @@
   font-weight: 100;
   src: local("Lato Hairline"), local("Lato-Hairline"), url(https://fonts.gstatic.com/s/lato/v11/eFRpvGLEW31oiexbYNx7Y_esZW2xOQ-xsNqO47m55DA.woff2) format("woff2");
   unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF; }
+
 /* latin */
 @font-face {
   font-family: 'Lato';
@@ -266,6 +267,7 @@
   font-weight: 100;
   src: local("Lato Hairline"), local("Lato-Hairline"), url(https://fonts.gstatic.com/s/lato/v11/GtRkRNTnri0g82CjKnEB0Q.woff2) format("woff2");
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000; }
+
 /* latin-ext */
 @font-face {
   font-family: 'Lato';
@@ -273,6 +275,7 @@
   font-weight: 300;
   src: local("Lato Light"), local("Lato-Light"), url(https://fonts.gstatic.com/s/lato/v11/dPJ5r9gl3kK6ijoeP1IRsvY6323mHUZFJMgTvxaG2iE.woff2) format("woff2");
   unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF; }
+
 /* latin */
 @font-face {
   font-family: 'Lato';
@@ -280,6 +283,7 @@
   font-weight: 300;
   src: local("Lato Light"), local("Lato-Light"), url(https://fonts.gstatic.com/s/lato/v11/EsvMC5un3kjyUhB9ZEPPwg.woff2) format("woff2");
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000; }
+
 /* latin-ext */
 @font-face {
   font-family: 'Lato';
@@ -287,6 +291,7 @@
   font-weight: 400;
   src: local("Lato Regular"), local("Lato-Regular"), url(https://fonts.gstatic.com/s/lato/v11/UyBMtLsHKBKXelqf4x7VRQ.woff2) format("woff2");
   unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF; }
+
 /* latin */
 @font-face {
   font-family: 'Lato';
@@ -294,6 +299,7 @@
   font-weight: 400;
   src: local("Lato Regular"), local("Lato-Regular"), url(https://fonts.gstatic.com/s/lato/v11/1YwB1sO8YE1Lyjf12WNiUA.woff2) format("woff2");
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000; }
+
 /* latin */
 @font-face {
   font-family: 'Shadows Into Light';
@@ -301,6 +307,7 @@
   font-weight: 400;
   src: local("Shadows Into Light"), local("ShadowsIntoLight"), url(https://fonts.gstatic.com/s/shadowsintolight/v6/clhLqOv7MXn459PTh0gXYFK2TSYBz0eNcHnp4YqE4Ts.woff2) format("woff2");
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000; }
+
 .center {
   text-align: center;
   text-indent: 0 !important; }
@@ -314,12 +321,12 @@
 .desktop-only {
   display: none; }
 
-@media (min-width: 640px) {
+@media screen and (min-width: 640px) {
   .mobile-only {
     display: none; }
-
   .desktop-only {
     display: block; } }
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote,
 a, abbr, acronym, address, big, cite,
@@ -380,7 +387,7 @@ h1 {
 h2 {
   font-size: 6.09vmax;
   font-weight: 400;
-  color: #A8A8A8; }
+  color: #545454; }
   @media (min-width: 640px) {
     h2 {
       font-size: 4.35vmax; } }
@@ -399,18 +406,18 @@ h4 {
   font-weight: 400; }
   @media (min-width: 640px) {
     h4 {
-      font-size: 2.53562vmax; } }
+      font-size: 2.53561vmax; } }
 
 p, ul, ol {
   font-size: 4vw;
   line-height: 1.5;
-  color: #A8A8A8; }
+  color: #545454; }
 
 a {
   text-decoration: none;
-  color: #A8A8A8; }
+  color: #545454; }
   a:hover {
-    color: #51504f; }
+    color: #3b3b3b; }
 
 .topstuff {
   background-color: #EFEFEF;
@@ -435,9 +442,9 @@ a {
       .splash > div > ul li a {
         color: #EFEFEF; }
         .splash > div > ul li a :hover {
-          color: #A8A8A8; }
+          color: #545454; }
       .splash > div > ul li span {
-        font-size: 2.53562vmax;
+        font-size: 2.53561vmax;
         font-weight: 100; }
 
 #splashname {
@@ -477,10 +484,10 @@ a {
     color: #ffffff; }
 
 .navreact a, .navreact span {
-  color: #A8A8A8;
+  color: #545454;
   transition: .5s color; }
   .navreact a :hover, .navreact span :hover {
-    color: #51504f; }
+    color: #3b3b3b; }
 
 #mobile-nav span {
   font-size: 8vmin;
@@ -571,7 +578,7 @@ a {
     border: 3px solid #dadada;
     border-radius: 1em;
     background-color: #ffffff;
-    color: #51504f;
+    color: #3b3b3b;
     padding: 0.5em; }
     @media (max-width: 640px) {
       .contact-form form input[type=submit], .contact-form form button {
@@ -592,7 +599,7 @@ a {
       margin-right: 1em;
       display: table-cell; }
       .contact-form ul li a {
-        color: #A8A8A8; }
+        color: #545454; }
       .contact-form ul li span {
         font-size: 2.54829vmax;
         font-weight: 100; }
@@ -607,10 +614,10 @@ a {
   .desktop-only.contact-form input[type=submit], .desktop-only.contact-form button {
     cursor: pointer; }
     .desktop-only.contact-form input[type=submit]:hover, .desktop-only.contact-form button:hover {
-      border: 3px solid #A8A8A8;
+      border: 3px solid #545454;
       background-color: #EFEFEF; }
     .desktop-only.contact-form input[type=submit]:active, .desktop-only.contact-form button:active {
-      box-shadow: 0 0 15px #A8A8A8 inset; }
+      box-shadow: 0 0 15px #545454 inset; }
 
 #content-wrapper {
   width: 90%;
@@ -656,7 +663,7 @@ a {
   #content pre {
     width: 90%;
     max-width: 900px;
-    border: 2px solid #A8A8A8;
+    border: 2px solid #545454;
     overflow-x: scroll;
     padding: 0.5em; }
     #content pre code {
@@ -713,6 +720,7 @@ a {
 #content .resume-info > p:first-child {
   text-indent: 0;
   text-align: center; }
+
 #content .resume-info .resume-drop {
   margin: 1em;
   padding: 0.5em;
@@ -724,7 +732,7 @@ a {
     text-indent: 0;
     color: #59556a;
     font-weight: 400;
-    font-size: 2.53562vmax; }
+    font-size: 2.53561vmax; }
   #content .resume-info .resume-drop .resume-drop-blurb {
     width: 80%;
     height: 0;
@@ -733,7 +741,7 @@ a {
     text-align: left; }
     #content .resume-info .resume-drop .resume-drop-blurb p {
       text-indent: 0;
-      color: #51504f; }
+      color: #3b3b3b; }
       @media (max-width: 640px) {
         #content .resume-info .resume-drop .resume-drop-blurb p {
           font-size: 0.7em; } }
@@ -743,7 +751,7 @@ a {
     #content .resume-info .resume-drop ul li {
       margin-bottom: 0.75em;
       cursor: pointer;
-      color: #A8A8A8; }
+      color: #545454; }
       #content .resume-info .resume-drop ul li span {
         margin-right: 0.5em; }
         #content .resume-info .resume-drop ul li span::before {
@@ -751,9 +759,9 @@ a {
           transition: transform 0.2s;
           transform: rotate(135deg); }
       #content .resume-info .resume-drop ul li:hover {
-        color: #51504f; }
+        color: #3b3b3b; }
       #content .resume-info .resume-drop ul li.active {
-        color: #51504f; }
+        color: #3b3b3b; }
         #content .resume-info .resume-drop ul li.active span::before {
           transition: transform 0.3s;
           transform: rotate(225deg); }
@@ -827,7 +835,7 @@ footer ul {
     text-align: center;
     display: table-cell;
     font-family: 'lato', "sans-serif";
-    font-size: 2.53562vmax;
+    font-size: 2.53561vmax;
     font-weight: 400;
     padding: 0;
     vertical-align: middle;
@@ -838,11 +846,11 @@ footer ul {
     footer ul li :last-child {
       margin-right: 0; }
     footer ul li a {
-      color: #A8A8A8;
+      color: #545454;
       text-decoration: none;
       -webkit-transition: all .3s ease; }
       footer ul li a :hover, footer ul li a :focus, footer ul li a :active {
-        color: #51504f; }
+        color: #3b3b3b; }
 
 .copyright {
   margin-top: 5%;
@@ -854,6 +862,7 @@ footer ul {
 
 #content .blogroll p {
   text-indent: 0; }
+
 #content .blogroll a {
   opacity: 0.8;
   text-decoration: none;
@@ -867,20 +876,25 @@ footer ul {
   #content .blogroll a:hover {
     opacity: 1;
     border-bottom: none; }
+
 #content .blogroll .subtitle {
   font-size: 1.69886vmax;
   color: #EFEFEF; }
   @media (min-width: 640px) {
     #content .blogroll .subtitle {
       font-size: 1.35909vmax; } }
+
 #content .blogpost > .date {
   font-family: 'Lato', sans-serif;
   color: #59556a;
   margin: 0.25em; }
+
 #content .blogpost p {
   margin-bottom: 0.75em; }
+
 #content .blogpost hr {
   opacity: 0.5; }
+
 #content .blogpost h2 {
   font-size: 3.045vmax;
   text-align: center; }
@@ -888,6 +902,7 @@ footer ul {
     #content .blogpost h2 {
       font-size: 4.35vmax;
       text-align: left; } }
+
 #content .blogpost h3 {
   font-size: 1.89225vmax;
   text-align: center; }
