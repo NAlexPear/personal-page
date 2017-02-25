@@ -15,7 +15,7 @@ var webpackStream = require( "webpack-stream" );
 
 gulp.task(
     "webpack",
-    () => gulp.src( "./theme/js/main.js" )
+    () => gulp.src( "./theme/js/main.jsx" )
         .pipe( webpackStream( webpackConfig, webpack ) )
         .pipe( gulp.dest( "public/theme/js/" ) )
 );
@@ -104,7 +104,7 @@ gulp.task(
     "default",
     [ "webpack", "css" ],
     () => gulp
-        .src( [ "public/**/*","!public/**/*.gz","!public/**/*.md","!public/**/*.txt", "!public/**/*.json","!public/**/*.xml", "!public/theme/images/**/*" ] )
+        .src( [ "public/**/*.html", "public/**/*.css", "public/**/*.js" ] )
         .pipe( gzip() )
         .pipe( gulp.dest( "public" ) )
 );

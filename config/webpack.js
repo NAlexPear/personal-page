@@ -4,17 +4,17 @@ process.noDeprecation = true;
 
 module.exports = {
     "output": {
-        "filename": "main.js",
-        "path": path.resolve( __dirname, "../public/theme/js/main.js" )
+        "filename": "main.js"
     },
     "module": {
         "rules": [
             {
-                "test": /\.js$/,
+                "test": /\.js[x]$/,
                 "exclude": /(node_modules|bower_components)/,
                 "loader": "babel-loader",
                 "options": {
-                    "presets": [ "es2015" ]
+                    "presets": [ "es2015" ],
+                    "plugins": [ "inferno" ]
                 }
             }
         ]
@@ -26,6 +26,7 @@ module.exports = {
     },
     "devServer": {
         "contentBase": path.resolve( __dirname, "../public" ),
+        "publicPath": "/theme/js/",
         "port": 9000,
         "compress": true
     },
