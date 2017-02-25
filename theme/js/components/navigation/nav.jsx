@@ -2,12 +2,6 @@
 // Libraries
 import { Link } from "inferno-router";
 
-// Lodash Modules
-import {
-    flow,
-    map
-} from "lodash/fp";
-
 // Configuration
 import routes from "config/routes.json";
 
@@ -34,10 +28,10 @@ function NavBar(){
     return (
         <ul class="navbubbles">
             {
-                flow(
-                    map( mapDefinition ),
-                    map( MenuItem )
-                )( Object.entries( routes ) )
+                Object
+                    .entries( routes )
+                    .map( mapDefinition )
+                    .map( MenuItem )
             }
         </ul>
     );
