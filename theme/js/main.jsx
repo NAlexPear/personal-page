@@ -8,33 +8,37 @@ import { createBrowserHistory } from "history";
 // Components
 import NavBar from "./components/navigation/nav.jsx";
 
+// Pages
+import Homepage from "./pages/Home.jsx";
+import About from "./pages/About.jsx";
+import Resume from "./pages/CV.jsx";
+import Contact from "./pages/Contact.jsx";
+import Projects from "./pages/Projects.jsx";
+
 
 var browserHistory = createBrowserHistory();
 
 var routes;
 
+function Wrapper( children = null ){
+    return (
+        <div id="page-wrap">
+            <div id="content-wrapper">
+                <div id="content">
+                    { children || null }
+                </div>
+            </div>
+        </div>
+    );
+}
+
 function App( { children } ){
-    /* eslint-disable no-console */
-    console.log( "App is running!" );
-    console.log( "children?", children );
-
-    return <div>{ NavBar() }</div>;
-}
-
-function Homepage(){
-    console.log( "Hompage!" );
-}
-
-function About(){
-    console.log( "About!" );
-}
-
-function Resume(){
-    console.log( "Resume!" );
-}
-
-function Contact(){
-    console.log( "Contact Me!" );
+    return (
+        <div>
+            { NavBar() }
+            { Wrapper( children ) }
+        </div>
+    );
 }
 
 routes = (
@@ -44,6 +48,7 @@ routes = (
               <Route path="/about" component={ About }/>
               <Route path="/resume" component={ Resume }/>
               <Route path="/contact" component={ Contact }/>
+              <Route path="/projects" component={ Projects }/>
         </Route>
     </Router>
 );
