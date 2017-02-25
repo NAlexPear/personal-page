@@ -1,32 +1,40 @@
+/* eslint-disable no-unused-vars, new-cap */
+
 // Libraries
-/* eslint-disable no-unused-vars */
 import Inferno from "inferno";
 import { Router, Route, IndexRoute } from "inferno-router";
 import { createBrowserHistory } from "history";
+
+// Components
+import NavBar from "./components/navigation/nav.jsx";
+
 
 var browserHistory = createBrowserHistory();
 
 var routes;
 
-function App(){
+function App( { children } ){
     /* eslint-disable no-console */
     console.log( "App is running!" );
+    console.log( "children?", children );
+
+    return <div>{ NavBar() }</div>;
 }
 
 function Homepage(){
-
+    console.log( "Hompage!" );
 }
 
 function About(){
-
+    console.log( "About!" );
 }
 
 function Resume(){
-
+    console.log( "Resume!" );
 }
 
 function Contact(){
-
+    console.log( "Contact Me!" );
 }
 
 routes = (
@@ -42,5 +50,5 @@ routes = (
 
 Inferno.render(
     routes,
-    document.getElementById( "content" )
+    document.getElementById( "app" )
 );

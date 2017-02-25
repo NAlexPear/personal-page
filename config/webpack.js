@@ -14,13 +14,18 @@ module.exports = {
                 "loader": "babel-loader",
                 "options": {
                     "presets": [ "es2015" ],
-                    "plugins": [ "inferno" ]
+                    "plugins": [
+                        "syntax-jsx",
+                        [ "inferno", { "imports": true } ],
+                        "lodash"
+                    ]
                 }
             }
         ]
     },
     "resolve": {
         "alias": {
+            "config": __dirname,
             "gsap": path.resolve( __dirname, "../node_modules/gsap" )
         }
     },
