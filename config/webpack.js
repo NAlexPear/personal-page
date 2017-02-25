@@ -1,4 +1,6 @@
+/* eslint-disable new-cap */
 var path = require( "path" );
+var webpack = require( "webpack" );
 
 process.noDeprecation = true;
 
@@ -29,6 +31,9 @@ module.exports = {
             "gsap": path.resolve( __dirname, "../node_modules/gsap" )
         }
     },
+    "plugins": [
+        new webpack.optimize.UglifyJsPlugin()
+    ],
     "devServer": {
         "contentBase": path.resolve( __dirname, "../public" ),
         "publicPath": "/theme/js/",
