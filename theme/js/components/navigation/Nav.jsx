@@ -10,9 +10,15 @@ function filterHome( { route } ){
 }
 
 function getMenuItem( { route, label } ){
+    var link = <Link to={route}>{ label }</Link>;
+
+    if( route.match( /blog/ ) ){
+        link = <a href={route}>{label}</a>;
+    }
+    
     return (
         <li className="navreact">
-            <Link to={route}>{ label }</Link>
+            { link };
         </li>
     );
 }

@@ -11,7 +11,7 @@ var useref = require( "gulp-useref" );
 var sass = require( "gulp-sass" );
 var sitemap = require( "gulp-sitemap" );
 var webpack = require( "webpack" );
-var webpackConfig = require( "./config/webpack" );
+var webpackConfig = require( "./config/webpack.config" );
 var webpackStream = require( "webpack-stream" );
 
 gulp.task(

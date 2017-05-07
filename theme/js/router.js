@@ -14,35 +14,43 @@ import routes from "config/routes.json";
 
 var history = createHistory();
 var pages = { Home, About, Resume, Contact, Projects };
+var actions;
+var Router;
 
-var actions = transform(
-    ( acc, { route, content } ) => acc[ route ] = pages[ content ]
+
+function getContent( route ){
+    var content = actions[ route ];
+
+    return content ? content() : "";
+}
+
+function transformRoutes( acc, { route, content } ){
+    acc[ route ] = pages[ content ];
+}
+
+
+actions = transform(
+    transformRoutes
 )( {} )( routes );
 
-var Router = {
+Router = {
     init( updater = ( () => ( {} ) ) ){
-        this.update = updater;
+        this.update( updater );
+
+        this.update( location.pathname );
 
         this.clear = history.listen(
-            ( location, action ) => {
-                if( action === "POP" ){
-                    this.update( this.getContent( location.pathname ) );
-                }
-            }
+            ( { pathname } ) => this.update( pathname )
         );
-
-        this.navigate( "/" );
     },
     getLocation(){
         return history.location.pathname;
     },
     navigate( route ){
         history.push( route );
-
-        this.update( this.getContent( route ) );
     },
-    getContent( route ){
-        return actions[ route ]();
+    update( updater ){
+        this.update = ( route ) => updater( getContent( route ) );
     }
 };
 
