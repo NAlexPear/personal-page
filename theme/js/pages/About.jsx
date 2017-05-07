@@ -1,10 +1,10 @@
 /* eslint-disable no-unused-vars */
-// Libraries
-import { Link } from "inferno-router";
+// Components
+import Link from "components/navigation/Link.jsx";
 
 export default function About(){
     return (
-        <div class="about-me">
+        <div className="about-me">
             <h4>My name is Alex, and I build things.</h4>
             <p>Maybe not kitchen tables or log cabins (not yet, anyway), but you'll always find me building <i>something</i>. Those somethings that I'm most proud of have been made-from-scratch businesses, programs, and products. I take pride in creating organizations that are useful and meaningful (more on what that means later in <Link to="/blog">my blog</Link>).</p>
             <p>The desire to build things has taken me a lot of places. The need to build has lead me to create teaching opportunities for musicians and artists, help turn a student-run nightclub into a successful event space, create a place for unlikely athletes to meet their full potential, and build multiple programs for aspiring programs. </p>

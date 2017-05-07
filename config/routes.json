@@ -1,7 +1,33 @@
-{
-    "/about": "about me",
-    "/resume": "résumé",
-    "/blog": "blog",
-    "/projects": "projects",
-    "/contact": "contact me"
-}
+[
+    {
+        "route": "/about",
+        "label": "about me",
+        "content": "About"
+    },
+    {
+        "route": "/resume",
+        "label": "résumé",
+        "content": "Resume"
+    },
+    {
+        "route": "/blog",
+        "label": "blog",
+        "content": "Blog",
+        "passthru": true
+    },
+    {
+        "route": "/projects",
+        "label": "projects",
+        "content": "Projects"
+    },
+    {
+        "route": "/contact",
+        "label": "contact me",
+        "content": "Contact"
+    },
+    {
+        "route": "/",
+        "label": "home",
+        "content": "Home"
+    }
+]

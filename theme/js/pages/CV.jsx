@@ -24,7 +24,7 @@ const JOBS = [
 function Job( props ){
     return (
         <li>
-            <span class="ti ti-location-arrow"></span>{ props.display }
+            <span className="ti ti-location-arrow"></span>{ props.display }
             <div>
                 <p>{ props.blurb }</p>
             </div>
@@ -34,10 +34,10 @@ function Job( props ){
 
 export default function CV(){
     return (
-        <div class="resume-info">
+        <div className="resume-info">
             <div>
-                <div class="resume-drop">
-                <p class="resume-title">Click on a position to learn more</p>
+                <div className="resume-drop">
+                <p className="resume-title">Click on a position to learn more</p>
                     <ul>
                         { JOBS.map( Job ) }
                     </ul>
