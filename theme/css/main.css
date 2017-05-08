@@ -721,50 +721,47 @@ a {
   text-indent: 0;
   text-align: center; }
 
-#content .resume-info .resume-drop {
-  margin: 1em;
-  padding: 0.5em;
-  border-radius: 2em;
-  box-shadow: 0 0 20px #dadada; }
-  #content .resume-info .resume-drop .resume-title {
-    padding-top: 0.5em;
-    text-align: center;
+#content .resume-info .resume-drop .resume-title {
+  padding-top: 0.5em;
+  text-align: center;
+  text-indent: 0;
+  color: #59556a;
+  font-weight: 400;
+  font-size: 2.53561vmax; }
+
+#content .resume-info .resume-drop .resume-drop-blurb {
+  width: 80%;
+  height: 0;
+  overflow: hidden;
+  margin: 0.5em;
+  text-align: left; }
+  #content .resume-info .resume-drop .resume-drop-blurb p {
     text-indent: 0;
-    color: #59556a;
-    font-weight: 400;
-    font-size: 2.53561vmax; }
-  #content .resume-info .resume-drop .resume-drop-blurb {
-    width: 80%;
-    height: 0;
-    overflow: hidden;
-    margin: 0.5em;
-    text-align: left; }
-    #content .resume-info .resume-drop .resume-drop-blurb p {
-      text-indent: 0;
+    color: #3b3b3b; }
+    @media (max-width: 640px) {
+      #content .resume-info .resume-drop .resume-drop-blurb p {
+        font-size: 0.7em; } }
+
+#content .resume-info .resume-drop ul {
+  list-style-type: none;
+  padding-right: 4vw; }
+  #content .resume-info .resume-drop ul li {
+    margin-bottom: 0.75em;
+    cursor: pointer;
+    color: #545454; }
+    #content .resume-info .resume-drop ul li span {
+      margin-right: 0.5em; }
+      #content .resume-info .resume-drop ul li span::before {
+        display: inline-block;
+        transition: transform 0.2s;
+        transform: rotate(135deg); }
+    #content .resume-info .resume-drop ul li:hover {
       color: #3b3b3b; }
-      @media (max-width: 640px) {
-        #content .resume-info .resume-drop .resume-drop-blurb p {
-          font-size: 0.7em; } }
-  #content .resume-info .resume-drop ul {
-    list-style-type: none;
-    padding-right: 4vw; }
-    #content .resume-info .resume-drop ul li {
-      margin-bottom: 0.75em;
-      cursor: pointer;
-      color: #545454; }
-      #content .resume-info .resume-drop ul li span {
-        margin-right: 0.5em; }
-        #content .resume-info .resume-drop ul li span::before {
-          display: inline-block;
-          transition: transform 0.2s;
-          transform: rotate(135deg); }
-      #content .resume-info .resume-drop ul li:hover {
-        color: #3b3b3b; }
-      #content .resume-info .resume-drop ul li.active {
-        color: #3b3b3b; }
-        #content .resume-info .resume-drop ul li.active span::before {
-          transition: transform 0.3s;
-          transform: rotate(225deg); }
+    #content .resume-info .resume-drop ul li.active {
+      color: #3b3b3b; }
+      #content .resume-info .resume-drop ul li.active span::before {
+        transition: transform 0.3s;
+        transform: rotate(225deg) translateY(-10%); }
 
 #content .portfolio-display {
   height: auto;

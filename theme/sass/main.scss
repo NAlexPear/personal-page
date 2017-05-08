@@ -19,7 +19,7 @@ h1{
   @media (min-width: 640px) {
     font-size: $h1;
   }
-} 
+}
 h2{
   font-size: ($h1 + 2)*0.87;
   @media (min-width: 640px) {
@@ -424,10 +424,6 @@ a {
     text-align: center;
   }
   .resume-drop{
-    margin: 1em;
-    padding: 0.5em;
-    border-radius: 2em;
-    box-shadow: 0 0 20px #dadada;
     .resume-title{
       padding-top: 0.5em;
       text-align: center;
@@ -472,7 +468,7 @@ a {
           color: $color-mid-dark;
           span::before{
             transition: transform 0.3s;
-            transform: rotate(225deg);
+            transform: rotate(225deg) translateY(-10%);
           }
         }
       }
