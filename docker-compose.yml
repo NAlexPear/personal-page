@@ -1,0 +1,53 @@
+version: '3.3'
+services:
+  proxy:
+    restart: always
+    build:
+      context: ./services/proxy
+      dockerfile: Dockerfile
+    ports:
+      - "9000:80"
+    links:
+      - frontend
+      - api
+
+  postgres:
+    image: postgres
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: app_db
+      POSTGRES_USER: web_anon
+      POSTGRES_PASSWORD: mysecretpassword
+    volumes:
+      - db-data:/var/lib/postgresql/data
+      - ./services/db/init.sql:/docker-entrypoint-initdb.d/init.sql
+
+  api:
+    tty: true
+    image: rustdocker/rust:nightly
+    command: /bin/bash -c "rustup override set nightly-2018-06-09 && cargo install --force cargo-watch && cargo watch -x run"
+    working_dir: /usr/src/elm-api
+    expose:
+      - "8000"
+    links:
+      - postgres
+    volumes:
+      - ./src/api:/usr/src/elm-api:delegated
+
+  frontend:
+    tty: true
+    image: node
+    command: /bin/bash -c "npm install && npm run dev --unsafe-perm"
+    working_dir: /usr/src/elm-slides
+    expose:
+      - "8080"
+    volumes:
+      - ./src/frontend:/usr/src/elm-slides:delegated
+      - source: node_modules
+        target: /usr/src/elm-slides/node_modules
+        type: volume
+
+volumes:
+  db-data:
+  node_modules:
