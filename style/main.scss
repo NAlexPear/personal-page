@@ -1,0 +1,35 @@
+body {
+  color: #505050;
+  display: grid;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  grid-template-areas:
+    "header"
+    "content"
+    "footer";
+  grid-template-rows: min-content 1fr min-content;
+  min-height: 100vh;
+}
+
+#header {
+  grid-area: header;
+
+  img {
+    border-radius: 50%;
+    max-width: 20rem;
+    object-fit: cover;
+    object-position: center;
+  }
+}
+
+#content {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  grid-area: content;
+  justify-content: center;
+}
+
+#footer {
+  grid-area: footer;
+}
+

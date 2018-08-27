@@ -1,37 +1,28 @@
 module Main exposing (main)
 
 import Browser
-import Html exposing (Html, text)
+import Model exposing (Model, Screen(..))
+import Msg exposing (Msg)
+import Update exposing (update)
+import View exposing (view)
+
+
+init : () -> ( Model, Cmd Msg )
+init _ =
+    ( Model "Alex Pearson's Personal Page" Loading
+    , Cmd.none
+    )
+
+
+subscriptions : Model -> Sub Msg
+subscriptions model =
+    Sub.none
 
 
 main =
-    Browser.sandbox
+    Browser.document
         { init = init
         , update = update
+        , subscriptions = subscriptions
         , view = view
         }
-
-
-type alias Model =
-    String
-
-
-init : Model
-init =
-    "Hello World"
-
-
-type Msg
-    = Noop
-
-
-update : Msg -> Model -> Model
-update msg model =
-    case msg of
-        Noop ->
-            model
-
-
-view : Model -> Html Msg
-view model =
-    text "Hello World!!"

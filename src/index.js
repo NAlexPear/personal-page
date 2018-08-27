@@ -1,5 +1,5 @@
 const { Elm } = require('./Main.elm');
 
-console.log(Elm);
+require('../style/main.scss');
 
 Elm.Main.init({ node: document.getElementById('root') });

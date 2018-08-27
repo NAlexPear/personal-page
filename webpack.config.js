@@ -10,10 +10,12 @@ const htmlWebpackPlugin = new HtmlWebpackPlugin({
   appMountId: 'root',
   inject: false,
   links: [
+    'https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css',
+    'https://pro.fontawesome.com/releases/v5.2.0/css/all.css',
   ],
   mobile: true,
   template,
-  title: 'Savvy Screencasts',
+  title: 'Alex Pearson\'s Personal Page',
 });
 
 const shared = {
@@ -42,16 +44,24 @@ const dev = merge(shared, {
         test: /\.elm$/,
         exclude: [/elm-stuff/, /node_modules/],
         use: [
-          {
-            loader: 'elm-hot-webpack-loader',
-          },
+          { loader: 'elm-hot-webpack-loader' },
           {
             loader: 'elm-webpack-loader',
             options: {
               cwd: __dirname,
+              forceWatch: true,
               pathToElm: './node_modules/.bin/elm',
             },
           },
+        ],
+      },
+      {
+        test: /\.scss$/,
+        exclude: /node_modules/,
+        use: [
+          { loader: 'style-loader' },
+          { loader: 'css-loader' },
+          { loader: 'sass-loader' },
         ],
       },
     ],
