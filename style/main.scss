@@ -15,9 +15,11 @@ body {
 
   img {
     border-radius: 50%;
-    max-width: 20rem;
+    height: 30vh;
+    max-height: 20rem;
     object-fit: cover;
     object-position: center;
+    width: auto;
   }
 }
 

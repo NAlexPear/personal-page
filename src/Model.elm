@@ -1,16 +1,14 @@
-module Model exposing (Model, Screen(..))
+module Model exposing (Model)
 
 import Browser exposing (Document)
-import Html exposing (Html)
-import Msg exposing (Msg)
-
-
-type Screen
-    = Loading
-    | Loaded (List (Html Msg))
+import Browser.Navigation exposing (Key)
+import Screens exposing (Screen)
+import Url exposing (Url)
 
 
 type alias Model =
-    { title : String
+    { url : Url
+    , key : Key
+    , title : String
     , screen : Screen
     }

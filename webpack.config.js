@@ -49,7 +49,7 @@ const dev = merge(shared, {
             loader: 'elm-webpack-loader',
             options: {
               cwd: __dirname,
-              forceWatch: true,
+              debug: true,
               pathToElm: './node_modules/.bin/elm',
             },
           },

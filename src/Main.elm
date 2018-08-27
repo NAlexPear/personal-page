@@ -1,15 +1,18 @@
 module Main exposing (main)
 
-import Browser
-import Model exposing (Model, Screen(..))
+import Browser exposing (UrlRequest, application)
+import Browser.Navigation exposing (Key)
+import Model exposing (Model)
 import Msg exposing (Msg)
+import Screens exposing (mapScreen)
 import Update exposing (update)
+import Url exposing (Url)
 import View exposing (view)
 
 
-init : () -> ( Model, Cmd Msg )
-init _ =
-    ( Model "Alex Pearson's Personal Page" Loading
+init : () -> Url -> Key -> ( Model, Cmd Msg )
+init _ url key =
+    ( Model url key "Alex Pearson's Personal Page" <| mapScreen url
     , Cmd.none
     )
 
@@ -20,8 +23,10 @@ subscriptions model =
 
 
 main =
-    Browser.document
+    application
         { init = init
+        , onUrlChange = Msg.UrlChange
+        , onUrlRequest = Msg.LinkClicked
         , update = update
         , subscriptions = subscriptions
         , view = view
