@@ -21,16 +21,33 @@ type alias Content =
 shell : Content -> Content
 shell content =
     [ div [ id "header" ]
-        [ h1 [] [ text "Alex Pearson" ]
-        , img [ src "https://res.cloudinary.com/dfcybzffo/image/upload/v1535320013/alexpear.com/alexsmilin.jpg" ] []
+        [ img [ src "https://res.cloudinary.com/dfcybzffo/image/upload/v1535320013/alexpear.com/alexsmilin.jpg" ] []
+        , h3 [] [ text "educator" ]
+        , h3 [] [ text "problem solver" ]
+        , h3 [] [ text "software developer" ]
+        , h1 [] [ text "Alex Pearson" ]
         , ul []
             [ li [] [ a [ href "/" ] [ text "Home" ] ]
             , li [] [ a [ href "/résumé" ] [ text "Résumé" ] ]
+            , li [] [ a [ href "/contact" ] [ text "Contact" ] ]
             ]
         ]
     , div [ id "content" ] content
     , div [ id "footer" ]
-        [ text "AlexPear, LLC." ]
+        [ span [] [ text "AlexPear, LLC." ]
+        , a [ href "https://github.com/nalexpear" ]
+            [ text "GitHub"
+            , i [ class "fab fa-github" ] []
+            ]
+        , a [ href "https://linkedin.com/in/nalexpearson" ]
+            [ text "LinkedIn"
+            , i [ class "fab fa-linkedin" ] []
+            ]
+        , a [ href "https://twitter.com/nalexpearson" ]
+            [ text "Twitter"
+            , i [ class "fab fa-twitter" ] []
+            ]
+        ]
     ]
 
 

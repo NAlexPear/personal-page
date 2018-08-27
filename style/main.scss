@@ -1,5 +1,9 @@
+$breakpoint: 40rem;
+$color-main: #505050;
+$color-accent: #91d6ec;
+
 body {
-  color: #505050;
+  color: $color-main;
   display: grid;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   grid-template-areas:
@@ -10,28 +14,133 @@ body {
   min-height: 100vh;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+  opacity: 0.8;
+
+  &:hover {
+    opacity: 1;
+    text-decoration: underline;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin: 0;
+}
+
 #header {
+  $img-clip: polygon(0 0, 100% 0, 100% 100%, 0.33% 67.58%);
+  $spacing: 1rem;
+
+  display: flex;
+  flex-direction: column;
   grid-area: header;
+  justify-content: flex-start;
+
+  h1 {
+    margin: 0.5rem $spacing;
+  }
+
+  h3 {
+    margin-left: $spacing;
+    font-weight: 200;
+    opacity: 0.4;
+  }
 
   img {
-    border-radius: 50%;
-    height: 30vh;
+    align-self: center;
+    clip-path: $img-clip;
+    display: block;
+    float: right;
+    margin-bottom: -3vh;
     max-height: 20rem;
     object-fit: cover;
-    object-position: center;
-    width: auto;
+    object-position: top;
+    shape-outside: $img-clip;
+    width: 100%;
+  }
+
+  ul {
+    border-top: 0.25rem solid transparentize($color-accent, 0.5);
+    list-style: none;
+    padding: 2rem $spacing;
+
+    li {
+      padding: 1rem 0;
+
+      &:hover {
+        cursor: pointer;
+
+        a {
+          opacity: 1;
+          text-decoration: none;
+        }
+      }
+    }
   }
 }
 
 #content {
+  $spacing: 5vw;
+
   align-items: center;
   display: flex;
   flex-direction: column;
   grid-area: content;
   justify-content: center;
+  padding: $spacing;
+  line-height: 1.8;
+  letter-spacing: 0.05rem;
+
+  a {
+    text-decoration: underline;
+  }
+
+  p {
+    width: 90%;
+    max-width: $breakpoint * 2;
+
+    &:first-of-type:first-letter {
+      color: $color-accent;
+      float: left;
+      font-size: 4rem;
+      padding: 0.6rem 0.25rem 0 0;
+    }
+  }
 }
 
 #footer {
+  $spacing: 1rem;
+
   grid-area: footer;
+  opacity: 0.7;
+  padding: $spacing;
+
+  > span {
+    margin-right: $spacing;
+  }
+
+  > a {
+    border-left: 1px solid;
+    padding: 0 $spacing;
+
+    i {
+      padding-left: $spacing;
+    }
+  }
 }
 
+@media screen and (min-width: $breakpoint) {
+  body {
+    grid-template-areas:
+      "header content"
+      "header content"
+      "footer footer";
+    grid-template-columns: minmax(25vw, 14rem) auto;
+  }
+}
