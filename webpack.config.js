@@ -25,6 +25,19 @@ const shared = {
     filename: '[hash].js',
     chunkFilename: '[chunkhash].js',
   },
+  module: {
+    rules: [
+      {
+        test: /\.scss$/,
+        exclude: /node_modules/,
+        use: [
+          { loader: 'style-loader' },
+          { loader: 'css-loader' },
+          { loader: 'sass-loader' },
+        ],
+      },
+    ],
+  },
 };
 
 const dev = merge(shared, {
@@ -55,15 +68,6 @@ const dev = merge(shared, {
           },
         ],
       },
-      {
-        test: /\.scss$/,
-        exclude: /node_modules/,
-        use: [
-          { loader: 'style-loader' },
-          { loader: 'css-loader' },
-          { loader: 'sass-loader' },
-        ],
-      },
     ],
   },
 });
@@ -83,6 +87,9 @@ const prod = merge(shared, {
         exclude: [/elm-stuff/, /node_modules/],
         use: {
           loader: 'elm-webpack-loader',
+          options: {
+            optimize: true,
+          },
         },
       },
     ],

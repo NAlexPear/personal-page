@@ -5,6 +5,7 @@
   "main": "index.html",
   "private": true,
   "scripts": {
+    "build": "webpack --env prod",
     "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
