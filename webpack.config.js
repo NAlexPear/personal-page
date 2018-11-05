@@ -88,7 +88,9 @@ const prod = merge(shared, {
         use: {
           loader: 'elm-webpack-loader',
           options: {
+            cwd: __dirname,
             optimize: true,
+            pathToElm: './node_modules/.bin/elm',
           },
         },
       },
