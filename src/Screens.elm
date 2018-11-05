@@ -2,6 +2,7 @@ module Screens exposing (Screen(..), mapScreen)
 
 import Dict exposing (Dict)
 import Html exposing (..)
+import Html.Attributes exposing (..)
 import Msg exposing (Msg)
 import Url exposing (Url)
 import Url.Parser exposing (Parser, map, oneOf, parse, s, top)
@@ -45,7 +46,14 @@ home =
 
 contact : Content
 contact =
-    [ text "hallo!" ]
+    [ h2 [] [ text "Contact:" ]
+    , Html.form [ attribute "netlify" "", name "contact", method "POST" ]
+        [ input [ type_ "text", name "name", placeholder "Your Name" ] []
+        , input [ type_ "email", name "email", placeholder "example@your.email.com" ] []
+        , textarea [ name "message", placeholder "Your Message Here" ] []
+        , button [ type_ "submit" ] [ text "Send" ]
+        ]
+    ]
 
 
 résumé : Content
