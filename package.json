@@ -5,7 +5,7 @@
   "main": "index.html",
   "private": true,
   "scripts": {
-    "build": "webpack --env prod",
+    "build": "webpack --env prod && cp _redirects ./dist",
     "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
